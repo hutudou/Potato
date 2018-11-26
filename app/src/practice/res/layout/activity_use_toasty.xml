@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.potato.activity.UseToastyActivity">
+    <include layout="@layout/app_toolbar"/>
+    <Button
+        android:layout_marginTop="28dp"
+        android:id="@+id/buttonSuccess"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="弹出成功消息" />
+
+    <Button
+        android:id="@+id/buttonError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="弹出错误消息" />
+
+    <Button
+        android:id="@+id/buttonNormal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="弹出一般消息" />
+
+    <Button
+        android:id="@+id/buttonWarn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="弹出警告消息消息" />
+</LinearLayout>

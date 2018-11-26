@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.potato.activity.UseButterKnifeActivity">
+    <include layout="@layout/app_toolbar"/>
+    <Button
+        android:layout_marginTop="28dp"
+    android:id="@+id/button1"
+    android:text="按钮一"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/button2"
+        android:text="按钮二"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/button3"
+        android:text="按钮三"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/button4"
+        android:text="按钮四"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

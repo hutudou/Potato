@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.potato.activity.UseMPAndroidChart">
+    <include layout="@layout/app_toolbar"/>
+    <TextView
+        android:layout_marginTop="16dp"
+        android:id="@+id/textLineOne"
+        android:textSize="@dimen/text_size_18"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/textLineTwo"
+        android:textSize="@dimen/text_size_18"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/lineChart"
+        android:layout_width="match_parent"
+        android:layout_height="195dp"
+        android:layout_marginTop="20dp"/>
+
+</LinearLayout>

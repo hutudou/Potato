@@ -1,0 +1,30 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+         // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+    ext {
+        //app发布版----平时开发调试的时候，请设置为false，正式上线发布的时候设置为true
+        appRelease = false
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

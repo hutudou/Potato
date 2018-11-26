@@ -1,0 +1,156 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    compileSdkVersion 26
+
+    productFlavors {
+        practice {
+            applicationId "com.example.administrator.potato.practice"
+            resValue("string", "app_name", "安卓发布版")
+            if (!appRelease) {
+                resValue("string", "app_name", "安卓调试版")
+            }
+        }
+        everyday {
+            applicationId "com.example.administrator.potato.everyday"
+            resValue("string", "app_name", "新闻发布版")
+            if (!appRelease) {
+                resValue("string", "app_name", "新闻调试版")
+            }
+        }
+    }
+    defaultConfig {
+        applicationId "com.example.administrator.potato"
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode VERSION_CODE as int
+        versionName VERSION_NAME
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+        flavorDimensions "versionCode"
+        //Build Config中加入每个flavor的名字 需要放在productFlavors节点之后
+        project.android.productFlavors.each {
+            flavor ->
+                buildConfigField("String", flavor.name, "\"${flavor.name}\"")
+        }
+    }
+    signingConfigs {
+        release {
+            keyAlias RELEASE_KEY_ALIAS
+            keyPassword RELEASE_KEY_PASSWORD
+            storeFile file(RELEASE_STORE_FILE)
+            storePassword RELEASE_STORE_PASSWORD
+        }
+        //debug采用和release版本一样的签名文件
+        debug {
+            keyAlias RELEASE_KEY_ALIAS
+            keyPassword RELEASE_KEY_PASSWORD
+            storeFile file(RELEASE_STORE_FILE)
+            storePassword RELEASE_STORE_PASSWORD
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDir 'libs'
+            jni.srcDirs = []
+        }
+    }
+}
+
+dependencies {
+    compile 'com.github.SiKang123:AndroidToolBox:1.0'
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'junit:junit:4.12'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    compile 'com.github.GrenderG:Toasty:1.1.5'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.6'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.6'
+    androidTestCompile('com.android.support:support-annotations:26.1.0') {
+        force = true
+    }
+    implementation files('libs/BaiduLBS_Android.jar')
+    implementation 'com.hjq:xxpermissions:3.6'
+    // RxJava
+    compile 'io.reactivex.rxjava2:rxjava:2.1.0'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
+    //rxpermissions
+    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
+    compile 'com.android.support:design:26.1.0'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    //okhttp
+    implementation 'com.squareup.okhttp3:okhttp:3.8.0'
+    //okgo 一款okhttp管理框架
+    compile 'com.lzy.net:okgo:3.0.4'
+    compile 'com.lzy.net:okrx2:2.0.2'
+    compile 'com.lzy.net:okserver:2.0.5'
+    //fastjson
+    compile 'com.alibaba:fastjson:1.2.44'
+    compile 'com.airbnb.android:lottie:2.0.0-rc1'
+    //recyclerView动画
+    implementation 'jp.wasabeef:recyclerview-animators:2.2.0'
+    compile 'com.github.JayFang1993:DropDownMenu:v0.9'
+}
+def bakPath = file("baseApk/${VERSION_NAME}/")
+
+List<String> flavors = new ArrayList<>()
+
+project.android.productFlavors.each {
+    flavor ->
+        flavors.add(flavor.name)
+}
+
+boolean hasFlavors = flavors.size() > 0
+
+def getDate() {
+    return !appRelease ? "debug" : "release-" + new Date().format("YYYY-MM-dd-HH-mm-ss")
+}
+
+android.applicationVariants.all { variant ->
+    /**
+     * task type, you want to bak
+     */
+    def taskName = variant.name
+    def date = getDate()
+    tasks.all {
+        if ("assemble${taskName.capitalize()}".equalsIgnoreCase(it.name)) {
+            it.doLast {
+                copy {
+                    def fileNamePrefix = "${project.name}-${variant.baseName}"
+                    def newFileNamePrefix = hasFlavors ? "${fileNamePrefix}" : "${fileNamePrefix}-${date}"
+                    newFileNamePrefix = "${newFileNamePrefix}-${VERSION_NAME}"
+                    def destPath = hasFlavors ? file("${bakPath}/${project.name}-${date}/${variant.flavorName}") : bakPath
+                    from variant.outputs[0].outputFile
+                    into destPath
+                    rename { String fileName ->
+                        fileName.replace("${fileNamePrefix}.apk", "${newFileNamePrefix}.apk")
+                    }
+                }
+            }
+        }
+    }
+}

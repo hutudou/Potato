@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.potato.activity.WelcomeActivity">
+
+    <TextView
+        android:id="@+id/textSkip"
+        android:background="@drawable/shape_toorbar_text"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="18dp"
+        android:layout_gravity="end"
+        android:gravity="center"
+        android:text="跳过5"
+        android:textColor="@color/toolbar_color"
+        android:textSize="@dimen/text_size_15" />
+
+    <ImageView
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:src="@drawable/image_app_name" />
+
+    <TextView
+        android:id="@+id/textWordShow"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/toolbar_color"
+        android:textSize="@dimen/text_size_17" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimationView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="42dp"
+        android:layout_weight="1"
+        android:scaleType="center"
+        android:scaleX="1"
+        android:scaleY="1"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="welcome.json"
+        app:lottie_loop="false" />
+
+    <TextView
+        android:id="@+id/textVersion"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="35dp"
+        android:gravity="center"
+        android:text="当前版本:"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_17" />
+</LinearLayout>

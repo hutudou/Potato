@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.administrator.potato">
+
+    <!--
+        需要动态申请的权限
+        所谓同组权限即表示多个权限属于同一权限组，
+        这一组的权限只需要动态申请一个，其他的权限就不需要重复申请
+    -->
+
+
+    <!-- 动态权限第一组 -->
+    <!-- 网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- 动态权限第二组 -->
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- 动态权限第三组 -->
+    <!-- 向SDCard写入数据权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 读取SDCard数据 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- 动态权限第四组 -->
+    <!-- SDCard中创建与删除文件权限 -->
+
+
+    <!-- 普通权限 -->
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 访问网络，网络定位需要上网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name=".activity.UseBaiDuMapActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.UseToastyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.UseButterKnifeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PracticeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PopupWindowActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.UseDialogActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.UseRxPermissionsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.UseNumImageViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.TabLayoutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.UseWebViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.UseMPAndroidChart"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.UseVideoViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.UseEventBusActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ReceiveActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.UseNotificationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.UseOkHttpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.UseLottieActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.UseSnackBarActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.UseServiceActivity"
+            android:screenOrientation="portrait" />
+
+        <service android:name=".service.TestService" />
+
+        <activity android:name=".activity.ChooseDocActivity" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.administrator.potato.mAuthorities"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_path" />
+        </provider>
+
+        <activity android:name=".activity.UseDropDawnMenuActivity"></activity>
+    </application>
+
+</manifest>

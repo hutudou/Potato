@@ -11,7 +11,17 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c77175e4-a2f6-473a-819f-7317ed910537" name="Default" comment="none" />
+    <list default="true" id="c77175e4-a2f6-473a-819f-7317ed910537" name="Default" comment="none">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/__local_aars___C__Users_Administrator_Desktop_potato_app_libs_BaiduLBS_Android_jar_unspecified_jar.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/activity/BaseActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/activity/BaseActivity.java" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +65,18 @@
     <favorites_list name="potato" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="BaseActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/activity/BaseActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="667">
+              <caret line="296" column="5" lean-forward="false" selection-start-line="296" selection-start-column="5" selection-end-line="296" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -2910,8 +2931,8 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/utils/MPAndroidLineChartUtil.java" />
         <option value="$PROJECT_DIR$/app/src/practice/java/com/example/administrator/potato/activity/ChooseDocActivity.java" />
         <option value="$PROJECT_DIR$/app/src/practice/java/com/example/administrator/potato/activity/UseMPAndroidChart.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/activity/BaseActivity.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/activity/BaseActivity.java" />
       </list>
     </option>
   </component>
@@ -2955,22 +2976,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="AndroidView">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="potato" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Gradle Scripts" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidBuildScriptsGroupNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -3033,7 +3040,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
+              <option name="myItemId" value="practice" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -3055,7 +3062,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
+              <option name="myItemId" value="practice" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -3097,7 +3104,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
+              <option name="myItemId" value="practice" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -3127,7 +3134,21 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="potato" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gradle Scripts" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidBuildScriptsGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -3136,7 +3157,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="sync.plugin.last.upgrade.timestamp" value="1540360433002" />
     <property name="device.picker.selection" value="3950f9ab" />
-    <property name="SearchEverywhereHistoryKey" value="Base&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/activity/BaseActivity.java&#10;Choo&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/java/com/example/administrator/potato/activity/ChooseDocActivity.java&#10;Use&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/java/com/example/administrator/potato/activity/UseMPAndroidChart.java&#10;UseM&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/java/com/example/administrator/potato/activity/UseMPAndroidChart.java&#10;Choose&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/java/com/example/administrator/potato/activity/ChooseDocActivity.java&#10;UseW&#9;PSI&#9;JAVA://com.example.administrator.potato.activity.UseWebViewActivity&#10;Main&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/java/com/example/administrator/potato/activity/MainActivity.java&#10;UseSn&#9;PSI&#9;JAVA://com.example.administrator.potato.activity.UseSnackBarActivity&#10;tv_menu_ti&#9;PSI&#9;JAVA://com.example.administrator.potato.practice.test.R.id#tv_menu_title&#10;tv_menu_title&#9;PSI&#9;JAVA://com.example.administrator.potato.practice.test.R.id#tv_menu_title&#10;icon_vector&#9;PSI&#9;JAVA://com.example.administrator.potato.R.drawable#icon_vector_back&#10;icon_ve&#9;FILE&#9;file://E:/myAndroidPro/potato/app/build/generated/res/pngs/practice/debug/drawable-hdpi/icon_vector_back.png&#10;Ch&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/java/com/example/administrator/potato/activity/ChooseDocActivity.java&#10;Json&#9;PSI&#9;JAVA://com.example.administrator.potato.callback.JsonDialogCallback&#10;main&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/java/com/example/administrator/potato/activity/MainActivity.java&#10;Ever&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/activity/EveryDayMainActivity.java&#10;image&#9;PSI&#9;JAVA://com.example.administrator.potato.utils.NumImageView&#10;Sho&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/utils/TextViewShowWordOneByOne.java&#10;app&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/AppConstant.java&#10;No&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/utils/NotificationUtil.java&#10;BaseA&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/activity/BaseActivity.java&#10;noti&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/utils/NotificationUtil.java&#10;we&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/activity/WelcomeActivity.java&#10;UseVi&#9;PSI&#9;JAVA://com.example.administrator.potato.activity.UseVideoViewActivity&#10;mainA&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/java/com/example/administrator/potato/activity/MainActivity.java&#10;myA&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/application/MyApplication.java&#10;Sting&#9;PSI&#9;JAVA://android.support.annotation.VisibleForTesting&#10;Strin&#9;FILE&#9;jar://C:/Users/Administrator/.gradle/caches/modules-2/files-2.1/com.lzy.net/okgo/3.0.4/4db61c4d59a8f4893a18d7d9c98453d6a8abf51d/okgo-3.0.4-sources.jar!/com/lzy/okgo/callback/StringCallback.java&#10;Reque&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/request/RequestMethod.java&#10;String&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/callback/StringDialogCallback.java&#10;StringDia&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/callback/StringDialogCallback.java&#10;ite&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/res/layout/item_today_in_history.xml&#10;item&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/res/layout/item_today_in_history.xml&#10;use&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/java/com/example/administrator/potato/activity/UseOkHttpActivity.java&#10;StringD&#9;PSI&#9;JAVA://com.example.administrator.potato.callback.StringDialogCallback&#10;Call&#9;FILE&#9;jar://C:/Users/Administrator/.gradle/caches/modules-2/files-2.1/com.lzy.net/okgo/3.0.4/4db61c4d59a8f4893a18d7d9c98453d6a8abf51d/okgo-3.0.4-sources.jar!/com/lzy/okgo/callback/StringCallback.java&#10;Ba&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/activity/BaseActivity.java&#10;UseOk&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/java/com/example/administrator/potato/activity/UseOkhttpActivity.java&#10;mainActi&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/java/com/example/administrator/potato/activity/MainActivity.java&#10;Toass&#9;PSI&#9;JAVA://com.example.administrator.potato.utils.ToastMessage#toastSuccess" />
+    <property name="SearchEverywhereHistoryKey" value="Pra&#9;PSI&#9;JAVA://com.example.administrator.potato.activity.PracticeActivity&#10;Base&#9;FILE&#9;file://C:/Users/Administrator/Desktop/potato/app/src/main/java/com/example/administrator/potato/activity/BaseActivity.java&#10;Choo&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/java/com/example/administrator/potato/activity/ChooseDocActivity.java&#10;Use&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/java/com/example/administrator/potato/activity/UseMPAndroidChart.java&#10;UseM&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/java/com/example/administrator/potato/activity/UseMPAndroidChart.java&#10;Choose&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/java/com/example/administrator/potato/activity/ChooseDocActivity.java&#10;UseW&#9;PSI&#9;JAVA://com.example.administrator.potato.activity.UseWebViewActivity&#10;Main&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/java/com/example/administrator/potato/activity/MainActivity.java&#10;UseSn&#9;PSI&#9;JAVA://com.example.administrator.potato.activity.UseSnackBarActivity&#10;tv_menu_ti&#9;PSI&#9;JAVA://com.example.administrator.potato.practice.test.R.id#tv_menu_title&#10;tv_menu_title&#9;PSI&#9;JAVA://com.example.administrator.potato.practice.test.R.id#tv_menu_title&#10;icon_vector&#9;PSI&#9;JAVA://com.example.administrator.potato.R.drawable#icon_vector_back&#10;icon_ve&#9;FILE&#9;file://E:/myAndroidPro/potato/app/build/generated/res/pngs/practice/debug/drawable-hdpi/icon_vector_back.png&#10;Ch&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/java/com/example/administrator/potato/activity/ChooseDocActivity.java&#10;Json&#9;PSI&#9;JAVA://com.example.administrator.potato.callback.JsonDialogCallback&#10;main&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/java/com/example/administrator/potato/activity/MainActivity.java&#10;Ever&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/activity/EveryDayMainActivity.java&#10;image&#9;PSI&#9;JAVA://com.example.administrator.potato.utils.NumImageView&#10;Sho&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/utils/TextViewShowWordOneByOne.java&#10;app&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/AppConstant.java&#10;No&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/utils/NotificationUtil.java&#10;BaseA&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/activity/BaseActivity.java&#10;noti&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/utils/NotificationUtil.java&#10;we&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/activity/WelcomeActivity.java&#10;UseVi&#9;PSI&#9;JAVA://com.example.administrator.potato.activity.UseVideoViewActivity&#10;mainA&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/java/com/example/administrator/potato/activity/MainActivity.java&#10;myA&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/application/MyApplication.java&#10;Sting&#9;PSI&#9;JAVA://android.support.annotation.VisibleForTesting&#10;Strin&#9;FILE&#9;jar://C:/Users/Administrator/.gradle/caches/modules-2/files-2.1/com.lzy.net/okgo/3.0.4/4db61c4d59a8f4893a18d7d9c98453d6a8abf51d/okgo-3.0.4-sources.jar!/com/lzy/okgo/callback/StringCallback.java&#10;Reque&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/request/RequestMethod.java&#10;String&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/callback/StringDialogCallback.java&#10;StringDia&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/callback/StringDialogCallback.java&#10;ite&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/res/layout/item_today_in_history.xml&#10;item&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/res/layout/item_today_in_history.xml&#10;use&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/java/com/example/administrator/potato/activity/UseOkHttpActivity.java&#10;StringD&#9;PSI&#9;JAVA://com.example.administrator.potato.callback.StringDialogCallback&#10;Call&#9;FILE&#9;jar://C:/Users/Administrator/.gradle/caches/modules-2/files-2.1/com.lzy.net/okgo/3.0.4/4db61c4d59a8f4893a18d7d9c98453d6a8abf51d/okgo-3.0.4-sources.jar!/com/lzy/okgo/callback/StringCallback.java&#10;Ba&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/activity/BaseActivity.java&#10;UseOk&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/java/com/example/administrator/potato/activity/UseOkhttpActivity.java&#10;mainActi&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/java/com/example/administrator/potato/activity/MainActivity.java&#10;Toass&#9;PSI&#9;JAVA://com.example.administrator.potato.utils.ToastMessage#toastSuccess" />
     <property name="DEBUGGABLE_DEVICE" value="oneplus-oneplus_a5000-3950f9ab" />
     <property name="DEBUGGABLE_PROCESS" value="com.example.administrator.potato.practice" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
@@ -3286,7 +3307,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1543211596174" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1543212265328" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -3334,7 +3355,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1543211596174" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1543212265328" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -3496,7 +3517,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1543211596175" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1543212265329" />
       </method>
     </configuration>
     <list size="3">
@@ -3662,6 +3683,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="1" />
+    <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -3679,7 +3701,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2793177" sideWeight="0.43878657" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2793177" sideWeight="0.43878657" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -3767,7 +3789,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/recyclerView/adapter/CommonRecyclerViewAdapter.java" />
     <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-26/android.jar!/android/content/ContentResolver.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
@@ -3888,6 +3909,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3905,11 +3927,26 @@
     <entry file="file://$PROJECT_DIR$/.gitignore" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/utils/MPAndroidLineChartUtil.java" />
     <entry file="file://$PROJECT_DIR$/app/.gitignore" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/activity/BaseActivity.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/temp/Const.java" />
     <entry file="file://$PROJECT_DIR$/app/build.gradle" />
     <entry file="file://$PROJECT_DIR$/app/src/practice/res/layout/activity_use_mpandroid_chart.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/practice/java/com/example/administrator/potato/activity/UseOkHttpActivity.java" />
     <entry file="file://$PROJECT_DIR$/app/src/practice/java/com/example/administrator/potato/activity/ChooseDocActivity.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/practice/java/com/example/administrator/potato/activity/PracticeActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/activity/BaseActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="296" column="5" lean-forward="false" selection-start-line="296" selection-start-column="5" selection-end-line="296" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

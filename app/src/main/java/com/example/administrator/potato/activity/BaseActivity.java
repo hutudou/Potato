@@ -295,4 +295,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         //点击事件
         void clickEvent();
     }
+
+    public void testGitIsSuccess() {
+        //测试git 是否关联成功
+    }
 }

@@ -296,7 +296,4 @@ public abstract class BaseActivity extends AppCompatActivity {
         void clickEvent();
     }
 
-    public void testGitIsSuccess() {
-        //测试git 是否关联成功
-    }
 }

@@ -58,10 +58,9 @@ public class UseEventBusActivity extends BaseActivity {
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        EventBusUtil.getInstance().postSticky(new BaseEvent(1, "这是一条普通消息哦..."));
+                        EventBusUtil.getInstance().postNormal(new BaseEvent(0, "这是一条普通消息哦..."));
                     }
                 }, 200);
-
                 //使用平时方法启动活动
                /* Intent intentNormal = new Intent(mContext, ReceiveActivity.class);
                 startActivity(intentNormal);*/

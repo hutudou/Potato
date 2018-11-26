@@ -9,7 +9,6 @@ import org.greenrobot.eventbus.ThreadMode;
  */
 public class EventBusUtil {
     private static volatile EventBusUtil instance;
-
     //双重检验锁实现单例
     public static EventBusUtil getInstance() {
         if (instance == null) {
@@ -44,6 +43,7 @@ public class EventBusUtil {
         //先监测是否已经注册
         if (EventBus.getDefault().isRegistered(object)) {
             EventBus.getDefault().unregister(object);
+            EventBus.getDefault().removeStickyEvent(object);
         }
     }
 
@@ -66,6 +66,7 @@ public class EventBusUtil {
     }
 
     public interface IEventBus {
+
         void register();
 
         void unregister();

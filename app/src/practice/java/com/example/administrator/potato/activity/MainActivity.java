@@ -48,7 +48,8 @@ public class MainActivity extends BaseActivity {
             "功能十六:SnackBar的使用以及封装",
             "功能十七:服务的使用",
             "功能十八:查找手机本地的word文档",
-            "功能十九:使用多条件查询框架----DropDawnMenu"
+            "功能十九:使用多条件查询框架----DropDawnMenu",
+            "功能二十:防崩溃框架Cockroach的使用"
     };
 
     @Override
@@ -180,6 +181,12 @@ public class MainActivity extends BaseActivity {
                     case 19:
                         Intent intent19 = new Intent(MyApplication.getContext(), UseDropDawnMenuActivity.class);
                         startActivity(intent19);
+                        break;
+                    //"功能二十:防崩溃框架Cockroach的使用"
+
+                    case 20:
+                        Intent intent20 = new Intent(MyApplication.getContext(), UseCockroachActivity.class);
+                        startActivity(intent20);
                         break;
                 }
             }

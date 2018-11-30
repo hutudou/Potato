@@ -1,8 +1,15 @@
 package com.example.administrator.potato.application;
 
 import android.app.Application;
+import android.app.ApplicationErrorReport;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Handler;
+import android.os.Looper;
+import android.util.Log;
+import android.widget.Toast;
 
+import com.example.administrator.potato.R;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheEntity;
 import com.lzy.okgo.cache.CacheMode;
@@ -11,6 +18,7 @@ import com.lzy.okgo.cookie.store.MemoryCookieStore;
 import com.lzy.okgo.https.HttpsUtils;
 import com.lzy.okgo.interceptor.HttpLoggingInterceptor;
 import com.squareup.leakcanary.LeakCanary;
+import com.wanjian.cockroach.Cockroach;
 
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -28,6 +36,8 @@ public class MyApplication extends Application {
         mContext = getApplicationContext();
         LeakCanary.install(this);
         initOkgo();
+        //安装防crash框架
+        installCockroach();
     }
 
     //得到Application的context
@@ -88,4 +98,18 @@ public class MyApplication extends Application {
                 .setRetryCount(3);                              //全局统一超时重连次数，默认为三次，那么最差的情况会请求4次(一次原始请求，三次重连请求)，不需要可以设置为0
 
     }
+
+    private void installCockroach() {
+        final Thread.UncaughtExceptionHandler sysExcepHandler = Thread.getDefaultUncaughtExceptionHandler();
+        Cockroach.install(new Cockroach.ExceptionHandler() {
+            @Override
+            public void handlerException(Thread thread, Throwable throwable) {
+                Toast.makeText(mContext, "未知异常，请重试", Toast.LENGTH_SHORT).show();
+            }
+
+
+        });
+
+    }
+
 }

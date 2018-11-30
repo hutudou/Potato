@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.potato.activity.UseCockroachActivity">
+
+    <include layout="@layout/app_toolbar"/>
+
+    <Button
+        android:id="@+id/buttonTypeOne"
+        android:text="数组越界异常"
+        android:layout_marginTop="36dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/buttongTypeTwo"
+        android:text="子线程异常"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

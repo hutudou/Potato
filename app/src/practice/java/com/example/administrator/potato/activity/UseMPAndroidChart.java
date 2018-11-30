@@ -125,25 +125,28 @@ public class UseMPAndroidChart extends BaseActivity {
         entriesFir = new ArrayList<>();
         for (int i = 0; i < 20; i++)
             entriesFir.add(new Entry(i, new Random().nextInt(300)));
-        LineDataSet dataSet = new LineDataSet(entriesFir, "曲线一"); //
+        LineDataSet dataSet = new LineDataSet(entriesFir, "测试一"); //
         //设置圆点是否是空心圆显示
         dataSet.setDrawCircles(false);
         dataSet.setDrawValues(true);
+        dataSet.setMode(LineDataSet.Mode.CUBIC_BEZIER);
         //设置折线的颜色
         dataSet.setColor(Color.parseColor("#7d7d7d"));
         //设置圆点的颜色
         dataSet.setCircleColor(Color.parseColor("#7d7d7d"));
         //设置折线的宽度
         dataSet.setLineWidth(1f);
+
         //第二条曲线
         entriesSec = new ArrayList<>();
         for (int i = 0; i < 20; i++)
             entriesSec.add(new Entry(i, -(new Random().nextInt(300))));
-        LineDataSet dataSet1 = new LineDataSet(entriesSec, "曲线二"); // add entries to dataset
+        LineDataSet dataSet1 = new LineDataSet(entriesSec, "测试二"); // add entries to dataset
         //设置圆点是否是空心圆显示
         dataSet1.setDrawCircles(false);
         //设置折线的颜色
         dataSet1.setColor(Color.parseColor("#3fc3fe"));
+        dataSet1.setMode(LineDataSet.Mode.CUBIC_BEZIER);
         //设置圆点的颜色
         dataSet1.setCircleColor(Color.parseColor("#7d7d7d"));
         //设置折线的宽度

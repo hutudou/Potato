@@ -117,7 +117,8 @@
                 android:resource="@xml/file_path" />
         </provider>
 
-        <activity android:name=".activity.UseDropDawnMenuActivity"></activity>
+        <activity android:name=".activity.UseDropDawnMenuActivity" />
+        <activity android:name=".activity.UseCockroachActivity"></activity>
     </application>
 
 </manifest>

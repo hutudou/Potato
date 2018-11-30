@@ -114,6 +114,8 @@ dependencies {
     //recyclerView动画
     implementation 'jp.wasabeef:recyclerview-animators:2.2.0'
     compile 'com.github.JayFang1993:DropDownMenu:v0.9'
+    //防崩溃框架
+    compile 'com.wanjian:cockroach:0.0.5'
 }
 def bakPath = file("baseApk/${VERSION_NAME}/")
 

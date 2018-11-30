@@ -9,6 +9,7 @@ import org.greenrobot.eventbus.ThreadMode;
  */
 public class EventBusUtil {
     private static volatile EventBusUtil instance;
+
     //双重检验锁实现单例
     public static EventBusUtil getInstance() {
         if (instance == null) {

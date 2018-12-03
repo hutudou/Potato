@@ -11,7 +11,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.administrator.potato.AppConstant;
@@ -31,7 +30,6 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import jp.wasabeef.recyclerview.adapters.ScaleInAnimationAdapter;
-import okhttp3.internal.Util;
 
 public class ChooseDocActivity extends BaseActivity {
 
@@ -96,7 +94,7 @@ public class ChooseDocActivity extends BaseActivity {
                 try {
                     startActivity(intent);
                 } catch (Exception e) {
-                    Log.d(AppConstant.logName, "" + e.toString());
+                    Log.d(AppConstant.LOG_NAME, "" + e.toString());
                     showSnackBar(toolbar, "没有找到可以打开该文件的程序哦...", true, null, null);
                 }
             }
@@ -172,7 +170,7 @@ public class ChooseDocActivity extends BaseActivity {
                     int dot = path.lastIndexOf("/");
                     String name = path.substring(dot + 1);
                     docBean.setName(name);
-                    Log.e(AppConstant.logName, name);
+                    Log.e(AppConstant.LOG_NAME, name);
                     docBeansList.add(docBean);
                 } while (cursor.moveToNext());
             }

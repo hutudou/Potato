@@ -10,6 +10,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.example.administrator.potato.R;
+import com.example.administrator.potato.utils.CrashLog;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheEntity;
 import com.lzy.okgo.cache.CacheMode;
@@ -99,12 +100,20 @@ public class MyApplication extends Application {
 
     }
 
+    //初始化Cockroach  并在回调接口中保存异常信息
     private void installCockroach() {
-        final Thread.UncaughtExceptionHandler sysExcepHandler = Thread.getDefaultUncaughtExceptionHandler();
+        final Toast toast = Toast.makeText(mContext, "", Toast.LENGTH_SHORT);
         Cockroach.install(new Cockroach.ExceptionHandler() {
             @Override
             public void handlerException(Thread thread, Throwable throwable) {
-                Toast.makeText(mContext, "未知异常，请重试", Toast.LENGTH_SHORT).show();
+                CrashLog.saveCrashLog(getApplicationContext(), throwable);
+                new Handler(Looper.getMainLooper()).post(new Runnable() {
+                    @Override
+                    public void run() {
+                        toast.setText("程序发生异常，请查看日志...");
+                        toast.show();
+                    }
+                });
             }
 
 

@@ -73,7 +73,7 @@ public class UseOkHttpActivity extends BaseActivity {
     @OnClick(R.id.button)
     public void onViewClicked() {
         Map<String, String> map = new HashMap<>();
-        map.put("key", AppConstant.mobAppkey);
+        map.put("key", AppConstant.MOB_APP_KEY);
         map.put("day", "0404");
         RequestMethod.get(this, RequestUrl.TOADY_IN_HISTORY, map, new StringDialogCallback(this) {
             @Override

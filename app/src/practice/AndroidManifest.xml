@@ -118,7 +118,8 @@
         </provider>
 
         <activity android:name=".activity.UseDropDawnMenuActivity" />
-        <activity android:name=".activity.UseCockroachActivity"></activity>
+        <activity android:name=".activity.UseCockroachActivity" />
+        <activity android:name=".activity.FileIOActivity"></activity>
     </application>
 
 </manifest>

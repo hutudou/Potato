@@ -29,13 +29,13 @@ public class TestService extends Service {
         notificationUtil = new NotificationUtil(this, "Count", "计数服务");
         //开启前台服务
         startForeground(1, new Notification());
-        Log.d(AppConstant.logName, "TestService: onCreate()");
+        Log.d(AppConstant.LOG_NAME, "TestService: onCreate()");
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         isStart = true;
-        Log.d(AppConstant.logName, "TestService: onStartCommand()");
+        Log.d(AppConstant.LOG_NAME, "TestService: onStartCommand()");
         count(0);
         return super.onStartCommand(intent, flags, startId);
     }
@@ -43,14 +43,14 @@ public class TestService extends Service {
     @Override
     public void onDestroy() {
         isStart = false;
-        Log.d(AppConstant.logName, "TestService: onDestroy()");
+        Log.d(AppConstant.LOG_NAME, "TestService: onDestroy()");
         super.onDestroy();
     }
 
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        Log.d(AppConstant.logName, "TestService: onBind()");
+        Log.d(AppConstant.LOG_NAME, "TestService: onBind()");
         return null;
     }
 

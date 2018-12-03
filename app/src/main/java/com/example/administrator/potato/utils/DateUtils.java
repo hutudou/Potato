@@ -16,8 +16,6 @@ import java.util.Date;
  */
 
 public class DateUtils {
-    private static Calendar mCalendar = Calendar.getInstance();
-
     /**
      * 得到某年某月的最后一天  当传入的月份大于12时  会自动换算成正确的年月日
      *
@@ -26,6 +24,7 @@ public class DateUtils {
      * @return String
      */
     public static String getEndDayOfMonth(int year, int month) {
+        Calendar mCalendar = Calendar.getInstance();
         mCalendar.set(Calendar.YEAR, year);
         mCalendar.set(Calendar.MONTH, month);
         mCalendar.set(Calendar.DAY_OF_MONTH, 1);
@@ -60,6 +59,7 @@ public class DateUtils {
      * @return String
      */
     public static String getAppointDate(int appointDay, @NonNull String dateType) {
+        Calendar mCalendar = Calendar.getInstance();
         mCalendar.add(Calendar.DATE, appointDay);
         Date date = mCalendar.getTime();
         return ConvertDateToString(date, dateType);
@@ -72,6 +72,7 @@ public class DateUtils {
      *             return String
      */
     public static String getLocalDate(String type) {
+        Calendar mCalendar = Calendar.getInstance();
         return DateUtils.ConvertDateToString(mCalendar.getTime(), type);
     }
 

@@ -14,9 +14,9 @@ android {
         }
         everyday {
             applicationId "com.example.administrator.potato.everyday"
-            resValue("string", "app_name", "新闻发布版")
+            resValue("string", "app_name", "EveryDay")
             if (!appRelease) {
-                resValue("string", "app_name", "新闻调试版")
+                resValue("string", "app_name", "EveryDay调试版")
             }
         }
     }

@@ -10,9 +10,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.administrator.potato.R;
 import com.example.administrator.potato.application.MyApplication;
+import com.example.administrator.potato.utils.PermissionUtils;
 import com.example.administrator.potato.utils.ToastMessage;
 import com.tbruyelle.rxpermissions2.Permission;
 import com.tbruyelle.rxpermissions2.RxPermissions;
@@ -50,7 +52,8 @@ public class MainActivity extends BaseActivity {
             "功能十八:查找手机本地的word文档",
             "功能十九:使用多条件查询框架----DropDawnMenu",
             "功能二十:防崩溃框架Cockroach的使用",
-            "功能二十一:安卓文件IO操作"
+            "功能二十一:安卓文件IO操作",
+            "功能二十二:RxJava的使用"
     };
 
     @Override
@@ -58,7 +61,22 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        getPermission();
+        PermissionUtils.getPermission(this, new PermissionUtils.IPermissionEvent() {
+            @Override
+            public void onAlreadyGet(Permission permission) {
+                Toast.makeText(getApplicationContext(), "权限已经获取了哟", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onPartRefuse(Permission permission) {
+                Toast.makeText(getApplicationContext(), "权限已经被拒绝了哟", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onCompleteRefuse(Permission permission) {
+                Toast.makeText(getApplicationContext(), "权限已经被永久拒绝了哟", Toast.LENGTH_SHORT).show();
+            }
+        }, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE);
         initView();
         initData();
     }
@@ -193,31 +211,15 @@ public class MainActivity extends BaseActivity {
                         Intent intent21 = new Intent(mContext, FileIOActivity.class);
                         startActivity(intent21);
                         break;
+                    //"功能二十二:RxJava的使用"
+                    case 22:
+                        Intent intent22 = new Intent(mContext, RxJavaActivity.class);
+                        startActivity(intent22);
+                        break;
                 }
             }
         });
     }
 
-    private void getPermission() {
-        RxPermissions rxPermissions = new RxPermissions(this);
-        rxPermissions
-                .requestEach(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                .subscribe(new Consumer<Permission>() {
-                    @Override
-                    public void accept(Permission permission) throws Exception {
-                        if (permission.granted) {//权限已获取
-                            ToastMessage.toastSuccess(permission.name + "权限已经成功获取了", true);
-                            Log.d("awei", permission.name + "权限已经成功获取了");
-                        } else if (permission.shouldShowRequestPermissionRationale) {//权限已拒绝 但是不是永久拒绝
-                            ToastMessage.toastWarn(permission.name + "权限获取失败，下次仍然可以继续获取", true);
-                            Log.d("awei", permission.name + "权限获取失败，下次仍然可以继续获取");
-                        } else {//权限已经永久拒绝
-                            ToastMessage.toastError(permission.name + "权限被永久拒绝", true);
-                            Log.d("awei", permission.name + "权限被永久拒绝");
-                        }
-                    }
-                })
-                .dispose();
-    }
 
 }

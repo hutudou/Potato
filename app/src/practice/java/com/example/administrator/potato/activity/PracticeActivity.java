@@ -52,20 +52,6 @@ public class PracticeActivity extends BaseActivity {
                 finish();
             }
         });
-        final NumImageView myIv = findViewById(R.id.imageView);
-        /*runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                timer.schedule(new TimerTask() {
-                    @Override
-                    public void run() {
-                        num += 1;
-                        myIv.setNum(num);
-                    }
-                }, 1000, 50);
-            }
-        });*/
-
     }
 
     @Override
@@ -95,56 +81,13 @@ public class PracticeActivity extends BaseActivity {
             bdLocationUtils.doLocation();//开启定位
             bdLocationUtils.mLocationClient.start();//开始定位
         } else {
-            getPermission();
+            //getPermission();
         }
     }
 
     private boolean isHasPermission() {
         return XXPermissions.isHasPermission(mContext, "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.MOUNT_UNMOUNT_FILESYSTEMS");
     }
-
-    private void getPermission() {
-        PermissionUtils.getPermission(this, new DealWithPermission() {
-            @Override
-            public void noPermission() {
-                showConfirmDialog("温馨提示", "使用该功能需要开启某些功能，是否现在开启?", new ConfirmDialogInterface() {
-                    @Override
-                    public void onConfirmClickListener() {
-                        XXPermissions.gotoPermissionSettings(mContext);
-                    }
-
-                    @Override
-                    public void onCancelClickListener() {
-                        ToastMessage.toastError("权限未获取，无法使用leak工具", true);
-                    }
-                });
-            }
-        }, "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.MOUNT_UNMOUNT_FILESYSTEMS");
-       /* XXPermissions.with(this)
-                .permission("android.permission.ACCESS_FINE_LOCATION")
-                .request(new OnPermission() {
-                    @Override
-                    public void hasPermission(List<String> granted, boolean isAll) {
-                        ToastMessage.toastSuccess("权限获取成功", true);
-                    }
-
-                    @Override
-                    public void noPermission(List<String> denied, boolean quick) {
-                        showConfirmDialog("温馨提示", "使用该功能需要开启摄像头权限，是否现在立即去开启相机权限", new ConfirmDialogInterface() {
-                            @Override
-                            public void onConfirmClickListener() {
-                                XXPermissions.gotoPermissionSettings(mContext);
-                            }
-
-                            @Override
-                            public void onCancelClickListener() {
-                                ToastMessage.toastError("权限未获取，无法使用百度地图的功能", true);
-                            }
-                        });
-                    }
-                });*/
-    }
-
 
     @OnClick(R.id.button3)
     public void onButton3Clicked() {

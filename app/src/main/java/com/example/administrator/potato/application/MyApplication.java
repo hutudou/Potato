@@ -107,10 +107,11 @@ public class MyApplication extends Application {
             @Override
             public void handlerException(Thread thread, Throwable throwable) {
                 CrashLog.saveCrashLog(getApplicationContext(), throwable);
+                //如果异常发生在子线程的话  Toast的提示是无法显示出来的 所以通过拿到主线程的Looper显示Toast
                 new Handler(Looper.getMainLooper()).post(new Runnable() {
                     @Override
                     public void run() {
-                        toast.setText("程序发生异常，请查看日志...");
+                        toast.setText("程序已经发生异常，请查看日志...");
                         toast.show();
                     }
                 });

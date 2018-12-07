@@ -19,7 +19,7 @@ public class AppConstant {
             + "1Potato_App"
             + File.separator
             + "TestFile";
-    //程序异常日志保存目录
+    //程序异常日志保存路径
     public static final String CRASH_LOG = Environment.getExternalStorageDirectory().getAbsolutePath()
             + File.separator
             + "1Potato_App"

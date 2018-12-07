@@ -1,61 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<LinearLayout
-    android:background="@color/colorPrimary"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="50dp">
-    <TextView
-        android:id="@+id/textTitle"
-        android:text="温馨提示"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:textSize="@dimen/text_size_20"
-        android:layout_width="match_parent"
-        android:layout_height="50dp" />
-</LinearLayout>
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_button_cancel"
+    android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/bg_color"
+            android:gravity="center"
+            android:text="温馨提示"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_20" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E0E0E0" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_color">
+
         <TextView
             android:id="@+id/textContent"
-            android:gravity="center"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_size_19"
-            android:text="你真的要放弃吗？"
             android:layout_width="match_parent"
-            android:layout_height="100dp" />
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="12dp"
+            android:text="你真的要放弃吗？"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_19" />
     </LinearLayout>
+
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="wrap_content"
+        android:background="@color/bg_color"
+        android:orientation="horizontal"
+        android:paddingBottom="16dp"
+        android:paddingTop="1dp">
+
         <TextView
             android:id="@+id/textConfirm"
-            android:background="#BBFFBB"
-            android:gravity="center"
-            android:textColor="@color/colorPrimary"
-            android:text="确定"
-            android:textStyle="bold"
-            android:textSize="@dimen/text_size_17"
-            android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="50dp" />
-        <View
-            android:layout_width="5dp"
-            android:layout_height="wrap_content"/>
+            android:layout_height="45dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_button_confirm"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_17" />
+
         <TextView
             android:id="@+id/textCancel"
-            android:background="#BBFFBB"
-            android:textColor="#FF0000"
-            android:textSize="@dimen/text_size_17"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_button_cancel"
             android:gravity="center"
             android:text="取消"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="50dp" />
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_17" />
     </LinearLayout>
 
 </LinearLayout>

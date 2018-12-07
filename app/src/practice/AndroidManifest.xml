@@ -119,7 +119,8 @@
 
         <activity android:name=".activity.UseDropDawnMenuActivity" />
         <activity android:name=".activity.UseCockroachActivity" />
-        <activity android:name=".activity.FileIOActivity"></activity>
+        <activity android:name=".activity.FileIOActivity" />
+        <activity android:name=".activity.RxJavaActivity"></activity>
     </application>
 
 </manifest>

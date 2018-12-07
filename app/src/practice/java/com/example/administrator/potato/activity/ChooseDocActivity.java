@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -104,9 +105,10 @@ public class ChooseDocActivity extends BaseActivity {
                 ToastMessage.toastWarn("长按" + position, true);
             }
         }));
+//        横向两列排列
+//        GridLayoutManager manager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
-
+//        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         //给recyclerView设置动画
         ScaleInAnimationAdapter animationAdapter = new ScaleInAnimationAdapter(adapter);
         animationAdapter.setDuration(500);

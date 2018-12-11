@@ -1,21 +1,12 @@
 package com.example.administrator.potato.utils;
 
-import android.Manifest;
 import android.app.Activity;
-import android.content.Context;
 import android.os.Build;
 import android.support.annotation.NonNull;
-import android.util.Log;
 
-import com.example.administrator.potato.application.MyApplication;
-import com.example.administrator.potato.interfaces.ConfirmDialogInterface;
-import com.example.administrator.potato.interfaces.DealWithPermission;
-import com.hjq.permissions.OnPermission;
-import com.hjq.permissions.XXPermissions;
 import com.tbruyelle.rxpermissions2.Permission;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
-import java.util.List;
 
 import io.reactivex.functions.Consumer;
 

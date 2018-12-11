@@ -6,13 +6,9 @@ import android.view.View;
 
 import com.example.administrator.potato.R;
 import com.example.administrator.potato.interfaces.ConfirmDialogInterface;
-import com.example.administrator.potato.interfaces.DealWithPermission;
 import com.example.administrator.potato.temp.BDLocationUtils;
 import com.example.administrator.potato.utils.DateUtils;
-import com.example.administrator.potato.utils.NumImageView;
-import com.example.administrator.potato.utils.PermissionUtils;
 import com.example.administrator.potato.utils.ToastMessage;
-import com.hjq.permissions.XXPermissions;
 
 import java.util.Timer;
 
@@ -56,6 +52,7 @@ public class PracticeActivity extends BaseActivity {
 
     @Override
     protected void initData() {
+
     }
 
     @OnClick(R.id.button1)
@@ -76,18 +73,8 @@ public class PracticeActivity extends BaseActivity {
     @OnClick(R.id.button2)
     public void onButton2Clicked() {
 
-        if (isHasPermission()) {
-            BDLocationUtils bdLocationUtils = new BDLocationUtils(this);
-            bdLocationUtils.doLocation();//开启定位
-            bdLocationUtils.mLocationClient.start();//开始定位
-        } else {
-            //getPermission();
-        }
     }
 
-    private boolean isHasPermission() {
-        return XXPermissions.isHasPermission(mContext, "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.MOUNT_UNMOUNT_FILESYSTEMS");
-    }
 
     @OnClick(R.id.button3)
     public void onButton3Clicked() {

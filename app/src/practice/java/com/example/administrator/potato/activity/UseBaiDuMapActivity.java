@@ -11,9 +11,7 @@ import android.widget.Toast;
 
 import com.example.administrator.potato.R;
 import com.example.administrator.potato.interfaces.BDLocationInterface;
-import com.example.administrator.potato.interfaces.ConfirmDialogInterface;
 import com.example.administrator.potato.utils.PermissionUtils;
-import com.example.administrator.potato.utils.ToastMessage;
 import com.example.administrator.potato.utils.baidumap.BDLocationParameter;
 import com.example.administrator.potato.utils.baidumap.BDLocationResult;
 import com.tbruyelle.rxpermissions2.Permission;

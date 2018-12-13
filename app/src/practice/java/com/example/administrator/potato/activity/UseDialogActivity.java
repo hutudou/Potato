@@ -8,10 +8,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.administrator.potato.R;
-import com.example.administrator.potato.interfaces.ConfirmDialogInterface;
 import com.example.administrator.potato.utils.ToastMessage;
 
-import java.util.TreeMap;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -33,12 +31,12 @@ public class UseDialogActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-    initToolBar(toolbar, "使用自定义dialog", true, new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            finish();
-        }
-    });
+        initToolBar(toolbar, "使用自定义dialog", true, new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
     @Override

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/shape_button_cancel"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_dialog"
     android:orientation="vertical">
 
     <LinearLayout
@@ -18,7 +18,7 @@
             android:gravity="center"
             android:text="温馨提示"
             android:textColor="@color/black"
-            android:textSize="@dimen/text_size_20" />
+            android:textSize="@dimen/text_size_25" />
 
         <View
             android:layout_width="match_parent"
@@ -27,8 +27,8 @@
     </LinearLayout>
 
     <LinearLayout
-        android:paddingTop="50dp"
-        android:paddingBottom="50dp"
+        android:paddingTop="40dp"
+        android:paddingBottom="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/bg_color">
@@ -39,6 +39,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="12dp"
+            android:lineSpacingMultiplier="1.2"
             android:text="你真的要放弃吗？"
             android:textColor="@color/black"
             android:textSize="@dimen/text_size_19" />
@@ -55,7 +56,7 @@
         <TextView
             android:id="@+id/textConfirm"
             android:layout_width="0dp"
-            android:layout_height="45dp"
+            android:layout_height="50dp"
             android:layout_marginEnd="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp"
@@ -69,7 +70,7 @@
         <TextView
             android:id="@+id/textCancel"
             android:layout_width="0dp"
-            android:layout_height="45dp"
+            android:layout_height="50dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:layout_weight="1"

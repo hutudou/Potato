@@ -19,15 +19,12 @@ import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.example.administrator.potato.application.MyApplication;
-import com.example.administrator.potato.interfaces.ConfirmDialogInterface;
 import com.example.administrator.potato.R;
 import com.lzy.okgo.OkGo;
 
 public abstract class BaseActivity extends AppCompatActivity {
     //上下文对象
     protected Context mContext;
-    //耗时操作的进度提示
-    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +32,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         //获取上下文对象
         mContext = this;
         initStateBar();
-        initProgressDialog();
     }
 
     @Override
@@ -43,17 +39,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         //统一关闭OK HTTP请求
         OkGo.getInstance().cancelTag(this);
         super.onDestroy();
-    }
-
-    //初始化ProgressDialog
-    private void initProgressDialog() {
-        progressDialog = new ProgressDialog(mContext);
-        //无标题
-        progressDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        //设置手指点击dialog不消失
-        progressDialog.setCanceledOnTouchOutside(false);
-        //设置dialog样式
-        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
     }
 
     /**
@@ -97,6 +82,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         TextView textContent = view.findViewById(R.id.textContent);
         TextView textConfirm = view.findViewById(R.id.textConfirm);
         TextView textCancel = view.findViewById(R.id.textCancel);
+
         //设置标题
         textTitle.setText(title);
         //设置消息内容
@@ -128,21 +114,6 @@ public abstract class BaseActivity extends AppCompatActivity {
             }
         });
 
-    }
-
-    protected void showProgressDialog(@NonNull String msg) {
-
-        if (progressDialog != null && !progressDialog.isShowing()) {
-            progressDialog.setMessage(msg);
-            progressDialog.show();
-        }
-    }
-
-    protected void closeProgressDialog() {
-
-        if (progressDialog != null && progressDialog.isShowing()) {
-            progressDialog.dismiss();
-        }
     }
 
     /**
@@ -296,4 +267,15 @@ public abstract class BaseActivity extends AppCompatActivity {
         void clickEvent();
     }
 
+    /**
+     * confirmDialog的点击事件
+     */
+    public interface ConfirmDialogInterface {
+
+        //监听确认按钮点击事件
+        void onConfirmClickListener();
+
+        //监听取消按钮点击事件
+        void onCancelClickListener();
+    }
 }

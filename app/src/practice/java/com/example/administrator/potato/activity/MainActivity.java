@@ -53,7 +53,8 @@ public class MainActivity extends BaseActivity {
             "功能十九:使用多条件查询框架----DropDawnMenu",
             "功能二十:防崩溃框架Cockroach的使用",
             "功能二十一:安卓文件IO操作",
-            "功能二十二:RxJava的使用"
+            "功能二十二:RxJava的使用",
+            "功能二十三:使用指纹验证"
     };
 
     @Override
@@ -215,6 +216,11 @@ public class MainActivity extends BaseActivity {
                     case 22:
                         Intent intent22 = new Intent(mContext, RxJavaActivity.class);
                         startActivity(intent22);
+                        break;
+                    //"功能二十三:使用指纹验证"
+                    case 23:
+                        Intent intent23 = new Intent(mContext, UserFingerprintActivity.class);
+                        startActivity(intent23);
                         break;
                 }
             }

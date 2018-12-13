@@ -5,8 +5,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.example.administrator.potato.R;
-import com.example.administrator.potato.interfaces.ConfirmDialogInterface;
-import com.example.administrator.potato.temp.BDLocationUtils;
 import com.example.administrator.potato.utils.DateUtils;
 import com.example.administrator.potato.utils.ToastMessage;
 

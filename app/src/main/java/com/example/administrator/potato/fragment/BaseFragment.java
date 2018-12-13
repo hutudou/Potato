@@ -17,7 +17,6 @@ import android.widget.TextView;
 import com.example.administrator.potato.R;
 import com.example.administrator.potato.activity.BaseActivity;
 import com.example.administrator.potato.application.MyApplication;
-import com.example.administrator.potato.interfaces.ConfirmDialogInterface;
 import com.lzy.okgo.OkGo;
 
 /**
@@ -60,7 +59,7 @@ public abstract class BaseFragment extends Fragment {
      * @param msg                    dialog的消息
      * @param confirmDialogInterface 监听dialog确认键以及取消键的点击事件
      */
-    protected void showConfirmDialog(@Nullable String title, @Nullable String msg, @NonNull final ConfirmDialogInterface confirmDialogInterface) {
+    protected void showConfirmDialog(@Nullable String title, @Nullable String msg, @NonNull final BaseActivity.ConfirmDialogInterface confirmDialogInterface) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
         //加载布局
         View view = View.inflate(mContext, R.layout.dialog_confirm, null);

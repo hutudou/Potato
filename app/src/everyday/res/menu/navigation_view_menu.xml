@@ -1,27 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_menu_call"
-            android:icon="@drawable/icon_vector_back"
-            android:title="Call" />
-        <item
-            android:id="@+id/nav_menu_friends"
-            android:icon="@drawable/icon_vector_back"
-            android:title="Friends" />
-        <item
-            android:id="@+id/nav_menu_location"
-            android:icon="@drawable/icon_vector_back"
-            android:title="Location" />
-        <item
-            android:id="@+id/nav_menu_mail"
-            android:icon="@drawable/icon_vector_back"
-            android:title="Mail" />
-        <item
-            android:id="@+id/nav_menu_cloud"
-            android:icon="@drawable/icon_vector_back"
-            android:title="Cloud" />
-    </group>
+    <item android:title="系统功能">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/position"
+                    android:icon="@drawable/icon_vector_position"
+                    android:title="位置信息" />
+
+                <item
+                    android:id="@+id/clearCache"
+                    android:icon="@drawable/icon_vector_clear_cache"
+                    android:title="缓存清理" />
+
+                <item
+                    android:id="@+id/scan"
+                    android:icon="@drawable/icon_vector_scan"
+                    android:title="扫一扫" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="软件信息">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/aboutEveryDay"
+                    android:icon="@drawable/icon_vector_about_every_day"
+                    android:title="关于EveryDay" />
+
+                <item
+                    android:id="@+id/aboutAuthor"
+                    android:icon="@drawable/icon_vector_about_author"
+                    android:title="关于作者" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="用户管理">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/modifyPassword"
+                    android:icon="@drawable/icon_vector_modify_password"
+                    android:title="修改密码" />
+
+                <item
+                    android:id="@+id/switchUser"
+                    android:icon="@drawable/icon_vector_change_user"
+                    android:title="更换用户" />
+                <item
+                    android:id="@+id/exit"
+                    android:icon="@drawable/icon_vector_exit"
+                    android:title="退出" />
+            </group>
+        </menu>
+    </item>
 
 </menu>

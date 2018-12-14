@@ -26,7 +26,7 @@ import com.lzy.okgo.OkGo;
  * 时间 2018/11/9
  */
 
-public abstract class BaseFragment extends Fragment {
+public abstract class BaseFragment extends android.support.v4.app.Fragment {
     private Context mContext;
 
     @Override

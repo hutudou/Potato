@@ -48,7 +48,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.EveryDayMainActivity"></activity>
+        <activity android:name=".activity.EveryDayMainActivity" />
+        <activity android:name=".activity.HistoryDetailedActivity"></activity>
     </application>
 
 </manifest>

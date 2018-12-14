@@ -2,16 +2,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/test1"
-        android:icon="@drawable/icon_vector_back"
-        android:title="测试一" />
+        android:id="@+id/weather"
+        android:icon="@drawable/icon_vector_weather"
+        android:title="每日天气" />
+
     <item
-        android:id="@+id/test2"
-        android:icon="@drawable/icon_vector_back"
-        android:title="测试二" />
+        android:id="@+id/history"
+        android:icon="@drawable/icon_vector_history"
+        android:title="历史今日" />
+
     <item
-        android:id="@+id/test3"
-        android:icon="@drawable/icon_vector_back"
-        android:title="测试三" />
+        android:id="@+id/note"
+        android:icon="@drawable/icon_vector_note"
+        android:title="每日一记" />
+
+    <item
+        android:id="@+id/secret"
+        android:icon="@drawable/icon_vector_secret"
+        android:title="小小树洞" />
 
 </menu>

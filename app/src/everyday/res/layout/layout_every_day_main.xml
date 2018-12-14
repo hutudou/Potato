@@ -6,11 +6,20 @@
 
     <include layout="@layout/app_toolbar" />
 
+    <LinearLayout
+        android:id="@+id/linearFragment"
+        android:layout_marginTop="?actionBarSize"
+        android:layout_marginBottom="?actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:scrollbars="none"
         app:itemBackground="@color/bg_color"
         app:itemIconTint="@drawable/bottom_navigation_view_selector"
         app:itemTextColor="@drawable/bottom_navigation_view_selector"

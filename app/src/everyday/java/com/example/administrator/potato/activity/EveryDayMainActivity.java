@@ -3,12 +3,17 @@ package com.example.administrator.potato.activity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.example.administrator.potato.R;
+import com.example.administrator.potato.fragment.HistoryFragment;
+import com.example.administrator.potato.utils.BottomNavigationViewUtil;
 import com.example.administrator.potato.utils.ToastMessage;
 
 import butterknife.Bind;
@@ -22,6 +27,9 @@ public class EveryDayMainActivity extends BaseActivity {
     Toolbar toolbar;
     @Bind(R.id.bottomNavigationView)
     BottomNavigationView bottomNavigationView;
+    @Bind(R.id.navigationView)
+    NavigationView navigationView;
+    private boolean isNeed = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +45,56 @@ public class EveryDayMainActivity extends BaseActivity {
         initToolBar(toolbar, "EveryDay", false, null, true, R.menu.app_toolbar_menu, new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                return false;
+                switch (item.getItemId()) {
+                    case R.id.itemRefresh:
+                       /* if (isNeed) {
+                            toolbar.setBackgroundColor(Color.RED);
+                            isNeed = false;
+                        } else {
+                            toolbar.setBackgroundColor(Color.parseColor("#66b3ff"));
+                            isNeed = true;
+                        }*/
+                        break;
+                }
+                return true;
             }
         });
+        BottomNavigationViewUtil.disableShiftMode(bottomNavigationView);
         initNavigationView();
         initBottomNavigationView();
+        //设置navigationView的子项点击事件
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.position:
+                        ToastMessage.toastWarn("功能正在开发中...", true);
+                        break;
+                    case R.id.clearCache:
+                        ToastMessage.toastWarn("功能正在开发中...", true);
+                        break;
+                    case R.id.scan:
+                        ToastMessage.toastWarn("功能正在开发中...", true);
+                        break;
+                    case R.id.aboutEveryDay:
+                        ToastMessage.toastWarn("功能正在开发中...", true);
+                        break;
+                    case R.id.aboutAuthor:
+                        ToastMessage.toastWarn("功能正在开发中...", true);
+                        break;
+                    case R.id.modifyPassword:
+                        ToastMessage.toastWarn("功能正在开发中...", true);
+                        break;
+                    case R.id.switchUser:
+                        ToastMessage.toastWarn("功能正在开发中...", true);
+                        break;
+                    case R.id.exit:
+                        ToastMessage.toastWarn("功能正在开发中...", true);
+                        break;
+                }
+                return true;
+            }
+        });
     }
 
     //初始化BottomNavigationView
@@ -51,14 +104,20 @@ public class EveryDayMainActivity extends BaseActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.test1:
-                        ToastMessage.toastNormal("第一部分");
+                    case R.id.weather:
+                        ToastMessage.toastNormal("每日天气");
                         return true;
-                    case R.id.test2:
-                        ToastMessage.toastNormal("第二部分");
+                    case R.id.history:
+                        FragmentManager fragmentManager = getSupportFragmentManager();
+                        FragmentTransaction transaction = fragmentManager.beginTransaction();
+                        transaction.replace(R.id.linearFragment, new HistoryFragment());
+                        transaction.commit();
                         return true;
-                    case R.id.test3:
-                        ToastMessage.toastNormal("第三部分");
+                    case R.id.note:
+                        ToastMessage.toastNormal("每日一记");
+                        return true;
+                    case R.id.secret:
+                        ToastMessage.toastWarn("功能正在完善中...", true);
                         return true;
                 }
                 return false;

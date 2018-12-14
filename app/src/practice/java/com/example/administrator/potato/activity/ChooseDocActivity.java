@@ -108,7 +108,7 @@ public class ChooseDocActivity extends BaseActivity {
 //        横向两列排列
 //        GridLayoutManager manager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         //给recyclerView设置动画
         ScaleInAnimationAdapter animationAdapter = new ScaleInAnimationAdapter(adapter);
         animationAdapter.setDuration(500);

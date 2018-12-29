@@ -6,7 +6,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -167,7 +166,7 @@ public class ChooseDocActivity extends BaseActivity {
                     docBean.setId(id);
                     docBean.setPath(path);
                     docBean.setSize(size / 1024);
-                    docBean.setModifyDate(DateUtils.formatTimeStamp("yyyy/MM/dd HH:mm:ss", Long.parseLong(modifyDate)));
+                    docBean.setModifyDate(DateUtils.timeStampToDate("yyyy/MM/dd HH:mm:ss", Long.parseLong(modifyDate)));
                     //查找path中最后一个出现'/'的地方 分割后即得文件名
                     int dot = path.lastIndexOf("/");
                     String name = path.substring(dot + 1);

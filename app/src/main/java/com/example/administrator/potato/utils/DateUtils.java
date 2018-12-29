@@ -5,9 +5,12 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 作者:土豆
@@ -77,18 +80,70 @@ public class DateUtils {
     }
 
     /**
-     * 转换时间戳
+     * 按照指定格式 将时间戳转换时间
      *
      * @param dataFormat 需要转换的日期格式
      * @param timeStamp  时间戳
      * @return
      */
-    public static String formatTimeStamp(String dataFormat, long timeStamp) {
+    public static String timeStampToDate(String dataFormat, long timeStamp) {
         timeStamp = timeStamp * 1000;
         SimpleDateFormat format = new SimpleDateFormat(dataFormat);
         String result = format.format(new Date(timeStamp));
         return result;
     }
 
+    /**
+     * 按照指定格式将时间转换为时间戳
+     *
+     * @param date       需要转换的时间
+     * @param dataFormat 时间格式
+     * @return
+     */
+    public static long dateToTimeStamp(String date, String dataFormat) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(dataFormat);
+        try {
+            return simpleDateFormat.parse(date).getTime() / 1000;
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
+    /**
+     * 秒转换为指定格式的日期
+     *
+     * @param second     秒数
+     * @param dataFormat 时间格式
+     * @return 转换后的时间
+     */
+    public static String secondToDate(long second, String dataFormat) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(second * 1000);//转换为毫秒
+        Date date = calendar.getTime();
+        SimpleDateFormat format = new SimpleDateFormat(dataFormat);
+        return format.format(date);
+    }
+
+    /**
+     * 将秒数转换为日时分秒，
+     *
+     * @param second 秒数
+     * @return map 包含了转换后的日、时、分、秒
+     */
+    public static Map<String, Long> secondToTime(long second) {
+        Map<String, Long> map = new HashMap<>();
+        long days = second / 86400;            //转换天数
+        second = second % 86400;            //剩余秒数
+        long hours = second / 3600;            //转换小时
+        second = second % 3600;                //剩余秒数
+        long minutes = second / 60;            //转换分钟
+        second = second % 60;                //剩余秒数
+        map.put("day", days);
+        map.put("hour", hours);
+        map.put("minute", minutes);
+        map.put("second", second);
+        return map;
+    }
 
 }

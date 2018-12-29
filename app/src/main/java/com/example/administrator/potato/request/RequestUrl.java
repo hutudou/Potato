@@ -6,5 +6,5 @@ package com.example.administrator.potato.request;
 
 public class RequestUrl {
     //历史上的今天
-    public static final String TOADY_IN_HISTORY="http://apicloud.mob.com/appstore/history/query";
+    public static final String TOADY_IN_HISTORY="http://apicloud.mob.com/appstore/history/query/";
 }

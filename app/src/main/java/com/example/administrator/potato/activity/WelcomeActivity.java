@@ -72,10 +72,13 @@ public class WelcomeActivity extends BaseActivity {
                     if (BuildConfig.FLAVOR.equals(BuildConfig.practice)) {
                         Class clazz = Class.forName("com.example.administrator.potato.activity.MainActivity");
                         gotoActivity(clazz);
+                        //跳转后 该活动出栈
+                        finish();
                     }
                     if (BuildConfig.FLAVOR.equals(BuildConfig.everyday)) {
                         Class clazz = Class.forName("com.example.administrator.potato.activity.EveryDayMainActivity");
                         gotoActivity(clazz);
+                        finish();
                     }
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();

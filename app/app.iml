@@ -8,82 +8,82 @@
     </facet>
     <facet type="android" name="Android">
       <configuration>
-        <option name="SELECTED_BUILD_VARIANT" value="everydayDebug" />
-        <option name="ASSEMBLE_TASK_NAME" value="assembleEverydayDebug" />
-        <option name="COMPILE_JAVA_TASK_NAME" value="compileEverydayDebugSources" />
+        <option name="SELECTED_BUILD_VARIANT" value="practiceDebug" />
+        <option name="ASSEMBLE_TASK_NAME" value="assemblePracticeDebug" />
+        <option name="COMPILE_JAVA_TASK_NAME" value="compilePracticeDebugSources" />
         <afterSyncTasks>
-          <task>generateEverydayDebugSources</task>
+          <task>generatePracticeDebugSources</task>
         </afterSyncTasks>
         <option name="ALLOW_USER_CONFIGURATION" value="false" />
         <option name="MANIFEST_FILE_RELATIVE_PATH" value="/src/main/AndroidManifest.xml" />
         <option name="RES_FOLDER_RELATIVE_PATH" value="/src/main/res" />
-        <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/src/main/res;file://$MODULE_DIR$/src/everyday/res" />
+        <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/src/main/res;file://$MODULE_DIR$/src/practice/res" />
         <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/src/main/assets" />
       </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7">
-    <output url="file://$MODULE_DIR$/build/intermediates/classes/everyday/debug" />
-    <output-test url="file://$MODULE_DIR$/build/intermediates/classes/test/everyday/debug" />
+    <output url="file://$MODULE_DIR$/build/intermediates/classes/practice/debug" />
+    <output-test url="file://$MODULE_DIR$/build/intermediates/classes/test/practice/debug" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/everyday/debug" isTestSource="false" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/r/everyday/debug" isTestSource="false" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/everyday/debug" isTestSource="false" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/everyday/debug" isTestSource="false" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/everyday/debug" isTestSource="false" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/everyday/debug" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/everyday/debug" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/everydayDebug/res" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/everydayDebug/resources" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/everydayDebug/assets" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/everydayDebug/aidl" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/everydayDebug/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/everydayDebug/rs" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/everydayDebug/shaders" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/androidTest/everyday/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/r/androidTest/everyday/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/androidTest/everyday/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/androidTest/everyday/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/androidTest/everyday/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/androidTest/everyday/debug" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/androidTest/everyday/debug" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestEverydayDebug/res" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestEverydayDebug/resources" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestEverydayDebug/assets" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestEverydayDebug/aidl" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestEverydayDebug/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestEverydayDebug/rs" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestEverydayDebug/shaders" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/test/everyday/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testEverydayDebug/res" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testEverydayDebug/resources" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testEverydayDebug/assets" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testEverydayDebug/aidl" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testEverydayDebug/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testEverydayDebug/rs" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testEverydayDebug/shaders" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/everyday/res" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/everyday/resources" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/everyday/assets" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/everyday/aidl" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/everyday/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/everyday/rs" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/everyday/shaders" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testEveryday/res" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testEveryday/resources" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testEveryday/assets" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testEveryday/aidl" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testEveryday/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testEveryday/rs" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testEveryday/shaders" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestEveryday/res" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestEveryday/resources" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestEveryday/assets" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestEveryday/aidl" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestEveryday/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestEveryday/rs" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestEveryday/shaders" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/practice/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/r/practice/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/practice/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/practice/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/practice/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/practice/debug" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/practice/debug" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/practiceDebug/res" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/practiceDebug/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/practiceDebug/assets" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/practiceDebug/aidl" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/practiceDebug/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/practiceDebug/rs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/practiceDebug/shaders" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/androidTest/practice/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/r/androidTest/practice/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/androidTest/practice/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/androidTest/practice/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/androidTest/practice/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/androidTest/practice/debug" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/androidTest/practice/debug" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestPracticeDebug/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestPracticeDebug/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestPracticeDebug/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestPracticeDebug/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestPracticeDebug/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestPracticeDebug/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestPracticeDebug/shaders" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/test/practice/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testPracticeDebug/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testPracticeDebug/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testPracticeDebug/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testPracticeDebug/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testPracticeDebug/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testPracticeDebug/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testPracticeDebug/shaders" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/practice/res" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/practice/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/practice/assets" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/practice/aidl" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/practice/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/practice/rs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/practice/shaders" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestPractice/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestPractice/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestPractice/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestPractice/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestPractice/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestPractice/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestPractice/shaders" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testPractice/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testPractice/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testPractice/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testPractice/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testPractice/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testPractice/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testPractice/shaders" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/debug/res" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/debug/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/debug/assets" type="java-resource" />
@@ -133,6 +133,7 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/javaPrecompile" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/jniLibs" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/lint" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/manifests" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/prebuild" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/res" />
@@ -161,6 +162,7 @@
     <orderEntry type="library" name="com.android.support:appcompat-v7-26.1.0" level="project" />
     <orderEntry type="library" scope="TEST" name="com.android.support.test:monitor-1.0.2" level="project" />
     <orderEntry type="library" name="com.android.support:support-annotations:26.1.0@jar" level="project" />
+    <orderEntry type="library" name="com.squareup.retrofit2:converter-scalars:2.0.2@jar" level="project" />
     <orderEntry type="library" name="com.android.support:support-core-ui-26.1.0" level="project" />
     <orderEntry type="library" name="jp.wasabeef:recyclerview-animators-2.2.0" level="project" />
     <orderEntry type="library" scope="TEST" name="com.android.support.test:runner-1.0.2" level="project" />
@@ -187,6 +189,7 @@
     <orderEntry type="library" name="com.android.support:support-vector-drawable-26.1.0" level="project" />
     <orderEntry type="library" name="com.alibaba:fastjson:1.2.44@jar" level="project" />
     <orderEntry type="library" name="com.squareup.okhttp3:okhttp:3.8.1@jar" level="project" />
+    <orderEntry type="library" name="com.squareup.retrofit2:converter-gson:2.0.2@jar" level="project" />
     <orderEntry type="library" name="com.lzy.net:okgo-3.0.4" level="project" />
     <orderEntry type="library" name="com.android.support.constraint:constraint-layout-1.1.2" level="project" />
     <orderEntry type="library" name="com.android.support:support-core-utils-26.1.0" level="project" />
@@ -195,6 +198,7 @@
     <orderEntry type="library" name="com.tbruyelle.rxpermissions2:rxpermissions-0.9.4" level="project" />
     <orderEntry type="library" name="com.squareup.leakcanary:leakcanary-watcher:1.6@jar" level="project" />
     <orderEntry type="library" name="io.reactivex.rxjava2:rxandroid-2.0.1" level="project" />
+    <orderEntry type="library" name="com.squareup.retrofit2:retrofit:2.0.2@jar" level="project" />
     <orderEntry type="library" name="com.github.PhilJay:MPAndroidChart:v3.0.3@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="org.hamcrest:hamcrest-library:1.3@jar" level="project" />
     <orderEntry type="library" name="com.github.JayFang1993:DropDownMenu-v0.9" level="project" />
@@ -202,6 +206,7 @@
     <orderEntry type="library" name="com.android.support:animated-vector-drawable-26.1.0" level="project" />
     <orderEntry type="library" name="com.jakewharton.rxbinding2:rxbinding-2.0.0" level="project" />
     <orderEntry type="library" name="org.greenrobot:eventbus:3.1.1@jar" level="project" />
+    <orderEntry type="library" name="com.google.code.gson:gson:2.6.1@jar" level="project" />
     <orderEntry type="library" name="com.github.SiKang123:AndroidToolBox-1.0" level="project" />
     <orderEntry type="library" name="com.android.support:cardview-v7-26.1.0" level="project" />
     <orderEntry type="library" name="com.android.support.constraint:constraint-layout-solver:1.1.2@jar" level="project" />

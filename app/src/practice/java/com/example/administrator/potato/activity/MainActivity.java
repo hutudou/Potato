@@ -54,7 +54,9 @@ public class MainActivity extends BaseActivity {
             "功能二十:防崩溃框架Cockroach的使用",
             "功能二十一:安卓文件IO操作",
             "功能二十二:RxJava的使用",
-            "功能二十三:使用指纹验证"
+            "功能二十三:使用指纹验证",
+            "功能二十四:Retrofit的简单使用",
+            "功能二十五:测试SharedPreferencesUtil"
     };
 
     @Override
@@ -221,6 +223,16 @@ public class MainActivity extends BaseActivity {
                     case 23:
                         Intent intent23 = new Intent(mContext, UserFingerprintActivity.class);
                         startActivity(intent23);
+                        break;
+                    //"功能二十四:Retrofit的简单使用"
+                    case 24:
+                        Intent intent24 = new Intent(mContext, UseRetrofitActivity.class);
+                        startActivity(intent24);
+                        break;
+                    //"功能二十五:测试SharedPreferencesUtil"
+                    case 25:
+                        Intent intent25 = new Intent(mContext, TestSharedPreferencesUtilActivity.class);
+                        startActivity(intent25);
                         break;
                 }
             }

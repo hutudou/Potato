@@ -121,7 +121,9 @@
         <activity android:name=".activity.UseCockroachActivity" />
         <activity android:name=".activity.FileIOActivity" />
         <activity android:name=".activity.RxJavaActivity" />
-        <activity android:name=".activity.UserFingerprintActivity"></activity>
+        <activity android:name=".activity.UserFingerprintActivity" />
+        <activity android:name=".activity.UseRetrofitActivity" />
+        <activity android:name=".activity.TestSharedPreferencesUtilActivity"></activity>
     </application>
 
 </manifest>

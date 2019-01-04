@@ -122,6 +122,8 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.0.2'
     compile 'com.squareup.retrofit2:converter-scalars:2.0.2'
     compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+    //图片选择框架
+    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
 }
 def bakPath = file("baseApk/${VERSION_NAME}/")
 

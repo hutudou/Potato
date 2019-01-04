@@ -1,6 +1,7 @@
 package com.example.administrator.potato.activity;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
@@ -30,6 +31,8 @@ public class EveryDayMainActivity extends BaseActivity {
     @Bind(R.id.navigationView)
     NavigationView navigationView;
     private boolean isNeed = true;
+    private boolean isExit = false;
+    private Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +44,14 @@ public class EveryDayMainActivity extends BaseActivity {
     }
 
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        handler.removeCallbacksAndMessages(null);
+    }
+
+    @Override
     protected void initView() {
+        handler = new Handler();
         initToolBar(toolbar, "EveryDay", false, null, true, R.menu.app_toolbar_menu, new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
@@ -137,5 +147,21 @@ public class EveryDayMainActivity extends BaseActivity {
     @Override
     protected void initData() {
 
+    }
+
+    @Override
+    public void onBackPressed() {//物理返回键点击事件  需要在两秒内按两次返回键才能退出
+        if (isExit) {
+            finish();
+        } else {
+            isExit = true;
+            showSnackBar(toolbar, "再按一次退出App", true, null, null);
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    isExit = false;
+                }
+            }, 2000);
+        }
     }
 }

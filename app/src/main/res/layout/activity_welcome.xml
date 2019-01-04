@@ -17,7 +17,7 @@
         android:layout_marginTop="18dp"
         android:layout_gravity="end"
         android:gravity="center"
-        android:text="跳过5"
+        android:text="跳过8"
         android:textColor="@color/toolbar_color"
         android:textSize="@dimen/text_size_15" />
 

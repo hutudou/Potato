@@ -96,7 +96,7 @@ public class CrashLog {
     private static void saveLog(String fileContent) {
         BufferedOutputStream bos = null;
         FileOutputStream fos = null;
-        String time = DateUtils.getLocalDate("YYYY-MM-dd HH:mm:ss");
+        String time = DateUtils.getLocalDate("YYYY-MM-dd HH时mm分ss秒");
         String fileName = "CrashLog-" + time + ".doc";
         try {
             //判断当前SD卡状态 为正常时才可以写入文件

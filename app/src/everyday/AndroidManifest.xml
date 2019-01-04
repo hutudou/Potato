@@ -48,8 +48,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.EveryDayMainActivity" />
-        <activity android:name=".activity.HistoryDetailedActivity"></activity>
+        <activity
+            android:name=".activity.EveryDayMainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HistoryDetailedActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 package com.example.administrator.potato.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -12,9 +13,13 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.example.administrator.potato.AppConstant;
 import com.example.administrator.potato.R;
 import com.example.administrator.potato.fragment.HistoryFragment;
+import com.example.administrator.potato.utils.BaseEvent;
 import com.example.administrator.potato.utils.BottomNavigationViewUtil;
+import com.example.administrator.potato.utils.EventBusUtil;
+import com.example.administrator.potato.utils.SharedPreferencesUtil;
 import com.example.administrator.potato.utils.ToastMessage;
 
 import butterknife.Bind;
@@ -30,7 +35,6 @@ public class EveryDayMainActivity extends BaseActivity {
     BottomNavigationView bottomNavigationView;
     @Bind(R.id.navigationView)
     NavigationView navigationView;
-    private boolean isNeed = true;
     private boolean isExit = false;
     private Handler handler;
 
@@ -39,14 +43,51 @@ public class EveryDayMainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_every_day_main);
         ButterKnife.bind(this);
+        showColorWelcome();
         initView();
         initData();
+    }
+
+    //更换颜色时显示颜色专属台词
+    private void showColorWelcome() {
+        if ((boolean) SharedPreferencesUtil.getData(AppConstant.IS_SHOW_COLOR_WELCOME, false)) {
+            switch ((int) SharedPreferencesUtil.getData(AppConstant.CURRENT_APP_THEME, -1)) {
+                case R.style.AppBlueTheme:
+                    showSnackBar(toolbar, "如果梦想有颜色，那一定是蓝色！!!", true, null, null);
+                    break;
+                case R.style.AppVioletTheme:
+                    showSnackBar(toolbar, "选择紫色，选择一种优雅的人生。。。", true, null, null);
+                    break;
+                case R.style.AppRedTheme:
+                    showSnackBar(toolbar, "我的主题色，欢乐欢乐最欢乐!!!", true, null, null);
+                    break;
+                case R.style.AppOrangeTheme:
+                    showSnackBar(toolbar, "年轻，就该追求无限的活力！！！", true, null, null);
+                    break;
+                case R.style.AppPinkTheme:
+                    showSnackBar(toolbar, "谁还不是个小可爱呢，嘤嘤嘤", true, null, null);
+                    break;
+                case R.style.AppBlackTheme:
+                    showSnackBar(toolbar, "没人可以比我更酷！！！", true, null, null);
+                    break;
+                default:
+                    showSnackBar(toolbar, "选择紫色，选择一种优雅的人生", true, null, null);
+                    break;
+            }
+            SharedPreferencesUtil.savaData(AppConstant.IS_SHOW_COLOR_WELCOME, false);
+        }
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         handler.removeCallbacksAndMessages(null);
+    }
+
+    @Override
+    protected void onRestart() {
+        recreate();
+        super.onRestart();
     }
 
     @Override
@@ -57,13 +98,6 @@ public class EveryDayMainActivity extends BaseActivity {
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.itemRefresh:
-                       /* if (isNeed) {
-                            toolbar.setBackgroundColor(Color.RED);
-                            isNeed = false;
-                        } else {
-                            toolbar.setBackgroundColor(Color.parseColor("#66b3ff"));
-                            isNeed = true;
-                        }*/
                         break;
                 }
                 return true;
@@ -83,8 +117,8 @@ public class EveryDayMainActivity extends BaseActivity {
                     case R.id.clearCache:
                         ToastMessage.toastWarn("功能正在开发中...", true);
                         break;
-                    case R.id.scan:
-                        ToastMessage.toastWarn("功能正在开发中...", true);
+                    case R.id.changeTheme:
+                        gotoActivity(ChangeThemeActivity.class, false);
                         break;
                     case R.id.aboutEveryDay:
                         ToastMessage.toastWarn("功能正在开发中...", true);
@@ -155,7 +189,12 @@ public class EveryDayMainActivity extends BaseActivity {
             finish();
         } else {
             isExit = true;
-            showSnackBar(toolbar, "再按一次退出App", true, null, null);
+            showSnackBar(toolbar, "再按一次退出App", true, "退出App", new ISnackBarClickEvent() {
+                @Override
+                public void clickEvent() {
+                    finish();
+                }
+            });
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -164,4 +203,5 @@ public class EveryDayMainActivity extends BaseActivity {
             }, 2000);
         }
     }
+
 }

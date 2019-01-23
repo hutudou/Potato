@@ -61,22 +61,22 @@ public class CrashLog {
     private static void saveCrashInfo2File(Throwable ex, Map<String, String> infos) {
         StringBuilder sb = new StringBuilder();
         //循环输出设备信息
-        sb.append("   ****************************************************\n");
-        sb.append(" *                                                      *\n");
-        sb.append("*                     设备信息                            *\n");
-        sb.append(" *                                                      *\n");
-        sb.append("   ****************************************************\n");
+        sb.append("   ************************************************************\n");
+        sb.append(" *                                                             *\n");
+        sb.append("*                            设备信息                            *\n");
+        sb.append(" *                                                             *\n");
+        sb.append("   ************************************************************\n");
         for (Map.Entry<String, String> entry : infos.entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
             sb.append(key).append("=").append(value).append("\n");
         }
         //收集异常信息
-        sb.append("   ****************************************************\n");
-        sb.append(" *                                                      *\n");
-        sb.append("*                     错误信息                            *\n");
-        sb.append(" *                                                      *\n");
-        sb.append("   ****************************************************\n");
+        sb.append("   ************************************************************\n");
+        sb.append(" *                                                             *\n");
+        sb.append("*                            错误信息                            *\n");
+        sb.append(" *                                                             *\n");
+        sb.append("   ************************************************************\n");
         Writer writer = new StringWriter();
         PrintWriter printWriter = new PrintWriter(writer);
         ex.printStackTrace(printWriter);

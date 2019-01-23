@@ -15,9 +15,10 @@
                     android:title="缓存清理" />
 
                 <item
-                    android:id="@+id/scan"
-                    android:icon="@drawable/icon_vector_scan"
-                    android:title="扫一扫" />
+                    android:id="@+id/changeTheme"
+                    android:icon="@drawable/icon_vector_theme"
+                    android:title="更改主题" />
+
             </group>
         </menu>
     </item>

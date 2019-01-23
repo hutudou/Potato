@@ -5,38 +5,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    style="@style/AppBlueTheme"
     tools:context="com.example.administrator.potato.activity.WelcomeActivity">
 
     <TextView
         android:id="@+id/textSkip"
-        android:background="@drawable/shape_toorbar_text"
         android:layout_width="50dp"
         android:layout_height="25dp"
+        android:layout_gravity="end"
         android:layout_marginEnd="18dp"
         android:layout_marginRight="18dp"
         android:layout_marginTop="18dp"
-        android:layout_gravity="end"
+        android:background="@drawable/shape_toorbar_text"
         android:gravity="center"
         android:text="跳过8"
-        android:textColor="@color/toolbar_color"
+        android:textColor="?attr/toolBarColor"
         android:textSize="@dimen/text_size_15" />
 
     <ImageView
-        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginTop="15dp"
         android:src="@drawable/image_app_name" />
 
     <TextView
         android:id="@+id/textWordShow"
-        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:gravity="center"
         android:text=""
-        android:textColor="@color/toolbar_color"
-        android:textSize="@dimen/text_size_17" />
+        android:textColor="?attr/toolBarColor"
+
+        android:textSize="@dimen/text_size_17"
+        android:textStyle="bold" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottieAnimationView"

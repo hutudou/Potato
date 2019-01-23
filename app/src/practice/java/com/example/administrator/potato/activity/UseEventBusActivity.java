@@ -66,14 +66,14 @@ public class UseEventBusActivity extends BaseActivity {
                 startActivity(intentNormal);*/
 
                 //使用BaseActivity中的方法启动活动
-                gotoActivity(ReceiveActivity.class);
+                gotoActivity(ReceiveActivity.class,false);
                 break;
             case R.id.buttonSendStick:
                 //发送粘性消息 即使消息发出时组件没有建立 也仍然可以继续接受消息
                 EventBusUtil.getInstance().postSticky(new BaseEvent(1, "这是一条粘性消息哦..."));
                /* Intent intentSticky = new Intent(mContext, ReceiveActivity.class);
                 startActivity(intentSticky);*/
-                gotoActivity(ReceiveActivity.class);
+                gotoActivity(ReceiveActivity.class,false);
                 break;
         }
     }

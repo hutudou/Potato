@@ -4,6 +4,6 @@
     android:useLevel="true">
 
     <corners android:radius="8dp" />
-    <solid android:color="@color/toolbar_color" />
+    <solid android:color="?attr/toolBarColor" />
 
 </shape>

@@ -1,10 +1,66 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+    <!-- app主题之梦想蓝 -->
+    <style name="AppBlueTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/toolbar_color</item>
-        <item name="colorPrimaryDark">@color/toolbar_color</item>
+        <item name="colorPrimary">#66b3ff</item>
+        <item name="colorPrimaryDark">#66b3ff</item>
+        <item name="toolBarColor">#66b3ff</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- app主题之淡雅紫-->
+    <style name="AppVioletTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#9393FF</item>
+        <item name="colorPrimaryDark">#9393FF</item>
+        <item name="toolBarColor">#9393FF</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- app主题之欢乐红-->
+    <style name="AppRedTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#FF7575</item>
+        <item name="colorPrimaryDark">#FF7575</item>
+        <item name="toolBarColor">#FF7575</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- app主题之活力橙-->
+    <style name="AppOrangeTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#FFAF60</item>
+        <item name="colorPrimaryDark">#FFAF60</item>
+        <item name="toolBarColor">#FFAF60</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- app主题之少女粉-->
+    <style name="AppPinkTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#FFBFFF</item>
+        <item name="colorPrimaryDark">#FFBFFF</item>
+        <item name="toolBarColor">#FFBFFF</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- app主题之炫酷黑-->
+    <style name="AppBlackTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#4F4F4F</item>
+        <item name="colorPrimaryDark">#4F4F4F</item>
+        <item name="toolBarColor">#4F4F4F</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -18,12 +74,12 @@
 
     <!--toolbar相关-->
     <!--隐藏action bar-->
-    <style name="AppTheme.Base" parent="Theme.AppCompat">
+    <style name="Base.Theme.AppCompat.Light.DarkActionBar.Base" parent="Theme.AppCompat">
         <item name="windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
     </style>
 
-    <style name="AppTheme.NoActionBar">
+    <style name="Base.Theme.AppCompat.Light.DarkActionBar.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
@@ -33,4 +89,5 @@
     <style name="circularDialog" parent="Theme.AppCompat.Dialog.Alert">
         <item name="android:radius">15dp</item>
     </style>
+
 </resources>

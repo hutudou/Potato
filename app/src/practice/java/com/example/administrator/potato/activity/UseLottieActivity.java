@@ -64,7 +64,7 @@ public class UseLottieActivity extends BaseActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                gotoActivity(MainActivity.class);
+                gotoActivity(MainActivity.class,false);
             }
 
             @Override

@@ -240,6 +240,7 @@ public class MainActivity extends BaseActivity {
                         Intent intent26 = new Intent(mContext, PictureSelectorActivity.class);
                         startActivity(intent26);
                         break;
+
                 }
             }
         });

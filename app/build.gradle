@@ -22,7 +22,7 @@ android {
     }
     defaultConfig {
         applicationId "com.example.administrator.potato"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 26
         versionCode VERSION_CODE as int
         versionName VERSION_NAME

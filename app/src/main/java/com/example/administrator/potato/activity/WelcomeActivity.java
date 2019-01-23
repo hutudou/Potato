@@ -25,10 +25,6 @@ import io.reactivex.schedulers.Schedulers;
 
 public class WelcomeActivity extends BaseActivity {
     private static final String welcomeWord = "了解每一天,发现每一天,记录每一天";
-    //倒计时的总时间
-    private static final int TIME_COUNT_TOTAL_TIME = 9000;
-    //倒计时的间隔时间
-    private static final int TIME_COUNT_TOTAL_TIME_INTERVAL = 1000;
     //textView逐字显示的间隔时间
     private static final int SHOW_WORD_ONE_BY_ONE_TIME = 200;
     @Bind(R.id.textVersion)
@@ -89,11 +85,11 @@ public class WelcomeActivity extends BaseActivity {
                     //根据flavor选择进入不同的页面
                     if (BuildConfig.FLAVOR.equals(BuildConfig.practice)) {
                         Class clazz = Class.forName("com.example.administrator.potato.activity.MainActivity");
-                        gotoActivity(clazz);
+                        gotoActivity(clazz,false);
                     }
                     if (BuildConfig.FLAVOR.equals(BuildConfig.everyday)) {
                         Class clazz = Class.forName("com.example.administrator.potato.activity.EveryDayMainActivity");
-                        gotoActivity(clazz);
+                        gotoActivity(clazz,false);
                     }
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();

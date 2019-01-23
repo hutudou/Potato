@@ -36,6 +36,7 @@ import java.util.Map;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import jp.wasabeef.recyclerview.adapters.ScaleInAnimationAdapter;
+import jp.wasabeef.recyclerview.adapters.SlideInRightAnimationAdapter;
 
 /**
  * 作者 Administrator
@@ -137,7 +138,7 @@ public class HistoryFragment extends BaseFragment {
             @Override
             public void onError(Response<String> response) {
                 super.onError(response);
-                showSnackBar(recyclerView, "与服务器通信失败...", false, null, null);
+                showSnackBar(recyclerView, "与服务器通信失败...", true, null, null);
             }
         });
     }

@@ -3,6 +3,8 @@ package com.example.administrator.potato.fragment;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.MenuRes;
@@ -207,8 +209,10 @@ public abstract class BaseFragment extends android.support.v4.app.Fragment {
                         iSnackBarClickEvent.clickEvent();
                     }
                 });
+        TypedArray typedArray = mContext.obtainStyledAttributes(R.styleable.appCustomerAttrs);
         //设置snackBar和titleBar颜色一致
-        snackbar.getView().setBackgroundColor(getResources().getColor(R.color.toolbar_color));
+        snackbar.getView().setBackgroundColor(typedArray.getColor(R.styleable.appCustomerAttrs_toolBarColor, Color.RED));
+        typedArray.recycle();
         //设置action文字的颜色
         snackbar.setActionTextColor(getResources().getColor(R.color.normal_white));
         //设置snackBar图标 这里是获取到snackBar的textView 然后给textView增加左边图标的方式来实现的

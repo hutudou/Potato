@@ -1,8 +1,9 @@
 package com.example.administrator.potato.activity;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.MenuRes;
@@ -13,13 +14,18 @@ import android.support.v7.app.AlertDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
 
+import com.example.administrator.potato.AppConstant;
 import com.example.administrator.potato.application.MyApplication;
 import com.example.administrator.potato.R;
+import com.example.administrator.potato.utils.AppCustomerAttrsUtil;
+import com.example.administrator.potato.utils.SharedPreferencesUtil;
+import com.example.administrator.potato.utils.ToastMessage;
 import com.lzy.okgo.OkGo;
 
 public abstract class BaseActivity extends AppCompatActivity {
@@ -29,6 +35,12 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //设置主题
+        if ((int) SharedPreferencesUtil.getData(AppConstant.CURRENT_APP_THEME, -1) == -1) {
+            setTheme(R.style.AppVioletTheme);
+        } else {
+            setTheme((int) SharedPreferencesUtil.getData(AppConstant.CURRENT_APP_THEME, -1));
+        }
         //获取上下文对象
         mContext = this;
         initStateBar();
@@ -41,6 +53,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
+
     /**
      * 设置状态栏的颜色与toolbar一致 只有安卓5.0以上才能用
      */
@@ -51,9 +64,17 @@ public abstract class BaseActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+//            TypedArray typedArray = mContext.obtainStyledAttributes(R.styleable.appCustomerAttrs);
             //设置状态栏的颜色与toolBar的颜色一致
-            window.setStatusBarColor(getResources().getColor(R.color.toolbar_color));
+            window.setStatusBarColor(AppCustomerAttrsUtil.getColor(mContext, R.styleable.appCustomerAttrs, R.styleable.appCustomerAttrs_toolBarColor));
+//            typedArray.recycle();
         }
+    }
+
+    public int getColorPrimary() {
+        TypedValue typedValue = new TypedValue();
+        getTheme().resolveAttribute(R.attr.colorPrimary, typedValue, true);
+        return typedValue.data;
     }
 
     /**
@@ -178,35 +199,44 @@ public abstract class BaseActivity extends AppCompatActivity {
     /**
      * 活动跳转
      *
-     * @param clazz 要跳转的活动
+     * @param clazz            要跳转的活动
+     * @param isFinishActivity 是否结束当前活动
      */
-    protected void gotoActivity(Class<?> clazz) {
+    protected void gotoActivity(Class<?> clazz, boolean isFinishActivity) {
         Intent intent = new Intent(MyApplication.getContext(), clazz);
         startActivity(intent);
+        if (isFinishActivity) {
+            this.finish();
+        }
     }
 
     /**
      * 活动跳转
      *
-     * @param clazz  目标跳转活动
-     * @param bundle 参数
+     * @param clazz            目标跳转活动
+     * @param bundle           参数
+     * @param isFinishActivity 是否结束当前活动
      */
-    protected void gotoActivity(Class<?> clazz, Bundle bundle) {
+    protected void gotoActivity(Class<?> clazz, Bundle bundle, boolean isFinishActivity) {
         Intent intent = new Intent(MyApplication.getContext(), clazz);
         if (bundle != null) {
             intent.putExtras(bundle);
         }
         startActivity(intent);
+        if (isFinishActivity) {
+            this.finish();
+        }
     }
 
     /**
      * 活动跳转
      *
-     * @param clazz  目标跳转活动
-     * @param bundle 参数
-     * @param action action
+     * @param clazz            目标跳转活动
+     * @param bundle           参数
+     * @param action           action
+     * @param isFinishActivity 是否结束当前活动
      */
-    protected void gotoActivity(Class<?> clazz, Bundle bundle, String action) {
+    protected void gotoActivity(Class<?> clazz, Bundle bundle, String action, boolean isFinishActivity) {
         Intent intent = new Intent(MyApplication.getContext(), clazz);
         if (bundle != null) {
             intent.putExtras(bundle);
@@ -215,6 +245,9 @@ public abstract class BaseActivity extends AppCompatActivity {
             intent.setAction(action);
         }
         startActivity(intent);
+        if (isFinishActivity) {
+            this.finish();
+        }
     }
 
     /**
@@ -243,8 +276,10 @@ public abstract class BaseActivity extends AppCompatActivity {
                         iSnackBarClickEvent.clickEvent();
                     }
                 });
+        TypedArray typedArray = mContext.obtainStyledAttributes(R.styleable.appCustomerAttrs);
         //设置snackBar和titleBar颜色一致
-        snackbar.getView().setBackgroundColor(getResources().getColor(R.color.toolbar_color));
+        snackbar.getView().setBackgroundColor(typedArray.getColor(R.styleable.appCustomerAttrs_toolBarColor, Color.RED));
+        typedArray.recycle();
         //设置action文字的颜色
         snackbar.setActionTextColor(getResources().getColor(R.color.normal_white));
         //设置snackBar图标 这里是获取到snackBar的textView 然后给textView增加左边图标的方式来实现的

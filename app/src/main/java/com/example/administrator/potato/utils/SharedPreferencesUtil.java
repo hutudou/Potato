@@ -25,7 +25,7 @@ public class SharedPreferencesUtil {
      * @param key   参数的key
      * @param value 参数的值
      */
-    public static void savaData(@NonNull String key, Object value) {
+    public static void saveData(@NonNull String key, Object value) {
         SharedPreferences sharedPreferences = MyApplication.getContext().getSharedPreferences(APP_INFO, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         if (value instanceof String) {//根据value的类型存入对应的类型
@@ -49,7 +49,7 @@ public class SharedPreferencesUtil {
      * @param key   参数的key
      * @param value 参数的值
      */
-    public static void savaDataWithFileName(@NonNull String name, @NonNull String key, Object value) {
+    public static void saveDataWithFileName(@NonNull String name, @NonNull String key, Object value) {
         SharedPreferences sharedPreferences = MyApplication.getContext().getSharedPreferences(name, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         if (value instanceof String) {//根据value的类型存入对应的类型

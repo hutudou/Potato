@@ -31,7 +31,7 @@
                     android:layout_height="wrap_content"
                     android:text="请点击您喜欢的颜色以更换主题"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_13" />
+                    android:textSize="@dimen/text_size_15" />
 
                 <TextView
                     android:id="@+id/textCurrentTheme"
@@ -41,7 +41,7 @@
                     android:gravity="center"
                     android:text="当前主题-----淡雅紫"
                     android:textColor="?attr/toolBarColor"
-                    android:textSize="@dimen/text_size_15" />
+                    android:textSize="@dimen/text_size_20" />
             </LinearLayout>
 
             <LinearLayout
@@ -109,7 +109,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center_horizontal"
-                        android:text="中国红"
+                        android:text="欢乐红"
                         android:textColor="@color/black" />
 
                     <View
@@ -174,7 +174,7 @@
                         android:layout_height="70dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="5dp"
-                        android:background="#FFBFFF" />
+                        android:background="#FFAAD5" />
                 </LinearLayout>
 
                 <LinearLayout

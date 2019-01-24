@@ -1,6 +1,5 @@
 package com.example.administrator.potato.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -16,9 +15,7 @@ import android.view.MenuItem;
 import com.example.administrator.potato.AppConstant;
 import com.example.administrator.potato.R;
 import com.example.administrator.potato.fragment.HistoryFragment;
-import com.example.administrator.potato.utils.BaseEvent;
 import com.example.administrator.potato.utils.BottomNavigationViewUtil;
-import com.example.administrator.potato.utils.EventBusUtil;
 import com.example.administrator.potato.utils.SharedPreferencesUtil;
 import com.example.administrator.potato.utils.ToastMessage;
 
@@ -74,7 +71,7 @@ public class EveryDayMainActivity extends BaseActivity {
                     showSnackBar(toolbar, "选择紫色，选择一种优雅的人生", true, null, null);
                     break;
             }
-            SharedPreferencesUtil.savaData(AppConstant.IS_SHOW_COLOR_WELCOME, false);
+            SharedPreferencesUtil.saveData(AppConstant.IS_SHOW_COLOR_WELCOME, false);
         }
     }
 

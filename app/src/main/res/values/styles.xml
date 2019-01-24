@@ -47,9 +47,9 @@
     <!-- app主题之少女粉-->
     <style name="AppPinkTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#FFBFFF</item>
-        <item name="colorPrimaryDark">#FFBFFF</item>
-        <item name="toolBarColor">#FFBFFF</item>
+        <item name="colorPrimary">#FFAAD5</item>
+        <item name="colorPrimaryDark">#FFAAD5</item>
+        <item name="toolBarColor">#FFAAD5</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

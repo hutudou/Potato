@@ -16,10 +16,6 @@ import butterknife.OnClick;
 
 public class ChangeThemeActivity extends BaseActivity {
 
-    //常量
-    public static final int VIOLET = 1;
-    public static final int BLUE = 2;
-    public static final int RED = 3;
     @Bind(R.id.toolbar)
     Toolbar toolbar;
     @Bind(R.id.textCurrentTheme)

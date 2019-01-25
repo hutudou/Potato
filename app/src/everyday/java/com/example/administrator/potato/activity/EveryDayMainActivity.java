@@ -5,19 +5,29 @@ import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.administrator.potato.AppConstant;
 import com.example.administrator.potato.R;
+import com.example.administrator.potato.adapter.IndexPagerAdapter;
 import com.example.administrator.potato.fragment.HistoryFragment;
+import com.example.administrator.potato.fragment.RecordFragment;
+import com.example.administrator.potato.fragment.SecretFragment;
+import com.example.administrator.potato.fragment.WeatherFragment;
 import com.example.administrator.potato.utils.BottomNavigationViewUtil;
 import com.example.administrator.potato.utils.SharedPreferencesUtil;
 import com.example.administrator.potato.utils.ToastMessage;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -32,8 +42,12 @@ public class EveryDayMainActivity extends BaseActivity {
     BottomNavigationView bottomNavigationView;
     @Bind(R.id.navigationView)
     NavigationView navigationView;
+    @Bind(R.id.viewPager)
+    ViewPager viewPager;
     private boolean isExit = false;
     private Handler handler;
+    private List<Fragment> fragmentList;
+    private MenuItem menuItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +56,8 @@ public class EveryDayMainActivity extends BaseActivity {
         ButterKnife.bind(this);
         showColorWelcome();
         initView();
+        //onCreate只会走一次 所以只有 每日天气 那里的toolBar会被隐藏
+        toolbar.setVisibility(View.GONE);
         initData();
     }
 
@@ -50,7 +66,7 @@ public class EveryDayMainActivity extends BaseActivity {
         if ((boolean) SharedPreferencesUtil.getData(AppConstant.IS_SHOW_COLOR_WELCOME, false)) {
             switch ((int) SharedPreferencesUtil.getData(AppConstant.CURRENT_APP_THEME, -1)) {
                 case R.style.AppBlueTheme:
-                    showSnackBar(toolbar, "如果梦想有颜色，那一定是蓝色！!!", true, null, null);
+                    showSnackBar(toolbar, "如果梦想有颜色，那一定是蓝色!!!", true, null, null);
                     break;
                 case R.style.AppVioletTheme:
                     showSnackBar(toolbar, "选择紫色，选择一种优雅的人生。。。", true, null, null);
@@ -59,7 +75,7 @@ public class EveryDayMainActivity extends BaseActivity {
                     showSnackBar(toolbar, "我的主题色，欢乐欢乐最欢乐!!!", true, null, null);
                     break;
                 case R.style.AppOrangeTheme:
-                    showSnackBar(toolbar, "年轻，就该追求无限的活力！！！", true, null, null);
+                    showSnackBar(toolbar, "年轻，就该追求无限的活力!!!", true, null, null);
                     break;
                 case R.style.AppPinkTheme:
                     showSnackBar(toolbar, "谁还不是个小可爱呢，嘤嘤嘤", true, null, null);
@@ -100,6 +116,7 @@ public class EveryDayMainActivity extends BaseActivity {
                 return true;
             }
         });
+
         BottomNavigationViewUtil.disableShiftMode(bottomNavigationView);
         initNavigationView();
         initBottomNavigationView();
@@ -136,6 +153,45 @@ public class EveryDayMainActivity extends BaseActivity {
                 return true;
             }
         });
+
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                if (menuItem != null) {
+                    toolbar.setVisibility(View.GONE);
+                    menuItem.setChecked(false);
+                } else {
+                    bottomNavigationView.getMenu().getItem(0).setChecked(false);
+                }
+                if (position == 0) {
+                    toolbar.setVisibility(View.GONE);
+                } else {
+                    toolbar.setVisibility(View.VISIBLE);
+
+                }
+                menuItem = bottomNavigationView.getMenu().getItem(position);
+                menuItem.setChecked(true);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
+        //绑定viewPager
+        fragmentList = new ArrayList<>();
+        fragmentList.add(WeatherFragment.newInstance("每日天气"));
+        fragmentList.add(new HistoryFragment());
+        fragmentList.add(RecordFragment.newInstance("每日一记"));
+        fragmentList.add(SecretFragment.newInstance("小小树洞"));
+        IndexPagerAdapter indexPagerAdapter = new IndexPagerAdapter(getSupportFragmentManager(), fragmentList);
+        viewPager.setAdapter(indexPagerAdapter);
     }
 
     //初始化BottomNavigationView
@@ -146,19 +202,16 @@ public class EveryDayMainActivity extends BaseActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.weather:
-                        ToastMessage.toastNormal("每日天气");
+                        viewPager.setCurrentItem(0);
                         return true;
                     case R.id.history:
-                        FragmentManager fragmentManager = getSupportFragmentManager();
-                        FragmentTransaction transaction = fragmentManager.beginTransaction();
-                        transaction.replace(R.id.linearFragment, new HistoryFragment());
-                        transaction.commit();
+                        viewPager.setCurrentItem(1);
                         return true;
                     case R.id.note:
-                        ToastMessage.toastNormal("每日一记");
+                        viewPager.setCurrentItem(2);
                         return true;
                     case R.id.secret:
-                        ToastMessage.toastWarn("功能正在完善中...", true);
+                        viewPager.setCurrentItem(3);
                         return true;
                 }
                 return false;
@@ -174,6 +227,7 @@ public class EveryDayMainActivity extends BaseActivity {
         //更改toolBar和navigation时左侧的图标
         toolbar.setNavigationIcon(R.drawable.icon_vector_menu);
     }
+
 
     @Override
     protected void initData() {

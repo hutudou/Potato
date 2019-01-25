@@ -41,7 +41,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppVioletTheme"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:replace="android:theme">
         <activity
             android:name=".activity.WelcomeActivity"
@@ -59,7 +59,8 @@
         <activity
             android:name=".activity.HistoryDetailedActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".activity.ChangeThemeActivity"></activity>
+        <activity android:name=".activity.ChangeThemeActivity" />
+        <activity android:name=".activity.ChangeCityActivity"></activity>
     </application>
 
 </manifest>

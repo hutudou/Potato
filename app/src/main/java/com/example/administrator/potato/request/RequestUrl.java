@@ -7,4 +7,6 @@ package com.example.administrator.potato.request;
 public class RequestUrl {
     //历史上的今天
     public static final String TOADY_IN_HISTORY = "http://apicloud.mob.com/appstore/history/query";
+    //每日天气可查询的地区
+    public static final String CHOOSE_CITY = "http://apicloud.mob.com/v1/weather/citys";
 }

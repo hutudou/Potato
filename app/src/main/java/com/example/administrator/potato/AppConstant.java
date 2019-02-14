@@ -29,4 +29,5 @@ public class AppConstant {
     public static final String CURRENT_APP_THEME = "currentAppTheme";
     //更换颜色后是否需要展示欢迎
     public static final String IS_SHOW_COLOR_WELCOME = "isShowColorWelcome";
+    //定位服务间隔时间
 }

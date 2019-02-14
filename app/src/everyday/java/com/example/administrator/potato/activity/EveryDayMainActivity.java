@@ -1,13 +1,12 @@
 package com.example.administrator.potato.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -22,6 +21,7 @@ import com.example.administrator.potato.fragment.HistoryFragment;
 import com.example.administrator.potato.fragment.RecordFragment;
 import com.example.administrator.potato.fragment.SecretFragment;
 import com.example.administrator.potato.fragment.WeatherFragment;
+import com.example.administrator.potato.service.GetLocationService;
 import com.example.administrator.potato.utils.BottomNavigationViewUtil;
 import com.example.administrator.potato.utils.SharedPreferencesUtil;
 import com.example.administrator.potato.utils.ToastMessage;
@@ -56,9 +56,37 @@ public class EveryDayMainActivity extends BaseActivity {
         ButterKnife.bind(this);
         showColorWelcome();
         initView();
+        startAllServices();
         //onCreate只会走一次 所以只有 每日天气 那里的toolBar会被隐藏
         toolbar.setVisibility(View.GONE);
         initData();
+    }
+
+    @Override
+    protected void onRestart() {
+        recreate();
+        super.onRestart();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        handler.removeCallbacksAndMessages(null);
+        stopAllServices();
+    }
+
+    private void stopAllServices() {
+        stopService(new Intent(mContext, GetLocationService.class));
+    }
+
+    //开启app中所有服务
+    private void startAllServices() {
+        startGetLocationServices();
+    }
+
+    private void startGetLocationServices() {
+        Intent intent = new Intent(mContext, GetLocationService.class);
+        startService(intent);
     }
 
     //更换颜色时显示颜色专属台词
@@ -89,18 +117,6 @@ public class EveryDayMainActivity extends BaseActivity {
             }
             SharedPreferencesUtil.saveData(AppConstant.IS_SHOW_COLOR_WELCOME, false);
         }
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        handler.removeCallbacksAndMessages(null);
-    }
-
-    @Override
-    protected void onRestart() {
-        recreate();
-        super.onRestart();
     }
 
     @Override

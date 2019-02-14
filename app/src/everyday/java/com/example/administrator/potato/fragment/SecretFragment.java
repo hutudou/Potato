@@ -1,6 +1,7 @@
 package com.example.administrator.potato.fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,6 +48,7 @@ public class SecretFragment extends BaseFragment {
         view = inflater.inflate(R.layout.fragment_weather, container, false);
         ButterKnife.bind(this, view);
         text.setText(mParam1);
+
         return view;
     }
 
@@ -57,6 +59,7 @@ public class SecretFragment extends BaseFragment {
 
     @Override
     protected void initData() {
+        Log.d("awei","秘密碎片开始加载数据");
 
     }
 

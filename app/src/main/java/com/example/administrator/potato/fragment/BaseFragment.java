@@ -1,6 +1,5 @@
 package com.example.administrator.potato.fragment;
 
-import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
@@ -29,7 +28,14 @@ import com.lzy.okgo.OkGo;
  */
 
 public abstract class BaseFragment extends android.support.v4.app.Fragment {
+    //上下文对象
     private Context mContext;
+    //页面是否已经加载完毕
+    private boolean isPrepared = false;
+    //页面是否可见
+    private boolean isViewVisibility = false;
+    //是否是第一次加载
+    private boolean isFirstLoad = true;
 
     @Override
     public void onAttach(Context context) {
@@ -38,10 +44,43 @@ public abstract class BaseFragment extends android.support.v4.app.Fragment {
     }
 
     @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        isPrepared = true;
+        lozyLoad();
+    }
+
+    @Override
     public void onDestroyView() {
         //统一关闭okgo
         OkGo.getInstance().cancelTag(this);
         super.onDestroyView();
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (getUserVisibleHint()) {
+            isViewVisibility = true;
+            lozyLoad();
+        } else {
+
+        }
+    }
+
+    //懒加载
+    private void lozyLoad() {
+        if (!isViewVisibility || !isPrepared || !isFirstLoad) {
+            return;
+        }
+        initView();
+        initData();
+        isFirstLoad = false;
     }
 
     /**

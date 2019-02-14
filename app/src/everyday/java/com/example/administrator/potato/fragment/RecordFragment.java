@@ -1,6 +1,7 @@
 package com.example.administrator.potato.fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,6 +58,7 @@ public class RecordFragment extends BaseFragment {
 
     @Override
     protected void initData() {
+        Log.d("awei","纪录碎片开始加载数据");
 
     }
 

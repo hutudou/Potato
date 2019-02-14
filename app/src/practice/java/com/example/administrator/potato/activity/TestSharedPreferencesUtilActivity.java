@@ -35,11 +35,11 @@ public class TestSharedPreferencesUtilActivity extends BaseActivity {
                 finish();
             }
         });
-        SharedPreferencesUtil.savaData("testString", "Hello Word");
-        SharedPreferencesUtil.savaData("testInt", 666);
-        SharedPreferencesUtil.savaData("testFloat", 66.66f);
-        SharedPreferencesUtil.savaData("testLong", 666666L);
-        SharedPreferencesUtil.savaData("testBoole", true);
+        SharedPreferencesUtil.saveData("testString","Hello Word");
+        SharedPreferencesUtil.saveData("testInt", 666);
+        SharedPreferencesUtil.saveData("testFloat", 66.66f);
+        SharedPreferencesUtil.saveData("testLong", 666666L);
+        SharedPreferencesUtil.saveData("testBoole", true);
     }
 
     @Override

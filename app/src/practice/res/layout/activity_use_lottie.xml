@@ -13,7 +13,7 @@
             android:layout_marginTop="16dp"
             android:textSize="@dimen/text_size_24"
             android:textStyle="bold"
-            android:textColor="@color/toolbar_color"
+            android:textColor="?attr/toolBarColor"
             android:text="EveryDay"
             android:gravity="center"
             android:layout_width="match_parent"

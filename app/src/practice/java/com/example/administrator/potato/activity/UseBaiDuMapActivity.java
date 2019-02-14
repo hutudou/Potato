@@ -42,6 +42,7 @@ public class UseBaiDuMapActivity extends BaseActivity {
         //释放资源
         if (bdLocationParameter != null) {
             bdLocationParameter.release();
+            bdLocationParameter = null;
         }
     }
 

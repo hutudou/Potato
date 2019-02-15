@@ -105,8 +105,6 @@ public class HistoryFragment extends BaseFragment {
 
     @Override
     protected void initData() {
-        Log.d("awei","历史碎片开始加载数据");
-
         request();
     }
 

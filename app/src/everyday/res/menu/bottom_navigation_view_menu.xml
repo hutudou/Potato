@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/weather"
-        android:icon="@drawable/icon_vector_weather"
-        android:title="每日天气" />
 
     <item
         android:id="@+id/history"
         android:icon="@drawable/icon_vector_history"
         android:title="历史今日" />
+
+    <item
+        android:id="@+id/weather"
+        android:icon="@drawable/icon_vector_weather"
+        android:title="每日天气" />
 
     <item
         android:id="@+id/note"

@@ -58,7 +58,6 @@ public class RecordFragment extends BaseFragment {
 
     @Override
     protected void initData() {
-        Log.d("awei","纪录碎片开始加载数据");
 
     }
 

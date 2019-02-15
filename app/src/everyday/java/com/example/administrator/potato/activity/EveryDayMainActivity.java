@@ -57,8 +57,6 @@ public class EveryDayMainActivity extends BaseActivity {
         showColorWelcome();
         initView();
         startAllServices();
-        //onCreate只会走一次 所以只有 每日天气 那里的toolBar会被隐藏
-        toolbar.setVisibility(View.GONE);
         initData();
     }
 
@@ -179,12 +177,11 @@ public class EveryDayMainActivity extends BaseActivity {
             @Override
             public void onPageSelected(int position) {
                 if (menuItem != null) {
-                    toolbar.setVisibility(View.GONE);
                     menuItem.setChecked(false);
                 } else {
                     bottomNavigationView.getMenu().getItem(0).setChecked(false);
                 }
-                if (position == 0) {
+                if (position == 1) {
                     toolbar.setVisibility(View.GONE);
                 } else {
                     toolbar.setVisibility(View.VISIBLE);
@@ -202,8 +199,8 @@ public class EveryDayMainActivity extends BaseActivity {
 
         //绑定viewPager
         fragmentList = new ArrayList<>();
-        fragmentList.add(WeatherFragment.newInstance("每日天气"));
         fragmentList.add(new HistoryFragment());
+        fragmentList.add(WeatherFragment.newInstance("每日天气"));
         fragmentList.add(RecordFragment.newInstance("每日一记"));
         fragmentList.add(SecretFragment.newInstance("小小树洞"));
         IndexPagerAdapter indexPagerAdapter = new IndexPagerAdapter(getSupportFragmentManager(), fragmentList);
@@ -217,10 +214,10 @@ public class EveryDayMainActivity extends BaseActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.weather:
+                    case R.id.history:
                         viewPager.setCurrentItem(0);
                         return true;
-                    case R.id.history:
+                    case R.id.weather:
                         viewPager.setCurrentItem(1);
                         return true;
                     case R.id.note:

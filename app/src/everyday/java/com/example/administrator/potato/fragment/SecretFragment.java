@@ -59,7 +59,6 @@ public class SecretFragment extends BaseFragment {
 
     @Override
     protected void initData() {
-        Log.d("awei","秘密碎片开始加载数据");
 
     }
 

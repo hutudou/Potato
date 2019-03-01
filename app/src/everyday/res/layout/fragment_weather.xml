@@ -11,7 +11,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -43,16 +44,20 @@
                         android:paddingTop="20dp">
 
                         <TextView
+                            android:id="@+id/textTemperature"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="20℃"
+                            android:text="----"
                             android:textColor="@color/white"
                             android:textSize="@dimen/text_size_50" />
 
                         <TextView
+                            android:id="@+id/textWeather"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="晴"
+                            android:layout_marginStart="10dp"
+                            android:gravity="center"
+                            android:text="--"
                             android:textColor="@color/white"
                             android:textSize="@dimen/text_size_20" />
                     </LinearLayout>
@@ -64,41 +69,80 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/textAirQuality"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="空气质量:良"
+                            android:text="----"
                             android:textColor="@color/white"
                             android:textSize="@dimen/text_size_15" />
 
                         <TextView
+                            android:id="@+id/textWind"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="北风2级"
+                            android:layout_marginTop="5dp"
+                            android:text="----"
                             android:textColor="@color/white"
                             android:textSize="@dimen/text_size_15" />
 
                         <TextView
+                            android:id="@+id/textCold"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="感冒指数:易发期"
+                            android:layout_marginTop="5dp"
+                            android:text="----"
                             android:textColor="@color/white"
                             android:textSize="@dimen/text_size_15" />
 
                         <TextView
+                            android:id="@+id/textSport"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="运动指数:不适宜"
+                            android:layout_marginTop="5dp"
+                            android:letterSpacing="0.005"
+                            android:text="----"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_15" />
+
+                        <TextView
+                            android:id="@+id/textClothes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="----"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_15" />
+
+                        <TextView
+                            android:id="@+id/textAirHumidity"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="----"
                             android:textColor="@color/white"
                             android:textSize="@dimen/text_size_15" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="15dp"
+                android:textSize="@dimen/text_size_20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="一周预报"
+                android:textColor="@color/black" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="10dp">
+
+            </android.support.v7.widget.RecyclerView>
         </LinearLayout>
-        <!--<android.support.v7.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:background="#7b7b7b">
-        </android.support.v7.widget.RecyclerView>-->
+
 
     </ScrollView>
 </LinearLayout>

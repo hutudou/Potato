@@ -62,7 +62,10 @@ public class EveryDayMainActivity extends BaseActivity {
 
     @Override
     protected void onRestart() {
-        recreate();
+        //为了防止一直重复创建碎片 因此改为只有在切换主题的时候 才会重建活动
+        if ((boolean) SharedPreferencesUtil.getData(AppConstant.IS_SHOW_COLOR_WELCOME, false)) {
+            recreate();
+        }
         super.onRestart();
     }
 
@@ -130,7 +133,6 @@ public class EveryDayMainActivity extends BaseActivity {
                 return true;
             }
         });
-
         BottomNavigationViewUtil.disableShiftMode(bottomNavigationView);
         initNavigationView();
         initBottomNavigationView();

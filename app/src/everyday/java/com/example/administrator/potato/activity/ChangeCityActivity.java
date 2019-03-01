@@ -1,8 +1,9 @@
 package com.example.administrator.potato.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
+import android.text.TextUtils;
 import android.view.View;
 
 import com.alibaba.fastjson.JSON;
@@ -12,7 +13,6 @@ import com.example.administrator.potato.callback.StringDialogCallback;
 import com.example.administrator.potato.javabeen.CityBeen;
 import com.example.administrator.potato.request.RequestMethod;
 import com.example.administrator.potato.request.RequestUrl;
-import com.example.administrator.potato.utils.ToastMessage;
 import com.jaredrummler.materialspinner.MaterialSpinner;
 import com.lzy.okgo.model.Response;
 
@@ -27,9 +27,11 @@ import java.util.Map;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class ChangeCityActivity extends BaseActivity {
-
+    //常量
+    public static final int CONFIRM_CITY = 1;
     @Bind(R.id.toolbar)
     Toolbar toolbar;
     @Bind(R.id.spinnerProvince)
@@ -157,5 +159,17 @@ public class ChangeCityActivity extends BaseActivity {
                 spinnerArea.setItems(setAreasList(provincesIndex, position));
             }
         });
+    }
+
+    @OnClick(R.id.buttonConfirm)
+    public void onViewClicked() {
+        Intent intent = new Intent();
+        intent.putExtra("province", spinnerProvince.getText().toString());
+        intent.putExtra("area", spinnerArea.getText().toString());
+        if (TextUtils.isEmpty(spinnerArea.getText().toString())) {//有的地方是不存在第三级地区的 这种情况直接用第二级就行
+            intent.putExtra("area", spinnerCity.getText().toString());
+        }
+        setResult(CONFIRM_CITY, intent);
+        finish();
     }
 }

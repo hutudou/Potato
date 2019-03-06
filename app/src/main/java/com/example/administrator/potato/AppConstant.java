@@ -29,5 +29,6 @@ public class AppConstant {
     public static final String CURRENT_APP_THEME = "currentAppTheme";
     //更换颜色后是否需要展示欢迎
     public static final String IS_SHOW_COLOR_WELCOME = "isShowColorWelcome";
-    //定位服务间隔时间
+    //Bmob Application Id
+    public static final String BMOB_APPLICATION_ID = "28caea759127ddd035530fc5e87d104e";
 }

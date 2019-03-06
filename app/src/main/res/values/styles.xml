@@ -65,7 +65,6 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-
     <!--popupWindow进入进出动画-->
     <style name="popup_window_anim">
         <item name="android:windowEnterAnimation">@anim/popup_view_in</item>

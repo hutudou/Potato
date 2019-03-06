@@ -37,9 +37,12 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <!-- 指纹解锁权限 -->
     <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:name=".application.MyApplication"
+
         android:allowBackup="true"
         android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
@@ -51,7 +54,6 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".activity.WelcomeActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -72,6 +74,11 @@
             android:enabled="true"
             android:process=":remote" />
         <service android:name=".service.GetLocationService" />
+
+        <provider
+            android:name="cn.bmob.v3.util.BmobContentProvider"
+            android:authorities="com.example.administrator.potato.BmobContentProvider">
+        </provider>
 
     </application>
 

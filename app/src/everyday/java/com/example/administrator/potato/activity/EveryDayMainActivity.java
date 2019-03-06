@@ -23,6 +23,7 @@ import com.example.administrator.potato.fragment.SecretFragment;
 import com.example.administrator.potato.fragment.WeatherFragment;
 import com.example.administrator.potato.service.GetLocationService;
 import com.example.administrator.potato.utils.BottomNavigationViewUtil;
+import com.example.administrator.potato.utils.DataCleanUtils;
 import com.example.administrator.potato.utils.SharedPreferencesUtil;
 import com.example.administrator.potato.utils.ToastMessage;
 
@@ -145,7 +146,17 @@ public class EveryDayMainActivity extends BaseActivity {
                         ToastMessage.toastWarn("功能正在开发中...", true);
                         break;
                     case R.id.clearCache:
-                        ToastMessage.toastWarn("功能正在开发中...", true);
+                        showConfirmDialog("清理缓存", "当前缓存:" + DataCleanUtils.getTotalCacheSize(mContext) + ",确定要清除吗?", new ConfirmDialogInterface() {
+                            @Override
+                            public void onConfirmClickListener() {
+                                DataCleanUtils.clearAllCache(mContext);
+                            }
+
+                            @Override
+                            public void onCancelClickListener() {
+
+                            }
+                        });
                         break;
                     case R.id.changeTheme:
                         gotoActivity(ChangeThemeActivity.class, false);

@@ -104,7 +104,7 @@ public class UseBaiDuMapActivity extends BaseActivity {
         bdLocationParameter = new BDLocationParameter(new BDLocationInterface() {
             @Override
             public void onSuccess() {//处理定位成功事件
-                textResult.setText(String.format("经度是:%s\n纬度是:%s\n地址是:%s", BDLocationResult.LONGITUDE, BDLocationResult.LATITUDE, BDLocationResult.ADDRESS));
+                textResult.setText(String.format("经度是:%s\n纬度是:%s\n地址是:%s", BDLocationResult.longitude, BDLocationResult.latitude, BDLocationResult.address));
             }
 
             @Override

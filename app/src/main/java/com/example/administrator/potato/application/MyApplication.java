@@ -6,9 +6,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
+import android.support.multidex.MultiDex;
+import android.support.multidex.MultiDexApplication;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.administrator.potato.AppConstant;
 import com.example.administrator.potato.R;
 import com.example.administrator.potato.utils.CrashLog;
 import com.lzy.okgo.OkGo;
@@ -24,10 +27,12 @@ import com.wanjian.cockroach.Cockroach;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
+import cn.bmob.v3.Bmob;
 import okhttp3.OkHttpClient;
 
 
-public class MyApplication extends Application {
+public class MyApplication extends MultiDexApplication {
+
     private static Context mContext;
 
     //重写父类方法 获取ApplicationContext
@@ -39,6 +44,19 @@ public class MyApplication extends Application {
         initOkgo();
         //安装防crash框架
         installCockroach();
+        //初始化Bmob
+        initBmob();
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
+
+
+    private void initBmob() {
+        Bmob.initialize(this, AppConstant.BMOB_APPLICATION_ID);
     }
 
     //得到Application的context

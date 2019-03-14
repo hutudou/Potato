@@ -1,18 +1,13 @@
 package com.example.administrator.potato.application;
 
-import android.app.Application;
-import android.app.ApplicationErrorReport;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.example.administrator.potato.AppConstant;
-import com.example.administrator.potato.R;
 import com.example.administrator.potato.utils.CrashLog;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheEntity;

@@ -112,7 +112,7 @@ public class WelcomeActivity extends BaseActivity {
                         gotoActivity(clazz, false);
                     }
                     if (BuildConfig.FLAVOR.equals(BuildConfig.everyday)) {
-                        Class clazz = Class.forName("com.example.administrator.potato.activity.EveryDayMainActivity");
+                        Class clazz = Class.forName("com.example.administrator.potato.activity.LoginActivity");
                         gotoActivity(clazz, false);
                     }
                 } catch (ClassNotFoundException e) {

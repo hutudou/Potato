@@ -1,5 +1,6 @@
 package com.example.administrator.potato.fragment;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -189,7 +190,6 @@ public class WeatherFragment extends BaseFragment {
     @Override
     protected void initData() {
         request();
-        testBmobQuery();
     }
 
     private void testBmob() {
@@ -277,6 +277,6 @@ public class WeatherFragment extends BaseFragment {
     @OnClick(R.id.text)
     public void onViewClicked() {
         Intent intent = new Intent(getActivity(), ChangeCityActivity.class);
-        startActivityForResult(intent, CHANGE_CITY);
+        startActivityForResult(intent,CHANGE_CITY, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
     }
 }

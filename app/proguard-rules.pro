@@ -202,6 +202,39 @@ public static java.lang.String TABLENAME;
 }
 -keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueConsumerNodeRef {
  rx.internal.util.atomic.LinkedQueueNode consumerNode;
-
-
 }
+
+# keep BmobSDK
+-dontwarn cn.bmob.v3.**
+-keep class cn.bmob.v3.** {*;}
+
+#----------------bmob混淆开始----------------#
+
+# 确保JavaBean不被混淆-否则gson将无法将数据解析成具体对象
+-keep class * extends cn.bmob.v3.BmobObject {
+    *;
+}
+
+# 如果你需要兼容6.0系统，请不要混淆org.apache.http.legacy.jar
+-dontwarn android.net.compatibility.**
+-dontwarn android.net.http.**
+-dontwarn com.android.internal.http.multipart.**
+-dontwarn org.apache.commons.**
+-dontwarn org.apache.http.**
+-keep class android.net.compatibility.**{*;}
+-keep class android.net.http.**{*;}
+-keep class com.android.internal.http.multipart.**{*;}
+-keep class org.apache.commons.**{*;}
+-keep class org.apache.http.**{*;}
+
+#----------------bmob混淆结束----------------#
+
+
+
+#----------------mob混淆开始----------------#
+
+ -keep class com.mob.**{*;}
+ -keep class cn.smssdk.**{*;}
+ -dontwarn com.mob.**
+
+ #----------------mob混淆结束----------------#

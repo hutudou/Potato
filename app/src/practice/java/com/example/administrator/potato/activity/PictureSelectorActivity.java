@@ -78,8 +78,8 @@ public class PictureSelectorActivity extends BaseActivity {
             if (requestCode == 0) {
                 list = PictureSelector.obtainMultipleResult(data);
                 adapter.bindSelectImages(list);
-                adapter.notifyDataSetChanged();
             }
+            adapter.notifyDataSetChanged();
         }
     }
 

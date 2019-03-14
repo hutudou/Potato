@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.transition.Explode;
 import android.view.View;
 
 import com.alibaba.fastjson.JSON;
@@ -53,6 +54,7 @@ public class ChangeCityActivity extends BaseActivity {
         ButterKnife.bind(this);
         initView();
         initData();
+
     }
 
     @Override

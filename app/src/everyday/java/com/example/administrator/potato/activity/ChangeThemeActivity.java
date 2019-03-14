@@ -60,6 +60,8 @@ public class ChangeThemeActivity extends BaseActivity {
                     textCurrentTheme.setText("当前主题-----炫酷黑");
                     break;
             }
+        } else {
+            showSnackBar(toolbar, "程序内部异常,请重启程序试试...", true, null, null);
         }
     }
 

@@ -1,5 +1,6 @@
 package com.example.administrator.potato.activity;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,6 +12,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.transition.Explode;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -33,6 +35,7 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+
 public class EveryDayMainActivity extends BaseActivity {
 
     @Bind(R.id.drawerLayout)
@@ -54,12 +57,17 @@ public class EveryDayMainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_every_day_main);
+        getWindow().setEnterTransition(new Explode().setDuration(2000));
         ButterKnife.bind(this);
         showColorWelcome();
         initView();
         startAllServices();
         initData();
+       /* IntentFilter intentFilter=new IntentFilter();
+        intentFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
+        registerReceiver(NetworkChangReceiver,intentFilter);*/
     }
+
 
     @Override
     protected void onRestart() {
@@ -75,6 +83,7 @@ public class EveryDayMainActivity extends BaseActivity {
         super.onDestroy();
         handler.removeCallbacksAndMessages(null);
         stopAllServices();
+        /*unregisterReceiver(NetworkChangReceiver);*/
     }
 
     private void stopAllServices() {
@@ -171,10 +180,10 @@ public class EveryDayMainActivity extends BaseActivity {
                         ToastMessage.toastWarn("功能正在开发中...", true);
                         break;
                     case R.id.switchUser:
-                        ToastMessage.toastWarn("功能正在开发中...", true);
+                        gotoActivity(LoginActivity.class, ActivityOptions.makeSceneTransitionAnimation(EveryDayMainActivity.this).toBundle(), true);
                         break;
                     case R.id.exit:
-                        ToastMessage.toastWarn("功能正在开发中...", true);
+                        finish();
                         break;
                 }
                 return true;
@@ -281,4 +290,25 @@ public class EveryDayMainActivity extends BaseActivity {
         }
     }
 
+   /* private BroadcastReceiver NetworkChangReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(CONNECTIVITY_SERVICE);
+            NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+            if (networkInfo != null && networkInfo.isAvailable()) {
+                switch (networkInfo.getType()) {
+                    case TYPE_MOBILE:
+                        Toast.makeText(context, "正在使用移动数据", Toast.LENGTH_SHORT).show();
+                        break;
+                    case TYPE_WIFI:
+                        Toast.makeText(context, "正在使用wifi上网", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+            } else {
+                Toast.makeText(context, "当前无网络连接", Toast.LENGTH_SHORT).show();
+            }
+        }
+    };*/
+
 }
+

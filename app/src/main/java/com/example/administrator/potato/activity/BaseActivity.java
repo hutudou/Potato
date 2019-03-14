@@ -14,6 +14,7 @@ import android.support.v7.app.AlertDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.transition.Explode;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.Window;
@@ -25,7 +26,6 @@ import com.example.administrator.potato.application.MyApplication;
 import com.example.administrator.potato.R;
 import com.example.administrator.potato.utils.AppCustomerAttrsUtil;
 import com.example.administrator.potato.utils.SharedPreferencesUtil;
-import com.example.administrator.potato.utils.ToastMessage;
 import com.lzy.okgo.OkGo;
 
 public abstract class BaseActivity extends AppCompatActivity {
@@ -44,6 +44,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         //获取上下文对象
         mContext = this;
         initStateBar();
+        getWindow().setEnterTransition(new Explode().setDuration(300));
+        getWindow().setExitTransition(new Explode().setDuration(300));
+        getWindow().setReturnTransition(new Explode().setDuration(300));
     }
 
     @Override

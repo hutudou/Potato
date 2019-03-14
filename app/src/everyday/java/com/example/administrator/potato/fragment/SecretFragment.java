@@ -1,5 +1,7 @@
 package com.example.administrator.potato.fragment;
 
+import android.app.ActivityOptions;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -147,6 +149,7 @@ public class SecretFragment extends BaseFragment {
 
     @OnClick(R.id.textAddSecret)
     public void onViewClicked() {
-        gotoActivity(AddSecretActivity.class);
+        gotoActivity(AddSecretActivity.class, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
+//        startActivity(new Intent(getActivity(), AddSecretActivity.class), ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
     }
 }

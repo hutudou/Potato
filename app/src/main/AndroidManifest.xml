@@ -40,6 +40,17 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:name=".application.MyApplication"
         android:allowBackup="true"
@@ -48,9 +59,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        tools:replace="android:theme"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-        tools:ignore="GoogleAppIndexingWarning">
+        tools:ignore="GoogleAppIndexingWarning"
+        tools:replace="android:theme">
         <activity
             android:name=".activity.WelcomeActivity"
             android:screenOrientation="portrait">
@@ -68,6 +79,13 @@
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="RgtqmDu1NRHyBc8mOmOjK4QAHfz1gKP2" />
 
+        <!--<meta-data
+            android:name="Mob-AppKey"
+            android:value="2568b8e7ec06f" />
+        <meta-data
+            android:name="Mob-AppSecret"
+            android:value="2f412debdcfc0436c5324def5517661f" />-->
+
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
@@ -76,9 +94,7 @@
 
         <provider
             android:name="cn.bmob.v3.util.BmobContentProvider"
-            android:authorities="com.example.administrator.potato.BmobContentProvider">
-        </provider>
-
+            android:authorities="com.example.administrator.potato.BmobContentProvider" />
     </application>
 
 </manifest>

@@ -6,6 +6,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +15,7 @@ import android.widget.EditText;
 import com.example.administrator.potato.R;
 import com.example.administrator.potato.utils.NormalUtils;
 import com.example.administrator.potato.utils.ToastMessage;
+import com.mob.MobSDK;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -33,7 +35,7 @@ public class RegisterActivity extends BaseActivity {
     Button buttonCode;
     //存放正确的phone
     private String phone;
-    private EventHandler eventHandler = new EventHandler() {
+    EventHandler eventHandler = new EventHandler() {
         public void afterEvent(int event, int result, Object data) {
             // afterEvent会在子线程被调用，因此如果后续有UI相关操作，需要将数据发送到UI线程
             Message msg = new Message();
@@ -55,12 +57,11 @@ public class RegisterActivity extends BaseActivity {
                             // TODO 处理错误的结果
                             ((Throwable) data).printStackTrace();
                             ToastMessage.toastError("验证码发送失败,请重试...", true);
-
                         }
                     } else if (event == SMSSDK.EVENT_SUBMIT_VERIFICATION_CODE) {
                         if (result == SMSSDK.RESULT_COMPLETE) {
-                            ToastMessage.toastSuccess("验证成功...", true);
                             // TODO 处理验证码验证通过的结果
+                            ToastMessage.toastSuccess("验证通过...", true);
                         } else {
                             // TODO 处理错误的结果
                             ((Throwable) data).printStackTrace();
@@ -91,6 +92,9 @@ public class RegisterActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        // 在尝试读取通信录时以弹窗提示用户（可选功能）
+        SMSSDK.setAskPermisionOnReadContact(false);
+        MobSDK.init(RegisterActivity.this, "2568b8e7ec06f", "2f412debdcfc0436c5324def5517661f");
         initToolBar(toolbar, "注册", true, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,8 +102,6 @@ public class RegisterActivity extends BaseActivity {
             }
         });
         editPhoneNumber.addTextChangedListener(phoneWatcher);
-        // 在尝试读取通信录时以弹窗提示用户（可选功能）
-        SMSSDK.setAskPermisionOnReadContact(true);
 
 
         // 注册一个事件回调，用于处理SMSSDK接口请求的结果
@@ -144,6 +146,14 @@ public class RegisterActivity extends BaseActivity {
                 SMSSDK.getVerificationCode("86", phone);
                 break;
             case R.id.buttonNext:
+                if (TextUtils.isEmpty(phone)) {
+                    ToastMessage.toastWarn("请输入正确的手机号...", true);
+                    return;
+                }
+                if (TextUtils.isEmpty(editCode.getText().toString())) {
+                    ToastMessage.toastWarn("请输入验证码...", true);
+                    return;
+                }
                 // 提交验证码，其中的code表示验证码，如“1357”
                 SMSSDK.submitVerificationCode("86", phone, editCode.getText().toString());
                 break;

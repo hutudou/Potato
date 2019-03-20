@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.example.administrator.potato.R;
+import com.mob.MobSDK;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

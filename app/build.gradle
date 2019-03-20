@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.mob.sdk'
 android {
 
     compileSdkVersion 26
@@ -72,12 +71,9 @@ android {
     }
 }
 
-// 在MobSDK的扩展中注册SMSSDK的相关信息
-MobSDK {
-    appKey "2568b8e7ec06f"
-    appSecret "2f412debdcfc0436c5324def5517661f"
-
-    SMSSDK {
+repositories {
+    flatDir {
+        dirs 'libs' //就是你放aar的目录地址
     }
 }
 
@@ -127,7 +123,7 @@ dependencies {
     //防崩溃框架
     compile 'com.wanjian:cockroach:0.0.5'
     //cardview
-    compile('com.android.support:cardview-v7:26.1.0')
+    compile 'com.android.support:cardview-v7:26.1.0'
     //retrofit网络请求框架
     compile 'com.squareup.retrofit2:retrofit:2.0.2'
     compile 'com.squareup.retrofit2:converter-scalars:2.0.2'

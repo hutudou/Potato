@@ -192,47 +192,6 @@ public class WeatherFragment extends BaseFragment {
         request();
     }
 
-    private void testBmob() {
-        Person p1 = new Person();
-        p1.setUserName("测试用例");
-        p1.setAge("66");
-        p1.save(new SaveListener<String>() {
-            @Override
-            public void done(String s, BmobException e) {
-                if (e == null) {
-                    ToastMessage.toastSuccess("数据添加成功", true);
-                } else {
-                    ToastMessage.toastError("创建数据失败：" + e.getMessage(), true);
-                }
-            }
-        });
-    }
-
-    private void testBmobQuery() {
-        /*//查找Person表里面id为6b6c11c537的数据
-        BmobQuery<Person> bmobQuery = new BmobQuery<Person>();
-        bmobQuery.getObject("c83fbb7e04", new QueryListener<Person>() {
-            @Override
-            public void done(Person person, BmobException e) {
-                if (e == null) {
-                    ToastMessage.toastSuccess("数据查询成功", true);
-                } else {
-                    ToastMessage.toastError("查询数据失败：" + e.getMessage(), true);
-                }
-            }
-        });*/
-      /*  BmobQuery<Person> bmobQuery = new BmobQuery<>();
-        bmobQuery.findObjects(new FindListener<Person>() {
-            @Override
-            public void done(List<Person> list, BmobException e) {
-                if (e == null) {
-                    ToastMessage.toastSuccess("数据查询成功", true);
-                } else {
-                    ToastMessage.toastError("查询数据失败：" + e.getMessage(), true);
-                }
-            }
-        });*/
-    }
 
     private void request() {
         Map<String, String> map = new HashMap<>();

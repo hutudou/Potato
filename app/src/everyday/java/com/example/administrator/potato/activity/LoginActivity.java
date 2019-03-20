@@ -39,6 +39,9 @@ public class LoginActivity extends BaseActivity {
                 finish();
             }
         });
+        if (getIntent().hasExtra("account")) {
+            editAccount.setText(getIntent().getStringExtra("account"));
+        }
     }
 
     @Override
@@ -48,6 +51,7 @@ public class LoginActivity extends BaseActivity {
 
     @OnClick(R.id.buttonLogin)
     public void onViewClicked() {
+
         //先直接跳转主activity
         gotoActivity(EveryDayMainActivity.class, ActivityOptions.makeSceneTransitionAnimation(this).toBundle(), false);
     }
@@ -55,12 +59,12 @@ public class LoginActivity extends BaseActivity {
     //找回密码
     @OnClick(R.id.textForgetPassWord)
     public void onTextForgetPassWord() {
+
     }
 
     //注册
     @OnClick(R.id.textRegister)
     public void onTextRegister() {
         gotoActivity(RegisterActivity.class, ActivityOptions.makeSceneTransitionAnimation(this).toBundle(), false);
-
     }
 }

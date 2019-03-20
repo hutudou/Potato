@@ -156,6 +156,9 @@ public class RegisterActivity extends BaseActivity {
                 }
                 // 提交验证码，其中的code表示验证码，如“1357”
                 SMSSDK.submitVerificationCode("86", phone, editCode.getText().toString());
+                Bundle bundle = new Bundle();
+                bundle.putString("account", phone);
+                gotoActivity(SetPasswordActivity.class, bundle, true);
                 break;
         }
     }

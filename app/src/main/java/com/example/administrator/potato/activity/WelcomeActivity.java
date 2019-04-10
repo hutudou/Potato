@@ -33,8 +33,6 @@ import io.reactivex.schedulers.Schedulers;
 
 public class WelcomeActivity extends BaseActivity {
     private static final String welcomeWord = "了解每一天,发现每一天,记录每一天";
-    //textView逐字显示的间隔时间
-    private static final int SHOW_WORD_ONE_BY_ONE_TIME = 200;
     @Bind(R.id.textVersion)
     TextView textVersion;
     @Bind(R.id.textSkip)
@@ -92,7 +90,7 @@ public class WelcomeActivity extends BaseActivity {
                     }
                 });
         //逐字显示textView
-        TextViewShowWordOneByOne showWordOneByOne = new TextViewShowWordOneByOne(textWordShow, welcomeWord, SHOW_WORD_ONE_BY_ONE_TIME, true);
+        TextViewShowWordOneByOne showWordOneByOne = new TextViewShowWordOneByOne(textWordShow, welcomeWord, 200, true);
         showWordOneByOne.startTv(0);
         lottieAnimationView.setSpeed(2.0f);
         textVersion.setText(String.format("当前版本:    V %s", BuildConfig.VERSION_NAME));

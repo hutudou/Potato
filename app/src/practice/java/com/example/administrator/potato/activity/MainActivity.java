@@ -57,7 +57,8 @@ public class MainActivity extends BaseActivity {
             "功能二十三:使用指纹验证",
             "功能二十四:Retrofit的简单使用",
             "功能二十五:测试SharedPreferencesUtil",
-            "功能二十六:PictureSelector框架的使用以及封装"
+            "功能二十六:PictureSelector框架的使用以及封装",
+            "功能二十七:NumberPicker的使用"
     };
 
     @Override
@@ -239,6 +240,11 @@ public class MainActivity extends BaseActivity {
                     case 26:
                         Intent intent26 = new Intent(mContext, PictureSelectorActivity.class);
                         startActivity(intent26);
+                        break;
+                    //"功能二十七:NumberPicker的使用"
+                    case 27:
+                        Intent intent27 = new Intent(mContext, UseNumberPickerActivity.class);
+                        startActivity(intent27);
                         break;
 
                 }

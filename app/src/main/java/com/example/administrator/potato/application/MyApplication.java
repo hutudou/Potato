@@ -49,13 +49,12 @@ public class MyApplication extends MultiDexApplication {
         MultiDex.install(this);
     }
 
-
     private void initBmob() {
         Bmob.initialize(this, AppConstant.BMOB_APPLICATION_ID);
     }
 
     //得到Application的context
-    public static Context getContext() {
+    public  static Context getContext() {
         return mContext;
     }
 

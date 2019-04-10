@@ -132,14 +132,14 @@ public class PopupWindowActivity extends BaseActivity {
         //更新popupWindow
         popupWindow.update();
         //设置popupWindow的位置 相对于屏幕
-        popupWindow.showAtLocation(buttonOpen, Gravity.BOTTOM, 0, 0);
+        popupWindow.showAtLocation(popupView, Gravity.BOTTOM, 0, 0);
         //此方法同样是设置popupWindow的位置 相对于组件
         //popupWindow.showAsDropDown(buttonOpen,0,0);
     }
 
     //popubView在显示和消失时改变背景屏幕的透明度
     private void change(String type) {
-        Window window = getWindow();
+        Window window =  getWindow();
         final WindowManager.LayoutParams params = window.getAttributes();
         if (type.equals("dismiss")) {
             params.alpha = 1.0f;

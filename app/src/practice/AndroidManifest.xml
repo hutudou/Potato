@@ -141,6 +141,7 @@
         <activity
             android:name=".activity.PictureSelectorActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".activity.UseNumberPickerActivity"></activity>
     </application>
 
 </manifest>

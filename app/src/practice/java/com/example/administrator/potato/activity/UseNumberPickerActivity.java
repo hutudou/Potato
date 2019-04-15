@@ -141,7 +141,7 @@ public class UseNumberPickerActivity extends BaseActivity {
     @OnClick(R.id.buttonChooseDate)
     public void onButtonChooseDate() {
         DatePickerUtil datePickerUtil = new DatePickerUtil(UseNumberPickerActivity.this);
-        datePickerUtil.showDatePicker(new DatePickerUtil.IPickEvent() {
+        datePickerUtil.showDatePicker(DatePickerUtil.CHOOSE_YEAR_MONTH_DAY_HOUR_MINUTE_SECOND, new DatePickerUtil.IPickEvent() {
             @Override
             public void onCancel() {
 
@@ -149,7 +149,7 @@ public class UseNumberPickerActivity extends BaseActivity {
 
             @Override
             public void onConfirm(String dateResult) {
-            ToastMessage.toastSuccess("选择的日期是:"+dateResult,false);
+                ToastMessage.toastSuccess("选择的日期是:" + dateResult, false);
             }
         });
     }

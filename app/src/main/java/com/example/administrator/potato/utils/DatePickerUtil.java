@@ -1,6 +1,7 @@
 package com.example.administrator.potato.utils;
 
 import android.app.Activity;
+import android.support.annotation.NonNull;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,15 +55,15 @@ public class DatePickerUtil {
     private static final String DISMISS = "dismiss";
     private static final String SHOW = "show";
     //picker类型一 年月
-    private static final String CHOOSE_YEAR_MONTH = "chooseYearMonth";
+    public static final String CHOOSE_YEAR_MONTH = "chooseYearMonth";
     //picker类型二 月日
-    private static final String CHOOSE_MONTH_DAY = "chooseMonthDay";
+    public static final String CHOOSE_MONTH_DAY = "chooseMonthDay";
     //picker类型三 年月日
-    private static final String CHOOSE_YEAR_MONTH_DAY = "chooseYearMonthDay";
+    public static final String CHOOSE_YEAR_MONTH_DAY = "chooseYearMonthDay";
     //picker类型四  时分秒
-    private static final String CHOOSE_HOUR_MINUTE_SECOND = "chooseHourMinuteSecond";
+    public static final String CHOOSE_HOUR_MINUTE_SECOND = "chooseHourMinuteSecond";
     //picker类型五 年月日 时分秒
-    private static final String CHOOSE_YEAR_MONTH_DAY_HOUR_MINUTE_SECOND = "chooseYearMonthDayHourMinuteSecond";
+    public static final String CHOOSE_YEAR_MONTH_DAY_HOUR_MINUTE_SECOND = "chooseYearMonthDayHourMinuteSecond";
     //年
     private ArrayList<String> years;
     private Activity activity;
@@ -124,7 +125,7 @@ public class DatePickerUtil {
     }
 
     //把numberpicker镶嵌在dialog中
-    public void showDatePicker(final IPickEvent pickEvent) {
+    public void showDatePicker(@NonNull final String pickerType, final IPickEvent pickEvent) {
         //获取popupwindow布局
         final PopupWindow popupWindow = new PopupWindow(popupView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         //是否可以获取事件 设为false则事件会被父view拦截
@@ -139,6 +140,34 @@ public class DatePickerUtil {
                 change(DISMISS);
             }
         });
+        switch (pickerType) {
+            case CHOOSE_YEAR_MONTH://选择年月
+                pickerDay.setVisibility(View.GONE);
+                pickerHour.setVisibility(View.GONE);
+                pickerMinute.setVisibility(View.GONE);
+                pickerSecond.setVisibility(View.GONE);
+                break;
+            case CHOOSE_YEAR_MONTH_DAY://选择年月日
+                pickerHour.setVisibility(View.GONE);
+                pickerMinute.setVisibility(View.GONE);
+                pickerSecond.setVisibility(View.GONE);
+                break;
+            case CHOOSE_YEAR_MONTH_DAY_HOUR_MINUTE_SECOND://选择年月日  时分秒
+                break;
+            case CHOOSE_HOUR_MINUTE_SECOND://选择时分秒
+                pickerYear.setVisibility(View.GONE);
+                pickerMonth.setVisibility(View.GONE);
+                pickerDay.setVisibility(View.GONE);
+                break;
+            case CHOOSE_MONTH_DAY://选择月日
+                pickerYear.setVisibility(View.GONE);
+                pickerHour.setVisibility(View.GONE);
+                pickerMinute.setVisibility(View.GONE);
+                pickerSecond.setVisibility(View.GONE);
+                break;
+            default:
+                break;
+        }
         change(SHOW);
         //更新popupWindow
         popupWindow.update();
@@ -154,7 +183,28 @@ public class DatePickerUtil {
         textConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                pickEvent.onConfirm("" + years.get(pickerYear.getValue()) + "" + MONTHS[pickerMonth.getValue()] + "" + DAYS[pickerDay.getValue()] + "" + HOURS[pickerHour.getValue()] + "" + MINUTES[pickerMinute.getValue()] + "" + SECONDS[pickerSecond.getValue()]);
+                String result;
+                switch (pickerType) {
+                    case CHOOSE_YEAR_MONTH://选择年月
+                        result = "" + years.get(pickerYear.getValue()) + "" + MONTHS[pickerMonth.getValue()];
+                        break;
+                    case CHOOSE_YEAR_MONTH_DAY://选择年月日
+                        result = "" + years.get(pickerYear.getValue()) + "" + MONTHS[pickerMonth.getValue()] + "" + DAYS[pickerDay.getValue()];
+                        break;
+                    case CHOOSE_YEAR_MONTH_DAY_HOUR_MINUTE_SECOND://选择年月日  时分秒
+                        result = "" + years.get(pickerYear.getValue()) + "" + MONTHS[pickerMonth.getValue()] + "" + DAYS[pickerDay.getValue()] + "" + HOURS[pickerHour.getValue()] + "" + MINUTES[pickerMinute.getValue()] + "" + SECONDS[pickerSecond.getValue()];
+                        break;
+                    case CHOOSE_HOUR_MINUTE_SECOND://选择时分秒
+                        result = "" + HOURS[pickerHour.getValue()] + "" + MINUTES[pickerMinute.getValue()] + "" + SECONDS[pickerSecond.getValue()];
+                        break;
+                    case CHOOSE_MONTH_DAY://选择月日
+                        result = "" + MONTHS[pickerMonth.getValue()] + "" + DAYS[pickerDay.getValue()];
+                        break;
+                    default:
+                        result = "" + years.get(pickerYear.getValue()) + "" + MONTHS[pickerMonth.getValue()] + "" + DAYS[pickerDay.getValue()] + "" + HOURS[pickerHour.getValue()] + "" + MINUTES[pickerMinute.getValue()] + "" + SECONDS[pickerSecond.getValue()];
+                        break;
+                }
+                pickEvent.onConfirm(result);
                 popupWindow.dismiss();
             }
         });

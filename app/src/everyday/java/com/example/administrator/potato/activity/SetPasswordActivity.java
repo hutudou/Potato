@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.example.administrator.potato.R;
+import com.example.administrator.potato.application.MyApplication;
 import com.example.administrator.potato.bmobbeen.Person;
 import com.example.administrator.potato.utils.MD5Utils;
 import com.example.administrator.potato.utils.ToastMessage;
@@ -17,6 +18,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
+import cn.bmob.v3.listener.UpdateListener;
 
 public class SetPasswordActivity extends BaseActivity {
 
@@ -71,15 +73,15 @@ public class SetPasswordActivity extends BaseActivity {
             ToastMessage.toastWarn("两次密码应该一致...", true);
             return;
         }
-        Person person = new Person();
-        person.setAccount(getIntent().getStringExtra("account"));
-        person.setPassword(MD5Utils.encode(editPassword.getText().toString()));
-        person.setIntroduce("欢迎使用Everyday,祝你玩得愉快!");
-        person.setNickName("EveryDay用户");
-        person.save(new SaveListener<String>() {
+        final Person personInsert = new Person();
+        personInsert.setAccount(getIntent().getStringExtra("account"));
+        personInsert.setPassword(MD5Utils.encode(editPassword.getText().toString()));
+        personInsert.setIntroduce("欢迎使用Everyday,祝你玩得愉快!");
+        personInsert.setNickName("EveryDay用户");
+        personInsert.save(new SaveListener<String>() {
             @Override
             public void done(String s, BmobException e) {
-                if (e == null) {
+                if (e == null) {//提交到远程服务器成功
                     ToastMessage.toastSuccess("注册成功...", true);
                     Bundle bundle = new Bundle();
                     bundle.putString("account", getIntent().getStringExtra("account"));

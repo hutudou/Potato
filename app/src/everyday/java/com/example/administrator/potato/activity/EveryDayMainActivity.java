@@ -23,6 +23,7 @@ import com.example.administrator.potato.fragment.HistoryFragment;
 import com.example.administrator.potato.fragment.RecordFragment;
 import com.example.administrator.potato.fragment.SecretFragment;
 import com.example.administrator.potato.fragment.WeatherFragment;
+import com.example.administrator.potato.gen.HistoryLoginUserDao;
 import com.example.administrator.potato.service.GetLocationService;
 import com.example.administrator.potato.utils.BottomNavigationViewUtil;
 import com.example.administrator.potato.utils.DataCleanUtils;
@@ -52,6 +53,7 @@ public class EveryDayMainActivity extends BaseActivity {
     private Handler handler;
     private List<Fragment> fragmentList;
     private MenuItem menuItem;
+    private HistoryLoginUserDao historyLoginUserDao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -207,7 +209,6 @@ public class EveryDayMainActivity extends BaseActivity {
                     toolbar.setVisibility(View.GONE);
                 } else {
                     toolbar.setVisibility(View.VISIBLE);
-
                 }
                 menuItem = bottomNavigationView.getMenu().getItem(position);
                 menuItem.setChecked(true);
@@ -218,7 +219,6 @@ public class EveryDayMainActivity extends BaseActivity {
 
             }
         });
-
         //绑定viewPager
         fragmentList = new ArrayList<>();
         fragmentList.add(new HistoryFragment());

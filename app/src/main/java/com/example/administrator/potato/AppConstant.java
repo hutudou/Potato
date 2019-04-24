@@ -31,4 +31,8 @@ public class AppConstant {
     public static final String IS_SHOW_COLOR_WELCOME = "isShowColorWelcome";
     //Bmob Application Id
     public static final String BMOB_APPLICATION_ID = "28caea759127ddd035530fc5e87d104e";
+    //账号
+    public static final String ACCOUNT = "account";
+    //密码
+    public static final String PASSWORD = "password";
 }

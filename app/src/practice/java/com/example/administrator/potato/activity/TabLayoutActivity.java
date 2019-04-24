@@ -12,8 +12,6 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class TabLayoutActivity extends BaseActivity {
-
-
     @Bind(R.id.tabLayout)
     TabLayout tabLayout;
     @Bind(R.id.toolbar)

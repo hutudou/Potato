@@ -71,12 +71,10 @@ public class MainActivity extends BaseActivity {
             public void onAlreadyGet(Permission permission) {
                 Toast.makeText(getApplicationContext(), "权限已经获取了哟", Toast.LENGTH_SHORT).show();
             }
-
             @Override
             public void onPartRefuse(Permission permission) {
                 Toast.makeText(getApplicationContext(), "权限已经被拒绝了哟", Toast.LENGTH_SHORT).show();
             }
-
             @Override
             public void onCompleteRefuse(Permission permission) {
                 Toast.makeText(getApplicationContext(), "权限已经被永久拒绝了哟", Toast.LENGTH_SHORT).show();

@@ -1,5 +1,6 @@
 package com.example.administrator.potato.activity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
@@ -16,9 +17,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.transition.Explode;
 import android.util.TypedValue;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.administrator.potato.AppConstant;
@@ -57,7 +61,55 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        hideInputWhenTouchOtherView(this, ev);
+        return super.dispatchTouchEvent(ev);
+    }
 
+    /**
+     *      * 当点击其他View时隐藏软键盘
+     *      * @param activity
+     *      * @param ev
+     *      * @param excludeViews  点击这些View不会触发隐藏软键盘动作
+     *
+     */
+    public static final void hideInputWhenTouchOtherView(Activity activity, MotionEvent ev) {
+
+
+        if (ev.getAction() == MotionEvent.ACTION_DOWN) {
+            View v = activity.getCurrentFocus();
+            if (isShouldHideInput(v, ev)) {
+                InputMethodManager inputMethodManager = (InputMethodManager)
+                        activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+                if (inputMethodManager != null) {
+                    inputMethodManager.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                }
+            }
+        }
+    }
+    public static final boolean isShouldHideInput(View v, MotionEvent event) {
+        if (v != null && (v instanceof EditText)) {
+            return !isTouchView(v, event);
+        }
+        return false;
+    }
+    public static final boolean isTouchView(View view, MotionEvent event) {
+        if (view == null || event == null) {
+            return false;
+        }
+        int[] leftTop = {0, 0};
+        view.getLocationInWindow(leftTop);
+        int left = leftTop[0];
+        int top = leftTop[1];
+        int bottom = top + view.getHeight();
+        int right = left + view.getWidth();
+        if (event.getRawX() > left && event.getRawX() < right
+                && event.getRawY() > top && event.getRawY() < bottom) {
+            return true;
+        }
+        return false;
+    }
     /**
      * 设置状态栏的颜色与toolbar一致 只有安卓5.0以上才能用
      */

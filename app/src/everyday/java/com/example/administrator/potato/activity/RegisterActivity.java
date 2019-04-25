@@ -1,5 +1,6 @@
 package com.example.administrator.potato.activity;
 
+import android.app.ActivityOptions;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -12,16 +13,34 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.administrator.potato.AppConstant;
 import com.example.administrator.potato.R;
+import com.example.administrator.potato.bmobbeen.Person;
+import com.example.administrator.potato.utils.MD5Utils;
 import com.example.administrator.potato.utils.NormalUtils;
+import com.example.administrator.potato.utils.SharedPreferencesUtil;
 import com.example.administrator.potato.utils.ToastMessage;
 import com.mob.MobSDK;
+
+import java.util.concurrent.TimeUnit;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.datatype.BmobQueryResult;
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.SQLQueryListener;
 import cn.smssdk.EventHandler;
 import cn.smssdk.SMSSDK;
+import io.reactivex.Flowable;
+import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
 
 public class RegisterActivity extends BaseActivity {
 
@@ -33,6 +52,9 @@ public class RegisterActivity extends BaseActivity {
     EditText editCode;
     @Bind(R.id.buttonCode)
     Button buttonCode;
+    private static final int RESTTIME = 60;
+    //监听验证码是否可点击
+    private Disposable mDisposable;
     //存放正确的phone
     private String phone;
     EventHandler eventHandler = new EventHandler() {
@@ -88,6 +110,9 @@ public class RegisterActivity extends BaseActivity {
     protected void onDestroy() {
         super.onDestroy();
         SMSSDK.unregisterEventHandler(eventHandler);
+        if (mDisposable != null) {//活动销毁后取消心跳任务
+            mDisposable.dispose();
+        }
     }
 
     @Override
@@ -138,12 +163,56 @@ public class RegisterActivity extends BaseActivity {
         }
     };
 
+
     @OnClick({R.id.buttonCode, R.id.buttonNext})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.buttonCode:
-                // 请求验证码，其中country表示国家代码，如“86”；phone表示手机号码，如“13800138000”
-                SMSSDK.getVerificationCode("86", phone);
+                Observable.create(new ObservableOnSubscribe<Boolean>() {//先验证用户是否注册 将结果以true/false方式传递下去
+                    @Override
+                    public void subscribe(final ObservableEmitter<Boolean> emitter) throws Exception {
+                        //根据手机号查找数据库中是否存在该用户
+                        BmobQuery<Person> queryPerson = new BmobQuery<>();
+                        queryPerson.doSQLQuery("select * from Person where account='" + editPhoneNumber.getText().toString() + "'", new SQLQueryListener<Person>() {
+                            @Override
+                            public void done(BmobQueryResult<Person> bmobQueryResult, BmobException e) {
+                                if (e == null) {
+                                    emitter.onNext(bmobQueryResult.getResults().size() != 0);
+                                } else {
+                                    ToastMessage.toastError("与服务器连接失败,原因是:" + e.getLocalizedMessage(), false);
+                                }
+                            }
+                        });
+                    }
+                }).subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe(new Consumer<Boolean>() {
+                            @Override
+                            public void accept(Boolean aBoolean) throws Exception {
+                                if (aBoolean) {
+                                    ToastMessage.toastWarn("当前用户已注册,请勿重复注册...", false);
+                                } else {
+                                    // 请求验证码，其中country表示国家代码，如“86”；phone表示手机号码，如“13800138000”
+                                    SMSSDK.getVerificationCode("86", phone);
+                                    buttonCode.setEnabled(false);
+                                    mDisposable = Flowable.interval(1, TimeUnit.SECONDS)
+                                            .subscribeOn(Schedulers.io())
+                                            .observeOn(AndroidSchedulers.mainThread())
+                                            .subscribe(new Consumer<Long>() {
+                                                @Override
+                                                public void accept(Long aLong) throws Exception {
+                                                    if (RESTTIME - 1 - aLong == 0) {//六十秒计时到了之后需要让button可点击
+                                                        buttonCode.setEnabled(true);
+                                                        buttonCode.setText("获取验证码");
+                                                        mDisposable.dispose();
+                                                    } else {
+                                                        buttonCode.setText(String.format("%d秒", RESTTIME - 1 - aLong));
+                                                    }
+                                                }
+                                            });
+                                }
+                            }
+                        }).dispose();
                 break;
             case R.id.buttonNext:
                 if (TextUtils.isEmpty(phone)) {

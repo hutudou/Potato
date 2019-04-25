@@ -14,6 +14,8 @@ public class Secret extends BmobObject {
     private String comment;
     private String nickName;
     private int id;
+    private String account;
+
     public int getSpotGoodNumber() {
         return spotGoodNumber;
     }
@@ -62,4 +64,11 @@ public class Secret extends BmobObject {
         this.id = id;
     }
 
+    public String getAccount() {
+        return account;
+    }
+
+    public void setAccount(String account) {
+        this.account = account;
+    }
 }

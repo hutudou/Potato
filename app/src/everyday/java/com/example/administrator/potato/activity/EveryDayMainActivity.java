@@ -15,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.transition.Explode;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.administrator.potato.AppConstant;
 import com.example.administrator.potato.R;
@@ -261,6 +262,14 @@ public class EveryDayMainActivity extends BaseActivity {
         toggle.syncState();
         //更改toolBar和navigation时左侧的图标
         toolbar.setNavigationIcon(R.drawable.icon_vector_menu);
+        //设置头部view
+        View headView = navigationView.getHeaderView(0);
+        if (headView != null) {
+            TextView textNickName = headView.findViewById(R.id.textNickName);
+            textNickName.setText((String) SharedPreferencesUtil.getData(AppConstant.NICKNAME, "EveryDay用户"));
+            TextView textIntroduce = headView.findViewById(R.id.textIntroduce);
+            textIntroduce.setText((String) SharedPreferencesUtil.getData(AppConstant.INTRODUCE, "欢迎使用EveryDay,祝您用得开心!!!"));
+        }
     }
 
 

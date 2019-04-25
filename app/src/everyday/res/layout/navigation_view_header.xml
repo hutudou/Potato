@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="180dp"
-    android:orientation="vertical"
-    android:background="?attr/toolBarColor">
+    android:background="?attr/toolBarColor"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,23 +20,26 @@
             android:src="@drawable/image_header" />
 
         <TextView
+            android:id="@+id/textNickName"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp"
             android:gravity="center_vertical"
             android:text="土豆"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_size_24" />
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_20" />
     </LinearLayout>
 
     <TextView
-        android:layout_marginTop="18dp"
-        android:layout_marginLeft="18dp"
-        android:layout_marginStart="18dp"
-        android:id="@+id/textNote"
+        android:id="@+id/textIntroduce"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="至近至远东西，至深至浅清溪。" />
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="18dp"
+        android:text="至近至远东西，至深至浅清溪。"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_15" />
 
 </LinearLayout>

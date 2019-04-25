@@ -12,8 +12,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
+import com.example.administrator.potato.AppConstant;
 import com.example.administrator.potato.R;
 import com.example.administrator.potato.bmobbeen.Secret;
+import com.example.administrator.potato.utils.SharedPreferencesUtil;
 import com.example.administrator.potato.utils.ToastMessage;
 
 import butterknife.Bind;
@@ -73,6 +75,8 @@ public class AddSecretActivity extends BaseActivity {
                         } else {
                             secret.setNickName(editSecretName.getText().toString());
                         }
+                        //添加账号
+                        secret.setAccount((String) SharedPreferencesUtil.getData(AppConstant.ACCOUNT, ""));
                         secret.save(new SaveListener<String>() {
                             @Override
                             public void done(String s, BmobException e) {

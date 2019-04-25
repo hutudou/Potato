@@ -198,7 +198,7 @@ public abstract class BaseFragment extends android.support.v4.app.Fragment {
      */
     protected void gotoActivity(Class<?> clazz, Bundle bundle) {
         Intent intent = new Intent(MyApplication.getContext(), clazz);
-        startActivity(intent, bundle);
+        mContext.startActivity(intent, bundle);
     }
 
     /**

@@ -95,6 +95,7 @@ public class LoginActivity extends BaseActivity {
             ToastMessage.toastError("请输入密码...", false);
             return;
         }
+        //根据手机号查找数据库中是否存在该用户
         BmobQuery<Person> queryPerson = new BmobQuery<>();
         queryPerson.doSQLQuery("select * from Person where account='" + editAccount.getText().toString() + "'", new SQLQueryListener<Person>() {
             @Override
@@ -102,8 +103,11 @@ public class LoginActivity extends BaseActivity {
                 if (e == null) {
                     if (bmobQueryResult.getResults().size() != 0) {
                         if (bmobQueryResult.getResults().get(0).getPassword().equals(MD5Utils.encode(editPassword.getText().toString()))) {
+                            //存储当前用户登陆信息
                             SharedPreferencesUtil.saveData(AppConstant.ACCOUNT, editAccount.getText().toString());
                             SharedPreferencesUtil.saveData(AppConstant.PASSWORD, editPassword.getText().toString());
+                            SharedPreferencesUtil.saveData(AppConstant.NICKNAME, bmobQueryResult.getResults().get(0).getNickName());
+                            SharedPreferencesUtil.saveData(AppConstant.INTRODUCE, bmobQueryResult.getResults().get(0).getIntroduce());
                             ToastMessage.toastSuccess("登陆成功", false);
                             gotoActivity(EveryDayMainActivity.class, ActivityOptions.makeSceneTransitionAnimation(LoginActivity.this).toBundle(), false);
                         } else {

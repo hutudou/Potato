@@ -95,6 +95,7 @@ public class HistoryFragment extends BaseFragment {
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("event", adapter.getItem(position));
                 gotoActivity(HistoryDetailedActivity.class, bundle);
+//                gotoActivity(HistoryDetailedActivity.class);
             }
 
             @Override

@@ -95,11 +95,13 @@ public class LoginActivity extends BaseActivity {
             ToastMessage.toastError("请输入密码...", false);
             return;
         }
+        showWaitDialog(this);
         //根据手机号查找数据库中是否存在该用户
         BmobQuery<Person> queryPerson = new BmobQuery<>();
         queryPerson.doSQLQuery("select * from Person where account='" + editAccount.getText().toString() + "'", new SQLQueryListener<Person>() {
             @Override
             public void done(BmobQueryResult<Person> bmobQueryResult, BmobException e) {
+                hideWaitDialog();
                 if (e == null) {
                     if (bmobQueryResult.getResults().size() != 0) {
                         if (bmobQueryResult.getResults().get(0).getPassword().equals(MD5Utils.encode(editPassword.getText().toString()))) {

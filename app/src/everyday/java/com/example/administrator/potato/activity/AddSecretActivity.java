@@ -64,6 +64,7 @@ public class AddSecretActivity extends BaseActivity {
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.submit:
+                        showWaitDialog(AddSecretActivity.this);
                         if (TextUtils.isEmpty(editSecretContent.getText().toString())) {
                             ToastMessage.toastError("发布内容不能为空", true);
                             break;
@@ -80,6 +81,7 @@ public class AddSecretActivity extends BaseActivity {
                         secret.save(new SaveListener<String>() {
                             @Override
                             public void done(String s, BmobException e) {
+                                hideWaitDialog();
                                 if (e == null) {
                                     ToastMessage.toastSuccess("发表成功...", true);
                                     finish();

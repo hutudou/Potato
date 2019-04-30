@@ -1,5 +1,7 @@
 package com.example.administrator.potato.fragment;
 
+import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
@@ -10,9 +12,11 @@ import android.support.annotation.MenuRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.Window;
 import android.widget.TextView;
 
 import com.example.administrator.potato.R;
@@ -36,6 +40,8 @@ public abstract class BaseFragment extends android.support.v4.app.Fragment {
     private boolean isViewVisibility = false;
     //是否是第一次加载
     private boolean isFirstLoad = true;
+
+    private ProgressDialog progressDialog;
 
     @Override
     public void onAttach(Context context) {
@@ -186,10 +192,38 @@ public abstract class BaseFragment extends android.support.v4.app.Fragment {
      * @param clazz 要跳转的活动
      */
     protected void gotoActivity(Class<?> clazz) {
-        Intent intent = new Intent(MyApplication.getContext(), clazz);
+        Intent intent = new Intent(getActivity(), clazz);
         startActivity(intent);
     }
 
+    //初始化网络请求dialog
+    private void initWaitDialog(Fragment fragment) {
+        progressDialog = new ProgressDialog(fragment.getContext());
+        //无标题
+        progressDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //设置手指点击dialog不消失
+        progressDialog.setCanceledOnTouchOutside(false);
+        //设置dialog的内容
+        progressDialog.setMessage("正在全力加载中...");
+        //设置dialog样式
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+    }
+
+    //bmob内部封装了okhttp请求 所以需要手动添加dialog来提示用户正在进行网络请求
+    protected void showWaitDialog(Fragment fragment) {
+        initWaitDialog(fragment);
+        //dialog不为空且不在展示的状态才显示
+        if (progressDialog != null && !progressDialog.isShowing()) {
+            progressDialog.show();
+        }
+    }
+
+    protected void hideWaitDialog() {
+        if (progressDialog != null && progressDialog.isShowing()) {
+            progressDialog.dismiss();
+            progressDialog = null;
+        }
+    }
     /**
      * 活动跳转
      *
@@ -197,8 +231,9 @@ public abstract class BaseFragment extends android.support.v4.app.Fragment {
      * @param bundle 参数
      */
     protected void gotoActivity(Class<?> clazz, Bundle bundle) {
-        Intent intent = new Intent(MyApplication.getContext(), clazz);
-        mContext.startActivity(intent, bundle);
+        Intent intent = new Intent(getActivity(), clazz);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 
     /**
@@ -209,7 +244,7 @@ public abstract class BaseFragment extends android.support.v4.app.Fragment {
      * @param action action
      */
     protected void gotoActivity(Class<?> clazz, Bundle bundle, String action) {
-        Intent intent = new Intent(MyApplication.getContext(), clazz);
+        Intent intent = new Intent(getActivity(), clazz);
         if (bundle != null) {
             intent.putExtras(bundle);
         }

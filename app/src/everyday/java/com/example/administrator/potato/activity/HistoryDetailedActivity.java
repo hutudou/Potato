@@ -43,9 +43,9 @@ public class HistoryDetailedActivity extends BaseActivity {
 
         if (getIntent().hasExtra("event")) {
             historyInfoResults = (HistoryInfoResults) getIntent().getSerializableExtra("event");
+            textTitle.setText(historyInfoResults.getTitle());
+            textContent.setText(historyInfoResults.getEvent());
         }
-        textTitle.setText(historyInfoResults.getTitle());
-        textContent.setText(historyInfoResults.getEvent());
     }
 
     @Override

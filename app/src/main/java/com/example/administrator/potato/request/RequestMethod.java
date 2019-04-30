@@ -5,7 +5,6 @@ import android.content.Context;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.AbsCallback;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.Map;
@@ -32,6 +31,7 @@ public class RequestMethod {
                 .params(map)
                 .execute(callable);
     }
+
 
     /**
      * post请求上传map

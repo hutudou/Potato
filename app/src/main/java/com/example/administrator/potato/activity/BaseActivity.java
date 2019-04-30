@@ -1,6 +1,7 @@
 package com.example.administrator.potato.activity;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
@@ -36,6 +37,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     //上下文对象
     protected Context mContext;
 
+    private ProgressDialog progressDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,14 +71,12 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     /**
-     *      * 当点击其他View时隐藏软键盘
-     *      * @param activity
-     *      * @param ev
-     *      * @param excludeViews  点击这些View不会触发隐藏软键盘动作
-     *
+     * * 当点击其他View时隐藏软键盘
+     * * @param activity
+     * * @param ev
+     * * @param excludeViews  点击这些View不会触发隐藏软键盘动作
      */
     public static final void hideInputWhenTouchOtherView(Activity activity, MotionEvent ev) {
-
 
         if (ev.getAction() == MotionEvent.ACTION_DOWN) {
             View v = activity.getCurrentFocus();
@@ -88,12 +89,43 @@ public abstract class BaseActivity extends AppCompatActivity {
             }
         }
     }
+
+    //初始化网络请求dialog
+    private void initWaitDialog(Activity activity) {
+        progressDialog = new ProgressDialog(activity);
+        //无标题
+        progressDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //设置手指点击dialog不消失
+        progressDialog.setCanceledOnTouchOutside(false);
+        //设置dialog的内容
+        progressDialog.setMessage("正在全力加载中...");
+        //设置dialog样式
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+    }
+
+    //bmob内部封装了okhttp请求 所以需要手动添加dialog来提示用户正在进行网络请求
+    protected void showWaitDialog(Activity activity) {
+        initWaitDialog(activity);
+        //dialog不为空且不在展示的状态才显示
+        if (progressDialog != null && !progressDialog.isShowing()) {
+            progressDialog.show();
+        }
+    }
+
+    protected void hideWaitDialog() {
+        if (progressDialog != null && progressDialog.isShowing()) {
+            progressDialog.dismiss();
+            progressDialog = null;
+        }
+    }
+
     public static final boolean isShouldHideInput(View v, MotionEvent event) {
         if (v != null && (v instanceof EditText)) {
             return !isTouchView(v, event);
         }
         return false;
     }
+
     public static final boolean isTouchView(View view, MotionEvent event) {
         if (view == null || event == null) {
             return false;
@@ -110,6 +142,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
         return false;
     }
+
     /**
      * 设置状态栏的颜色与toolbar一致 只有安卓5.0以上才能用
      */
@@ -192,6 +225,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         });
 
     }
+
 
     /**
      * 初始化toolBar 完整版 左右两边都需要设置
@@ -283,6 +317,7 @@ public abstract class BaseActivity extends AppCompatActivity {
             this.finish();
         }
     }
+
 
     /**
      * 活动跳转

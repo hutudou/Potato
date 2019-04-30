@@ -75,6 +75,7 @@ public class SecretFragment extends BaseFragment {
 
     @Override
     protected void initView() {
+        showWaitDialog(SecretFragment.this);
         adapter = new CommonRecyclerViewAdapter<Secret>(getActivity(), R.layout.recycler_secret_item) {
             @Override
             public void convert(BaseRecyclerViewHolder holder, final Secret item, final int position) {
@@ -92,11 +93,13 @@ public class SecretFragment extends BaseFragment {
                 imageView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        showWaitDialog(SecretFragment.this);
                         Secret secret = new Secret();
                         secret.setSpotGoodNumber(item.getSpotGoodNumber() + 1);
                         secret.update(adapter.getItem(position).getObjectId(), new UpdateListener() {
                             @Override
                             public void done(BmobException e) {
+                                hideWaitDialog();
                                 if (e == null) {
                                     adapter.getItem(position).setSpotGoodNumber(adapter.getItem(position).getSpotGoodNumber() + 1);
                                     ToastMessage.toastSuccess("点赞成功...", true);
@@ -132,6 +135,7 @@ public class SecretFragment extends BaseFragment {
         bmobQuery.findObjects(new FindListener<Secret>() {
             @Override
             public void done(List<Secret> list, BmobException e) {
+                hideWaitDialog();
                 if (e == null) {
                     adapter.fillList(list);
                 } else {

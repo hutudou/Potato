@@ -14,7 +14,7 @@
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c77175e4-a2f6-473a-819f-7317ed910537" name="Default" comment="none">
@@ -26,19 +26,17 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/activity/AddSecretActivity.java" afterPath="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/activity/AddSecretActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/activity/HistoryDetailedActivity.java" afterPath="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/activity/HistoryDetailedActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/activity/EveryDayMainActivity.java" afterPath="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/activity/EveryDayMainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/activity/LoginActivity.java" afterPath="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/activity/LoginActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/activity/RegisterActivity.java" afterPath="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/activity/RegisterActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/fragment/HistoryFragment.java" afterPath="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/fragment/HistoryFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/fragment/SecretFragment.java" afterPath="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/fragment/SecretFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/AppConstant.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/AppConstant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/activity/BaseActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/activity/BaseActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/fragment/BaseFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/fragment/BaseFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/request/RequestMethod.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/request/RequestMethod.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/utils/Apploger.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/utils/Apploger.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/fragment/WeatherFragment.java" afterPath="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/fragment/WeatherFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/service/GetLocationService.java" afterPath="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/service/GetLocationService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/interfaces/BDLocationInterface.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/interfaces/BDLocationInterface.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/utils/PermissionUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/utils/PermissionUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/utils/baidumap/BDLocationListener.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/utils/baidumap/BDLocationListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/utils/baidumap/BDLocationParameter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/utils/baidumap/BDLocationParameter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/practice/java/com/example/administrator/potato/activity/UseBaiDuMapActivity.java" afterPath="$PROJECT_DIR$/app/src/practice/java/com/example/administrator/potato/activity/UseBaiDuMapActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle.properties" afterPath="$PROJECT_DIR$/gradle.properties" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -85,92 +83,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BaseActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/activity/BaseActivity.java">
+      <file leaf-file-name="LoginActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/activity/LoginActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+            <state relative-caret-position="357">
+              <caret line="114" column="25" lean-forward="false" selection-start-line="114" selection-start-column="25" selection-end-line="114" selection-end-column="25" />
               <folding>
-                <element signature="method#showWaitDialog#0;class#BaseActivity#0" expanded="false" />
-                <element signature="method#hideWaitDialog#0;class#BaseActivity#0" expanded="false" />
-                <element signature="docComment;method#initStateBar#0;class#BaseActivity#0" expanded="false" />
-                <element signature="method#initStateBar#0;class#BaseActivity#0" expanded="false" />
-                <element signature="e#5031#5041#0" expanded="false" />
-                <element signature="e#5307#5407#0" expanded="false" />
-                <element signature="method#getColorPrimary#0;class#BaseActivity#0" expanded="false" />
-                <element signature="docComment;method#initView#0;class#BaseActivity#0" expanded="false" />
-                <element signature="docComment;method#initData#0;class#BaseActivity#0" expanded="false" />
-                <element signature="docComment;method#showConfirmDialog#0;class#BaseActivity#0" expanded="false" />
-                <element signature="docComment;method#initToolBar#0;class#BaseActivity#0" expanded="false" />
-                <element signature="method#initToolBar#0;class#BaseActivity#0" expanded="false" />
-                <element signature="e#8492#8514#0" expanded="false" />
-                <element signature="docComment;method#initToolBar#1;class#BaseActivity#0" expanded="false" />
-                <element signature="method#initToolBar#1;class#BaseActivity#0" expanded="false" />
-                <element signature="docComment;method#gotoActivity#0;class#BaseActivity#0" expanded="false" />
-                <element signature="method#gotoActivity#0;class#BaseActivity#0" expanded="false" />
-                <element signature="docComment;method#gotoActivity#1;class#BaseActivity#0" expanded="false" />
-                <element signature="docComment;method#gotoActivity#2;class#BaseActivity#0" expanded="false" />
-                <element signature="docComment;method#showSnackBar#0;class#BaseActivity#0" expanded="false" />
-                <element signature="method#showSnackBar#0;class#BaseActivity#0" expanded="false" />
-                <element signature="docComment;class#ISnackBarClickEvent#0;class#BaseActivity#0" expanded="false" />
-                <element signature="class#ISnackBarClickEvent#0;class#BaseActivity#0" expanded="false" />
-                <element signature="docComment;class#ConfirmDialogInterface#0;class#BaseActivity#0" expanded="false" />
-                <element signature="class#ConfirmDialogInterface#0;class#BaseActivity#0" expanded="false" />
+                <element signature="method#onCreate#0;class#LoginActivity#0" expanded="false" />
+                <element signature="e#3836#3837#0" expanded="true" />
+                <element signature="e#3902#3903#0" expanded="true" />
+                <element signature="method#onViewClicked#0;class#LoginActivity#0" expanded="false" />
+                <element signature="e#7984#7985#0" expanded="true" />
+                <element signature="e#8026#8027#0" expanded="true" />
+                <element signature="method#onTextForgetPassWord#0;class#LoginActivity#0" expanded="false" />
+                <element signature="method#onTextRegister#0;class#LoginActivity#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/fragment/BaseFragment.java">
+      <file leaf-file-name="WeatherFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/fragment/WeatherFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="199" column="52" lean-forward="false" selection-start-line="199" selection-start-column="52" selection-end-line="199" selection-end-column="52" />
-              <folding>
-                <element signature="docComment;class#BaseFragment#0" expanded="false" />
-                <element signature="method#onAttach#0;class#BaseFragment#0" expanded="false" />
-                <element signature="method#onViewCreated#0;class#BaseFragment#0" expanded="false" />
-                <element signature="method#onActivityCreated#0;class#BaseFragment#0" expanded="false" />
-                <element signature="method#onDestroyView#0;class#BaseFragment#0" expanded="false" />
-                <element signature="method#setUserVisibleHint#0;class#BaseFragment#0" expanded="false" />
-                <element signature="method#lozyLoad#0;class#BaseFragment#0" expanded="false" />
-                <element signature="docComment;method#initView#0;class#BaseFragment#0" expanded="false" />
-                <element signature="docComment;method#initData#0;class#BaseFragment#0" expanded="false" />
-                <element signature="docComment;method#showConfirmDialog#0;class#BaseFragment#0" expanded="false" />
-                <element signature="method#showConfirmDialog#0;class#BaseFragment#0" expanded="false" />
-                <element signature="docComment;method#initToolBar#0;class#BaseFragment#0" expanded="false" />
-                <element signature="method#initToolBar#0;class#BaseFragment#0" expanded="false" />
-                <element signature="e#5058#5080#0" expanded="false" />
-                <element signature="docComment;method#gotoActivity#0;class#BaseFragment#0" expanded="false" />
-                <element signature="method#gotoActivity#0;class#BaseFragment#0" expanded="false" />
-                <element signature="docComment;method#gotoActivity#1;class#BaseFragment#0" expanded="false" />
-                <element signature="method#gotoActivity#1;class#BaseFragment#0" expanded="false" />
-                <element signature="docComment;method#gotoActivity#2;class#BaseFragment#0" expanded="false" />
-                <element signature="method#gotoActivity#2;class#BaseFragment#0" expanded="false" />
-                <element signature="docComment;method#showSnackBar#0;class#BaseFragment#0" expanded="false" />
-                <element signature="method#showSnackBar#0;class#BaseFragment#0" expanded="false" />
-                <element signature="docComment;class#ISnackBarClickEvent#0;class#BaseFragment#0" expanded="false" />
-                <element signature="class#ISnackBarClickEvent#0;class#BaseFragment#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddSecretActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/activity/AddSecretActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="79" column="64" lean-forward="false" selection-start-line="79" selection-start-column="64" selection-end-line="79" selection-end-column="64" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SecretFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/fragment/SecretFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="54" column="53" lean-forward="false" selection-start-line="54" selection-start-column="53" selection-end-line="54" selection-end-column="53" />
+            <state relative-caret-position="-483">
+              <caret line="178" column="56" lean-forward="false" selection-start-line="178" selection-start-column="56" selection-end-line="178" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -186,56 +122,57 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RequestMethod.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/request/RequestMethod.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DateUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/utils/DateUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppConstant.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/AppConstant.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/activity/LoginActivity.java">
+      <file leaf-file-name="PermissionUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/utils/PermissionUtils.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="267">
-              <caret line="99" column="56" lean-forward="false" selection-start-line="99" selection-start-column="56" selection-end-line="99" selection-end-column="56" />
+              <caret line="24" column="33" lean-forward="false" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WelcomeActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/activity/WelcomeActivity.java">
+      <file leaf-file-name="UseBaiDuMapActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/practice/java/com/example/administrator/potato/activity/UseBaiDuMapActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1909">
-              <caret line="112" column="108" lean-forward="false" selection-start-line="112" selection-start-column="95" selection-end-line="112" selection-end-column="108" />
+            <state relative-caret-position="704">
+              <caret line="95" column="23" lean-forward="false" selection-start-line="82" selection-start-column="19" selection-end-line="95" selection-end-column="23" />
               <folding>
-                <element signature="imports" expanded="false" />
+                <element signature="e#1639#1640#0" expanded="true" />
+                <element signature="e#1679#1680#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BDLocationListener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/utils/baidumap/BDLocationListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="736">
+              <caret line="42" column="34" lean-forward="false" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BDLocationInterface.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/interfaces/BDLocationInterface.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="11" column="10" lean-forward="false" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BDLocationParameter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/utils/baidumap/BDLocationParameter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="15" column="3" lean-forward="false" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -255,7 +192,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>App</find>
       <find>AppT</find>
       <find>AppTh</find>
       <find>AppTheme</find>
@@ -285,6 +221,7 @@
       <find>gotoActivity</find>
       <find>init</find>
       <find>hideWa</find>
+      <find>hide</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -3100,14 +3037,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/bmobbeen/Person.java" />
-        <option value="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/fragment/WeatherFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/utils/MD5Utils.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/activity/WelcomeActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/practice/res/layout/activity_tab_layout.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/adapter/FullyGridLayoutManager.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/icon_vector_delete.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/gv_filter_image.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/adapter/GridImageAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/practice/java/com/example/administrator/potato/activity/PictureSelectorActivity.java" />
         <option value="$USER_HOME$/.gradle/caches/transforms-1/files-1.1/multidex-1.0.1.aar/b1912507831cc99ca6feecacc9f6826d/jars/classes.jar!/android/support/multidex/MultiDexApplication.class" />
@@ -3135,14 +3064,11 @@
         <option value="$USER_HOME$/.gradle/caches/transforms-1/files-1.1/bmob-sdk-3.6.9.aar/bb3727ecc53ee30ac2a1c09df1f2c52b/jars/libs/BmobSDK_3.6.9_20190220.jar!/cn/bmob/v3/BmobQuery.class" />
         <option value="$PROJECT_DIR$/app/src/practice/java/com/example/administrator/potato/activity/RxJavaActivity.java" />
         <option value="$PROJECT_DIR$/app/src/everyday/res/layout/activity_login.xml" />
-        <option value="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/activity/EveryDayMainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/everyday/res/layout/navigation_view_header.xml" />
         <option value="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/bmobbeen/Secret.java" />
         <option value="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/fragment/HistoryFragment.java" />
         <option value="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/activity/HistoryDetailedActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/activity/LoginActivity.java" />
         <option value="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/activity/SetPasswordActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/activity/RegisterActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/activity/BaseActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/AppConstant.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/request/RequestMethod.java" />
@@ -3150,6 +3076,17 @@
         <option value="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/activity/AddSecretActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/fragment/BaseFragment.java" />
         <option value="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/fragment/SecretFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/activity/RegisterActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/activity/EveryDayMainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/interfaces/BDLocationInterface.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/utils/baidumap/BDLocationListener.java" />
+        <option value="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/service/GetLocationService.java" />
+        <option value="$PROJECT_DIR$/app/src/practice/java/com/example/administrator/potato/activity/UseBaiDuMapActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/utils/baidumap/BDLocationParameter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/utils/PermissionUtils.java" />
+        <option value="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/activity/LoginActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/fragment/WeatherFragment.java" />
         <option value="$PROJECT_DIR$/gradle.properties" />
       </list>
     </option>
@@ -3194,7 +3131,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -3207,9 +3143,32 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidBuildScriptsGroupNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="potato" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="potato" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manifests" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidManifestsGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -3516,7 +3475,103 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="example" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="administrator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="potato" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="baidumap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="potato" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="potato" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="everyday" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="potato" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="potato" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="everyday" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="example" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="administrator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="potato" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -3646,6 +3701,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -3655,8 +3712,8 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="sync.plugin.last.upgrade.timestamp" value="1540360433002" />
     <property name="device.picker.selection" value="192.168.1.120:5555" />
-    <property name="SearchEverywhereHistoryKey" value="Base&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/fragment/BaseFragment.java&#10;Add&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/activity/AddSecretActivity.java&#10;Login&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/activity/LoginActivity.java&#10;date&#9;PSI&#9;JAVA://com.example.administrator.potato.utils.DateUtils&#10;we&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/activity/WelcomeActivity.java&#10;login&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/activity/LoginActivity.java&#10;req&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/request/RequestMethod.java&#10;Histor&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/fragment/HistoryFragment.java&#10;b&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/activity/BaseActivity.java&#10;re&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/activity/RegisterActivity.java&#10;String&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/callback/StringDialogCallback.java&#10;BaseF&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/fragment/BaseFragment.java&#10;BaseFra&#9;PSI&#9;JAVA://com.example.administrator.potato.fragment.BaseFragment&#10;add&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/activity/AddSecretActivity.java&#10;SecretFragment&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/fragment/SecretFragment.java&#10;HistoryF&#9;PSI&#9;JAVA://com.example.administrator.potato.fragment.HistoryFragment&#10;Eve&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/activity/EveryDayMainActivity.java&#10;wel&#9;PSI&#9;JAVA://com.example.administrator.potato.activity.WelcomeActivity&#10;reg&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/activity/RegisterActivity.java&#10;Some&#9;PSI&#9;JAVA://com.example.administrator.potato.utils.SomeCode&#10;Main&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/java/com/example/administrator/potato/activity/MainActivity.java&#10;Rxjava&#9;PSI&#9;JAVA://com.example.administrator.potato.activity.RxJavaActivity&#10;main&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/java/com/example/administrator/potato/activity/MainActivity.java&#10;Appc&#9;PSI&#9;JAVA://com.example.administrator.potato.AppConstant&#10;dateUt&#9;PSI&#9;JAVA://com.example.administrator.potato.utils.DateUtils&#10;myA&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/application/MyApplication.java&#10;con&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/res/drawable/button_shape_confirm.xml&#10;setPa&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/activity/SetPasswordActivity.java&#10;myApp&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/application/MyApplication.java&#10;SetPass&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/activity/SetPasswordActivity.java&#10;setPasswor&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/activity/SetPasswordActivity.java&#10;Tab&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/java/com/example/administrator/potato/activity/TabLayoutActivity.java&#10;dialog_date_picker&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/res/layout/dialog_date_picker.xml&#10;po&#9;PSI&#9;JAVA://com.example.administrator.potato.activity.PopupWindowActivity&#10;confir&#9;PSI&#9;JAVA://com.example.administrator.potato.activity.BaseActivity.ConfirmDialogInterface&#10;mainAc&#9;PSI&#9;JAVA://com.example.administrator.potato.activity.MainActivity&#10;weather&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/fragment/WeatherFragment.java&#10;icon_vector_d&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/res/drawable/icon_vector_delete.xml&#10;no&#9;PSI&#9;JAVA://com.example.administrator.potato.utils.NotificationUtil&#10;base&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/activity/BaseActivity.java&#10;my&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/application/MyApplication.java&#10;Re&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/activity/RegisterActivity.java&#10;App&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/AppConstant.java&#10;My&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/application/MyApplication.java&#10;sty&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/res/values/styles.xml&#10;MyRe&#9;PSI&#9;JAVA://android.support.v4.os.ResultReceiver.MyResultReceiver&#10;eve&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/activity/EveryDayMainActivity.java&#10;Reques&#9;PSI&#9;JAVA://com.example.administrator.potato.request.RequestMethod&#10;util&#9;PSI&#9;JAVA://com.example.administrator.potato.utils.EventBusUtil&#10;ev&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/activity/EveryDayMainActivity.java" />
-    <property name="DEBUGGABLE_DEVICE" value="oneplus-oneplus_a5000-192.168.2.120:5555" />
+    <property name="SearchEverywhereHistoryKey" value="Wea&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/fragment/WeatherFragment.java&#10;login&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/activity/LoginActivity.java&#10;androidMan&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/AndroidManifest.xml&#10;Baidu&#9;PSI&#9;JAVA://com.example.administrator.potato.activity.UseBaiDuMapActivity&#10;appc&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/AppConstant.java&#10;get&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/service/GetLocationService.java&#10;Ever&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/activity/EveryDayMainActivity.java&#10;Weather&#9;PSI&#9;JAVA://com.example.administrator.potato.fragment.WeatherFragment&#10;regi&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/activity/RegisterActivity.java&#10;Base&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/fragment/BaseFragment.java&#10;Add&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/activity/AddSecretActivity.java&#10;Login&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/activity/LoginActivity.java&#10;date&#9;PSI&#9;JAVA://com.example.administrator.potato.utils.DateUtils&#10;we&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/activity/WelcomeActivity.java&#10;req&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/request/RequestMethod.java&#10;Histor&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/fragment/HistoryFragment.java&#10;b&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/activity/BaseActivity.java&#10;re&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/activity/RegisterActivity.java&#10;String&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/callback/StringDialogCallback.java&#10;BaseF&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/fragment/BaseFragment.java&#10;BaseFra&#9;PSI&#9;JAVA://com.example.administrator.potato.fragment.BaseFragment&#10;add&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/activity/AddSecretActivity.java&#10;SecretFragment&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/fragment/SecretFragment.java&#10;HistoryF&#9;PSI&#9;JAVA://com.example.administrator.potato.fragment.HistoryFragment&#10;Eve&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/activity/EveryDayMainActivity.java&#10;wel&#9;PSI&#9;JAVA://com.example.administrator.potato.activity.WelcomeActivity&#10;reg&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/activity/RegisterActivity.java&#10;Some&#9;PSI&#9;JAVA://com.example.administrator.potato.utils.SomeCode&#10;Main&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/java/com/example/administrator/potato/activity/MainActivity.java&#10;Rxjava&#9;PSI&#9;JAVA://com.example.administrator.potato.activity.RxJavaActivity&#10;main&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/java/com/example/administrator/potato/activity/MainActivity.java&#10;Appc&#9;PSI&#9;JAVA://com.example.administrator.potato.AppConstant&#10;dateUt&#9;PSI&#9;JAVA://com.example.administrator.potato.utils.DateUtils&#10;myA&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/application/MyApplication.java&#10;con&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/res/drawable/button_shape_confirm.xml&#10;setPa&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/activity/SetPasswordActivity.java&#10;myApp&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/application/MyApplication.java&#10;SetPass&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/activity/SetPasswordActivity.java&#10;setPasswor&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/activity/SetPasswordActivity.java&#10;Tab&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/practice/java/com/example/administrator/potato/activity/TabLayoutActivity.java&#10;dialog_date_picker&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/res/layout/dialog_date_picker.xml&#10;po&#9;PSI&#9;JAVA://com.example.administrator.potato.activity.PopupWindowActivity&#10;confir&#9;PSI&#9;JAVA://com.example.administrator.potato.activity.BaseActivity.ConfirmDialogInterface&#10;mainAc&#9;PSI&#9;JAVA://com.example.administrator.potato.activity.MainActivity&#10;weather&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/fragment/WeatherFragment.java&#10;icon_vector_d&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/res/drawable/icon_vector_delete.xml&#10;no&#9;PSI&#9;JAVA://com.example.administrator.potato.utils.NotificationUtil&#10;base&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/activity/BaseActivity.java&#10;my&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/main/java/com/example/administrator/potato/application/MyApplication.java&#10;Re&#9;FILE&#9;file://E:/myAndroidPro/potato/app/src/everyday/java/com/example/administrator/potato/activity/RegisterActivity.java" />
+    <property name="DEBUGGABLE_DEVICE" value="oneplus-oneplus_a5000-192.168.1.120:5555" />
     <property name="DEBUGGABLE_PROCESS" value="com.example.administrator.potato" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="DEBUGGER_ID" value="Auto" />
@@ -3874,7 +3931,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1556609356215" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1557209325628" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -3922,7 +3979,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1556609356215" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1557209325628" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -4084,7 +4141,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1556609356215" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1557209325628" />
       </method>
     </configuration>
     <list size="6">
@@ -4259,29 +4316,28 @@
     <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7713976" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2228145" sideWeight="0.69014084" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50270855" sideWeight="0.5063966" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.85590464" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="WIFI ADB ULTIMATE" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24840085" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35536295" sideWeight="0.4946695" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2990249" sideWeight="0.4936034" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2228145" sideWeight="0.6966414" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50270855" sideWeight="0.5063966" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4637053" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46587217" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2228145" sideWeight="0.30985916" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2228145" sideWeight="0.3033586" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="WIFI ADB ULTIMATE" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24840085" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18283582" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35536295" sideWeight="0.4946695" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18230277" sideWeight="0.6403034" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -4293,6 +4349,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32302773" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Freeline" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7713976" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -4373,98 +4430,11 @@
           <option name="timeStamp" value="65" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="281" />
+      <option name="time" value="288" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-26/android.jar!/java/util/Observable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.reactivex.rxjava2/rxjava/2.1.1/6112a58432d62645eca9d0aa77bf6bc7ad75b66a/rxjava-2.1.1-sources.jar!/io/reactivex/Observable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="1482" column="36" lean-forward="false" selection-start-line="1482" selection-start-column="36" selection-end-line="1482" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/practice/java/com/example/administrator/potato/activity/FileIOActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="819">
-          <caret line="62" column="53" lean-forward="false" selection-start-line="62" selection-start-column="53" selection-end-line="62" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/practice/java/com/example/administrator/potato/activity/RxJavaActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1012">
-          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1817">
-          <caret line="79" column="63" lean-forward="false" selection-start-line="79" selection-start-column="63" selection-end-line="79" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/practice/java/com/example/administrator/potato/activity/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="144" column="43" lean-forward="false" selection-start-line="144" selection-start-column="43" selection-end-line="144" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-26/android.jar!/android/view/View.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="376" column="5" lean-forward="true" selection-start-line="376" selection-start-column="5" selection-end-line="376" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/everyday/res/layout/activity_login.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1863">
-          <caret line="81" column="20" lean-forward="false" selection-start-line="81" selection-start-column="20" selection-end-line="81" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/utils/SomeCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="23" column="41" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="23" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/practice/res/layout/activity_rx_java.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/utils/SharedPreferencesUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/utils/ToastMessage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -4487,13 +4457,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/everyday/res/layout/navigation_view_header.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="828">
           <caret line="36" column="44" lean-forward="false" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-26/android.jar!/android/content/Context.class">
@@ -4511,13 +4481,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/everyday/res/layout/activity_every_day_main.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="18" column="51" lean-forward="false" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-26/android.jar!/android/view/LayoutInflater.class">
@@ -4528,20 +4498,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/local.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2530">
-          <caret line="110" column="13" lean-forward="false" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -4598,21 +4554,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_confirm.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/activity/EveryDayMainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="224" column="48" lean-forward="false" selection-start-line="224" selection-start-column="48" selection-end-line="224" selection-end-column="48" />
-        </state>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-26/android.jar!/java/lang/reflect/ParameterizedType.class">
@@ -4657,37 +4606,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/activity/RegisterActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2944">
-          <caret line="170" column="0" lean-forward="false" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#4621#4622#0" expanded="false" />
-            <element signature="e#4661#4662#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/fragment/HistoryFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1909">
           <caret line="123" column="24" lean-forward="false" selection-start-line="123" selection-start-column="24" selection-end-line="123" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#4144#4145#0" expanded="false" />
-            <element signature="e#4169#4170#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/AppConstant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -4695,9 +4617,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1909">
           <caret line="112" column="108" lean-forward="false" selection-start-line="112" selection-start-column="95" selection-end-line="112" selection-end-column="108" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -4705,9 +4624,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="15" column="36" lean-forward="false" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -4715,65 +4631,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
           <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/utils/DateUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/activity/LoginActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="99" column="56" lean-forward="false" selection-start-line="99" selection-start-column="56" selection-end-line="99" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/activity/BaseActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding>
-            <element signature="method#showWaitDialog#0;class#BaseActivity#0" expanded="false" />
-            <element signature="method#hideWaitDialog#0;class#BaseActivity#0" expanded="false" />
-            <element signature="docComment;method#initStateBar#0;class#BaseActivity#0" expanded="false" />
-            <element signature="method#initStateBar#0;class#BaseActivity#0" expanded="false" />
-            <element signature="e#5031#5041#0" expanded="false" />
-            <element signature="e#5307#5407#0" expanded="false" />
-            <element signature="method#getColorPrimary#0;class#BaseActivity#0" expanded="false" />
-            <element signature="docComment;method#initView#0;class#BaseActivity#0" expanded="false" />
-            <element signature="docComment;method#initData#0;class#BaseActivity#0" expanded="false" />
-            <element signature="docComment;method#showConfirmDialog#0;class#BaseActivity#0" expanded="false" />
-            <element signature="docComment;method#initToolBar#0;class#BaseActivity#0" expanded="false" />
-            <element signature="method#initToolBar#0;class#BaseActivity#0" expanded="false" />
-            <element signature="e#8492#8514#0" expanded="false" />
-            <element signature="docComment;method#initToolBar#1;class#BaseActivity#0" expanded="false" />
-            <element signature="method#initToolBar#1;class#BaseActivity#0" expanded="false" />
-            <element signature="docComment;method#gotoActivity#0;class#BaseActivity#0" expanded="false" />
-            <element signature="method#gotoActivity#0;class#BaseActivity#0" expanded="false" />
-            <element signature="docComment;method#gotoActivity#1;class#BaseActivity#0" expanded="false" />
-            <element signature="docComment;method#gotoActivity#2;class#BaseActivity#0" expanded="false" />
-            <element signature="docComment;method#showSnackBar#0;class#BaseActivity#0" expanded="false" />
-            <element signature="method#showSnackBar#0;class#BaseActivity#0" expanded="false" />
-            <element signature="docComment;class#ISnackBarClickEvent#0;class#BaseActivity#0" expanded="false" />
-            <element signature="class#ISnackBarClickEvent#0;class#BaseActivity#0" expanded="false" />
-            <element signature="docComment;class#ConfirmDialogInterface#0;class#BaseActivity#0" expanded="false" />
-            <element signature="class#ConfirmDialogInterface#0;class#BaseActivity#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/activity/AddSecretActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="79" column="64" lean-forward="false" selection-start-line="79" selection-start-column="64" selection-end-line="79" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -4781,47 +4638,211 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-69">
           <caret line="19" column="11" lean-forward="false" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/fragment/BaseFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="199" column="52" lean-forward="false" selection-start-line="199" selection-start-column="52" selection-end-line="199" selection-end-column="52" />
-          <folding>
-            <element signature="docComment;class#BaseFragment#0" expanded="false" />
-            <element signature="method#onAttach#0;class#BaseFragment#0" expanded="false" />
-            <element signature="method#onViewCreated#0;class#BaseFragment#0" expanded="false" />
-            <element signature="method#onActivityCreated#0;class#BaseFragment#0" expanded="false" />
-            <element signature="method#onDestroyView#0;class#BaseFragment#0" expanded="false" />
-            <element signature="method#setUserVisibleHint#0;class#BaseFragment#0" expanded="false" />
-            <element signature="method#lozyLoad#0;class#BaseFragment#0" expanded="false" />
-            <element signature="docComment;method#initView#0;class#BaseFragment#0" expanded="false" />
-            <element signature="docComment;method#initData#0;class#BaseFragment#0" expanded="false" />
-            <element signature="docComment;method#showConfirmDialog#0;class#BaseFragment#0" expanded="false" />
-            <element signature="method#showConfirmDialog#0;class#BaseFragment#0" expanded="false" />
-            <element signature="docComment;method#initToolBar#0;class#BaseFragment#0" expanded="false" />
-            <element signature="method#initToolBar#0;class#BaseFragment#0" expanded="false" />
-            <element signature="e#5058#5080#0" expanded="false" />
-            <element signature="docComment;method#gotoActivity#0;class#BaseFragment#0" expanded="false" />
-            <element signature="method#gotoActivity#0;class#BaseFragment#0" expanded="false" />
-            <element signature="docComment;method#gotoActivity#1;class#BaseFragment#0" expanded="false" />
-            <element signature="method#gotoActivity#1;class#BaseFragment#0" expanded="false" />
-            <element signature="docComment;method#gotoActivity#2;class#BaseFragment#0" expanded="false" />
-            <element signature="method#gotoActivity#2;class#BaseFragment#0" expanded="false" />
-            <element signature="docComment;method#showSnackBar#0;class#BaseFragment#0" expanded="false" />
-            <element signature="method#showSnackBar#0;class#BaseFragment#0" expanded="false" />
-            <element signature="docComment;class#ISnackBarClickEvent#0;class#BaseFragment#0" expanded="false" />
-            <element signature="class#ISnackBarClickEvent#0;class#BaseFragment#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/fragment/SecretFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="54" column="53" lean-forward="false" selection-start-line="54" selection-start-column="53" selection-end-line="54" selection-end-column="53" />
+        <state relative-caret-position="14">
+          <caret line="54" column="53" lean-forward="true" selection-start-line="54" selection-start-column="53" selection-end-line="54" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/activity/AddSecretActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="79" column="64" lean-forward="false" selection-start-line="79" selection-start-column="64" selection-end-line="79" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/utils/DateUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2668">
+          <caret line="126" column="0" lean-forward="false" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/activity/BaseActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="114" column="19" lean-forward="false" selection-start-line="114" selection-start-column="19" selection-end-line="114" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/fragment/BaseFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1219">
+          <caret line="199" column="52" lean-forward="false" selection-start-line="199" selection-start-column="52" selection-end-line="199" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.reactivex.rxjava2/rxjava/2.1.1/6112a58432d62645eca9d0aa77bf6bc7ad75b66a/rxjava-2.1.1-sources.jar!/io/reactivex/Observable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="10725" column="28" lean-forward="false" selection-start-line="10725" selection-start-column="28" selection-end-line="10725" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/activity/RegisterActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3473">
+          <caret line="193" column="40" lean-forward="false" selection-start-line="193" selection-start-column="40" selection-end-line="193" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/utils/baidumap/BDLocationResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/activity/EveryDayMainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1196">
+          <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="method#onRestart#0;class#EveryDayMainActivity#0" expanded="false" />
+            <element signature="method#showColorWelcome#0;class#EveryDayMainActivity#0" expanded="false" />
+            <element signature="method#initView#0;class#EveryDayMainActivity#0" expanded="false" />
+            <element signature="class#5766:6161" expanded="false" />
+            <element signature="method#onConfirmClickListener#0;class#5766:6161" expanded="false" />
+            <element signature="method#onCancelClickListener#0;class#5766:6161" expanded="false" />
+            <element signature="class#7215:8114" expanded="false" />
+            <element signature="method#onPageScrolled#0;class#7215:8114" expanded="false" />
+            <element signature="method#onPageSelected#0;class#7215:8114" expanded="false" />
+            <element signature="method#onPageScrollStateChanged#0;class#7215:8114" expanded="false" />
+            <element signature="method#initBottomNavigationView#0;class#EveryDayMainActivity#0" expanded="false" />
+            <element signature="method#initNavigationView#0;class#EveryDayMainActivity#0" expanded="false" />
+            <element signature="method#initData#0;class#EveryDayMainActivity#0" expanded="false" />
+            <element signature="method#onBackPressed#0;class#EveryDayMainActivity#0" expanded="false" />
+            <element signature="e#10851#10852#0" expanded="false" />
+            <element signature="e#10899#10900#0" expanded="false" />
+            <element signature="e#11026#11027#0" expanded="false" />
+            <element signature="e#11080#11081#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/app/libs/BaiduLBS_Android.jar!/com/baidu/location/BDLocation.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="23" column="48" lean-forward="false" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/interfaces/BDLocationInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="10" lean-forward="false" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/service/GetLocationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="32" column="50" lean-forward="false" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/utils/baidumap/BDLocationParameter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="15" column="3" lean-forward="false" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1840">
+          <caret line="80" column="0" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="819">
+          <caret line="110" column="13" lean-forward="false" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/AppConstant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/utils/baidumap/BDLocationListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="736">
+          <caret line="42" column="34" lean-forward="false" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/practice/java/com/example/administrator/potato/activity/UseBaiDuMapActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="704">
+          <caret line="95" column="23" lean-forward="false" selection-start-line="82" selection-start-column="19" selection-end-line="95" selection-end-column="23" />
+          <folding>
+            <element signature="e#1639#1640#0" expanded="true" />
+            <element signature="e#1679#1680#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrator/potato/utils/PermissionUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="24" column="33" lean-forward="false" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/activity/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="114" column="25" lean-forward="false" selection-start-line="114" selection-start-column="25" selection-end-line="114" selection-end-column="25" />
+          <folding>
+            <element signature="method#onCreate#0;class#LoginActivity#0" expanded="false" />
+            <element signature="e#3836#3837#0" expanded="true" />
+            <element signature="e#3902#3903#0" expanded="true" />
+            <element signature="method#onViewClicked#0;class#LoginActivity#0" expanded="false" />
+            <element signature="e#7984#7985#0" expanded="true" />
+            <element signature="e#8026#8027#0" expanded="true" />
+            <element signature="method#onTextForgetPassWord#0;class#LoginActivity#0" expanded="false" />
+            <element signature="method#onTextRegister#0;class#LoginActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/everyday/java/com/example/administrator/potato/fragment/WeatherFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-483">
+          <caret line="178" column="56" lean-forward="false" selection-start-line="178" selection-start-column="56" selection-end-line="178" selection-end-column="56" />
           <folding />
         </state>
       </provider>

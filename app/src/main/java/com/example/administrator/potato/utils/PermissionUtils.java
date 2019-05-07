@@ -20,7 +20,7 @@ import io.reactivex.functions.Consumer;
 public class PermissionUtils {
 
     /**
-     * 获取权限 可以是单个也可以是多个 但是每个权限得判断结果是单独抛出得
+     * 获取权限 可以是单个也可以是多个 但是每个权限得判断结果是单独抛出的
      *
      * @param activity         活动
      * @param iPermissionEvent 不同状态得回调结果 具体业务在调用处进行 以接口形式抛出

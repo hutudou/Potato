@@ -137,16 +137,9 @@ public class WeatherFragment extends BaseFragment {
     @Override
     protected void initView() {
         handler = new Handler();
-        //这里延时0.2秒是为了确保定位服务成功定位
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-
-            }
-        }, 200);
 
         if (TextUtils.isEmpty(BDLocationResult.city)) {//处理定位失败的情况
-            showConfirmDialog("温馨提示", "系统定位失败，将使用默认的城市进行查询天气，如有需要请自行选择城市", new BaseActivity.ConfirmDialogInterface() {
+            showConfirmDialog("温馨提示", "系统定位失败,将使用默认的城市进行查询天气,请检查应用是否已经获取了定位权限...", new BaseActivity.ConfirmDialogInterface() {
                 @Override
                 public void onConfirmClickListener() {
 
@@ -236,6 +229,6 @@ public class WeatherFragment extends BaseFragment {
     @OnClick(R.id.text)
     public void onViewClicked() {
         Intent intent = new Intent(getActivity(), ChangeCityActivity.class);
-        startActivityForResult(intent,CHANGE_CITY, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
+        startActivityForResult(intent, CHANGE_CITY, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
     }
 }

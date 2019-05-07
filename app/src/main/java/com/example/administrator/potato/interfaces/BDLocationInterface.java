@@ -1,6 +1,5 @@
 package com.example.administrator.potato.interfaces;
 
-import com.example.administrator.potato.utils.baidumap.BDLocationResult;
 
 /**
  * 作者:土豆
@@ -10,5 +9,5 @@ import com.example.administrator.potato.utils.baidumap.BDLocationResult;
 
 public interface BDLocationInterface{
      void onSuccess();
-     void onFail();
+     void onFail(int errorCode);
 }

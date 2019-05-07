@@ -64,7 +64,6 @@ public class EveryDayMainActivity extends BaseActivity {
         ButterKnife.bind(this);
         showColorWelcome();
         initView();
-        startAllServices();
         initData();
        /* IntentFilter intentFilter=new IntentFilter();
         intentFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
@@ -85,23 +84,14 @@ public class EveryDayMainActivity extends BaseActivity {
     protected void onDestroy() {
         super.onDestroy();
         handler.removeCallbacksAndMessages(null);
-        stopAllServices();
         /*unregisterReceiver(NetworkChangReceiver);*/
     }
 
-    private void stopAllServices() {
-        stopService(new Intent(mContext, GetLocationService.class));
-    }
 
-    //开启app中所有服务
-    private void startAllServices() {
-        startGetLocationServices();
-    }
 
-    private void startGetLocationServices() {
-        Intent intent = new Intent(mContext, GetLocationService.class);
-        startService(intent);
-    }
+
+
+
 
     //更换颜色时显示颜色专属台词
     private void showColorWelcome() {

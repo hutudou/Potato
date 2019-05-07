@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.example.administrator.potato.interfaces.BDLocationInterface;
+import com.example.administrator.potato.utils.ToastMessage;
 import com.example.administrator.potato.utils.baidumap.BDLocationParameter;
 
 import java.util.concurrent.TimeUnit;
@@ -29,7 +30,7 @@ public class GetLocationService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         //一分钟进行一次定位
-        disposable = Flowable.interval(0, 2, TimeUnit.MINUTES)
+        disposable = Flowable.interval(0, 10, TimeUnit.SECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<Long>() {
@@ -71,7 +72,8 @@ public class GetLocationService extends Service {
             }
 
             @Override
-            public void onFail() {//处理定位失败事件
+            public void onFail(int errorCode) {//处理定位失败事件
+                ToastMessage.toastError("定位服务异常,其返回码是:" + errorCode, false);
             }
         });
         bdLocationParameter.setLocationParame();

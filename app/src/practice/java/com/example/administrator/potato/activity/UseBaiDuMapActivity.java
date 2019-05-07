@@ -108,7 +108,7 @@ public class UseBaiDuMapActivity extends BaseActivity {
             }
 
             @Override
-            public void onFail() {//处理定位失败事件
+            public void onFail(int errorCode) {//处理定位失败事件
                 textResult.setText("定位失败啦");
             }
         });

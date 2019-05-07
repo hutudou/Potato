@@ -1,7 +1,10 @@
 package com.example.administrator.potato.activity;
 
 import android.app.ActivityOptions;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v7.widget.Toolbar;
 import android.text.InputType;
 import android.text.TextUtils;
@@ -13,9 +16,12 @@ import android.widget.EditText;
 import com.example.administrator.potato.AppConstant;
 import com.example.administrator.potato.R;
 import com.example.administrator.potato.bmobbeen.Person;
+import com.example.administrator.potato.service.GetLocationService;
 import com.example.administrator.potato.utils.MD5Utils;
+import com.example.administrator.potato.utils.PermissionUtils;
 import com.example.administrator.potato.utils.SharedPreferencesUtil;
 import com.example.administrator.potato.utils.ToastMessage;
+import com.tbruyelle.rxpermissions2.Permission;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -43,6 +49,12 @@ public class LoginActivity extends BaseActivity {
         ButterKnife.bind(this);
         initView();
         initData();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        stopAllServices();
     }
 
     @Override
@@ -82,7 +94,52 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     protected void initData() {
+        if (PermissionUtils.isHasPermission(this, "android.permission.ACCESS_FINE_LOCATION")) {//取得定位权限后直接开启定位服务
+            startAllServices();
+        } else {
+            PermissionUtils.getPermission(this, new PermissionUtils.IPermissionEvent() {
+                @Override
+                public void onAlreadyGet(Permission permission) {
+                    startGetLocationServices();
+                }
 
+                @Override
+                public void onPartRefuse(Permission permission) {
+                    //开启gps权限
+                    showConfirmDialog("温馨提示", "定位权限已被拒绝，需要手动开启权限,是否立刻前往开启定位服务?（具体步骤:点击\"权限\"---->选择\"定位\"---->选择\"允许\"）", new ConfirmDialogInterface() {
+                        @Override
+                        public void onConfirmClickListener() {
+                            Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                            intent.setData(Uri.parse("package:" + getPackageName()));
+                            startActivity(intent);
+                        }
+
+                        @Override
+                        public void onCancelClickListener() {
+
+                        }
+                    });
+                }
+
+                @Override
+                public void onCompleteRefuse(Permission permission) {
+                    //开启gps权限
+                    showConfirmDialog("温馨提示", "定位权限已被永久拒绝，需要手动开启权限,是否立刻前往开启定位服务?（具体步骤:点击\"权限\"---->选择\"定位\"---->选择\"允许\"）", new ConfirmDialogInterface() {
+                        @Override
+                        public void onConfirmClickListener() {
+                            Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                            intent.setData(Uri.parse("package:" + getPackageName()));
+                            startActivity(intent);
+                        }
+
+                        @Override
+                        public void onCancelClickListener() {
+
+                        }
+                    });
+                }
+            }, "android.permission.ACCESS_FINE_LOCATION");
+        }
     }
 
     @OnClick(R.id.buttonLogin)
@@ -123,6 +180,20 @@ public class LoginActivity extends BaseActivity {
                 }
             }
         });
+    }
+
+    private void stopAllServices() {
+        stopService(new Intent(mContext, GetLocationService.class));
+    }
+
+    //开启app中所有服务
+    private void startAllServices() {
+        startGetLocationServices();
+    }
+
+    private void startGetLocationServices() {
+        Intent intent = new Intent(mContext, GetLocationService.class);
+        startService(intent);
     }
 
     //找回密码

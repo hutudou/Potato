@@ -168,7 +168,6 @@ public class RegisterActivity extends BaseActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.buttonCode:
-                showWaitDialog(this);
                 Observable.create(new ObservableOnSubscribe<Boolean>() {//先验证用户是否注册 将结果以true/false方式传递下去
                     @Override
                     public void subscribe(final ObservableEmitter<Boolean> emitter) throws Exception {
@@ -190,7 +189,6 @@ public class RegisterActivity extends BaseActivity {
                         .subscribe(new Consumer<Boolean>() {
                             @Override
                             public void accept(Boolean aBoolean) throws Exception {
-                                hideWaitDialog();
                                 if (aBoolean) {
                                     ToastMessage.toastWarn("当前用户已注册,请勿重复注册...", false);
                                 } else {

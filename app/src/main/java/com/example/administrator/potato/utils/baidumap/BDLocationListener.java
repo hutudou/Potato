@@ -40,7 +40,7 @@ public class BDLocationListener extends BDAbstractLocationListener {
             BDLocationResult.locationFlag = true;
             bdLocationInterface.onSuccess();
         } else {
-            bdLocationInterface.onFail();
+            bdLocationInterface.onFail(errorCode);
         }
         Log.e("awei", "经度是" + BDLocationResult.longitude + "\n纬度是:" + BDLocationResult.latitude + "\n地址是:" + BDLocationResult.address);
     }

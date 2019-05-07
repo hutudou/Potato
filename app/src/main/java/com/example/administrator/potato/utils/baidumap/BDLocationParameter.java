@@ -63,14 +63,13 @@ public class BDLocationParameter {
 
         //可选，V7.2版本新增能力
         //如果设置了该接口，首次启动定位时，会先判断当前Wi-Fi是否超出有效期，若超出有效期，会先重新扫描Wi-Fi，然后定位
-        option.setWifiCacheTimeOut(5 * 60 * 1000);
+//        option.setWifiCacheTimeOut(5 * 60 * 1000);
 
         //可选，设置是否需要过滤GPS仿真结果，默认需要，即参数为false
         option.setEnableSimulateGps(false);
 
         //是否获取地址
         option.setIsNeedAddress(true);
-
         locationClient.setLocOption(option);
         locationClient.registerLocationListener(locationListener);
     }

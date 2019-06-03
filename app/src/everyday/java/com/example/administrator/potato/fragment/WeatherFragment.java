@@ -18,7 +18,6 @@ import com.example.administrator.potato.AppConstant;
 import com.example.administrator.potato.R;
 import com.example.administrator.potato.activity.BaseActivity;
 import com.example.administrator.potato.activity.ChangeCityActivity;
-import com.example.administrator.potato.bmobbeen.Person;
 import com.example.administrator.potato.callback.StringDialogCallback;
 import com.example.administrator.potato.holder.BaseRecyclerViewHolder;
 import com.example.administrator.potato.javabeen.WeatherBeen;
@@ -40,8 +39,6 @@ import java.util.Map;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import cn.bmob.v3.exception.BmobException;
-import cn.bmob.v3.listener.SaveListener;
 
 /**
  * 作者 Administrator
@@ -191,7 +188,7 @@ public class WeatherFragment extends BaseFragment {
         map.put("key", AppConstant.MOB_APP_KEY);
         map.put("city", city.replace("市", ""));
         map.put("province", province.replace("省", ""));
-        RequestMethod.get(getActivity(), RequestUrl.Query_Weather, map, new StringDialogCallback(getActivity()) {
+        RequestMethod.get(getActivity(), RequestUrl.QUERY_WEATHER, map, new StringDialogCallback(getActivity()) {
             @Override
             public void onSuccess(Response<String> response) {
                 try {

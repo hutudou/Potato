@@ -29,14 +29,14 @@ public class GetLocationService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        //一分钟进行一次定位
-        disposable = Flowable.interval(0, 10, TimeUnit.SECONDS)
+        //两分钟进行一次定位
+        disposable = Flowable.interval(0, 2, TimeUnit.MINUTES)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<Long>() {
                     @Override
                     public void accept(Long aLong) throws Exception {
-                        startLocation(aLong);
+                        getLocation(aLong);
                     }
                 });
         return super.onStartCommand(intent, flags, startId);
@@ -62,7 +62,7 @@ public class GetLocationService extends Service {
     }
 
     //开始定位
-    private void startLocation(final Long time) {
+    private void getLocation(final Long time) {
         bdLocationParameter = new BDLocationParameter(new BDLocationInterface() {
             @Override
             public void onSuccess() {//处理定位成功事件

@@ -1,7 +1,6 @@
 package com.example.administrator.potato.activity;
 
 import android.app.ActivityOptions;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -25,7 +24,6 @@ import com.example.administrator.potato.fragment.RecordFragment;
 import com.example.administrator.potato.fragment.SecretFragment;
 import com.example.administrator.potato.fragment.WeatherFragment;
 import com.example.administrator.potato.gen.HistoryLoginUserDao;
-import com.example.administrator.potato.service.GetLocationService;
 import com.example.administrator.potato.utils.BottomNavigationViewUtil;
 import com.example.administrator.potato.utils.DataCleanUtils;
 import com.example.administrator.potato.utils.SharedPreferencesUtil;
@@ -37,7 +35,9 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-
+/**
+ * @author potato
+ */
 public class EveryDayMainActivity extends BaseActivity {
 
     @Bind(R.id.drawerLayout)
@@ -88,11 +88,6 @@ public class EveryDayMainActivity extends BaseActivity {
     }
 
 
-
-
-
-
-
     //更换颜色时显示颜色专属台词
     private void showColorWelcome() {
         if ((boolean) SharedPreferencesUtil.getData(AppConstant.IS_SHOW_COLOR_WELCOME, false)) {
@@ -132,6 +127,8 @@ public class EveryDayMainActivity extends BaseActivity {
                 switch (item.getItemId()) {
                     case R.id.itemRefresh:
                         break;
+                    default:
+                        break;
                 }
                 return true;
             }
@@ -156,7 +153,6 @@ public class EveryDayMainActivity extends BaseActivity {
 
                             @Override
                             public void onCancelClickListener() {
-
                             }
                         });
                         break;
@@ -177,6 +173,8 @@ public class EveryDayMainActivity extends BaseActivity {
                         break;
                     case R.id.exit:
                         finish();
+                        break;
+                    default:
                         break;
                 }
                 return true;
@@ -239,12 +237,17 @@ public class EveryDayMainActivity extends BaseActivity {
                     case R.id.secret:
                         viewPager.setCurrentItem(3);
                         return true;
+                    default:
+                        break;
                 }
                 return false;
             }
         });
     }
 
+    /**
+     * 初始化侧边栏
+     */
     private void initNavigationView() {
         //将toolBar和navigation事件关联起来
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_navigation_view, R.string.close_navigation_view);
@@ -268,8 +271,11 @@ public class EveryDayMainActivity extends BaseActivity {
 
     }
 
+    /**
+     * 物理返回键点击事件  需要在两秒内按两次返回键才能退出
+     */
     @Override
-    public void onBackPressed() {//物理返回键点击事件  需要在两秒内按两次返回键才能退出
+    public void onBackPressed() {
         if (isExit) {
             finish();
         } else {
@@ -288,26 +294,6 @@ public class EveryDayMainActivity extends BaseActivity {
             }, 2000);
         }
     }
-
-   /* private BroadcastReceiver NetworkChangReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(CONNECTIVITY_SERVICE);
-            NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-            if (networkInfo != null && networkInfo.isAvailable()) {
-                switch (networkInfo.getType()) {
-                    case TYPE_MOBILE:
-                        Toast.makeText(context, "正在使用移动数据", Toast.LENGTH_SHORT).show();
-                        break;
-                    case TYPE_WIFI:
-                        Toast.makeText(context, "正在使用wifi上网", Toast.LENGTH_SHORT).show();
-                        break;
-                }
-            } else {
-                Toast.makeText(context, "当前无网络连接", Toast.LENGTH_SHORT).show();
-            }
-        }
-    };*/
 
 }
 

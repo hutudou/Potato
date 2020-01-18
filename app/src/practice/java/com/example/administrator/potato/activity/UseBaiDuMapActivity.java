@@ -20,6 +20,9 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+/**
+ * @author potato
+ */
 public class UseBaiDuMapActivity extends BaseActivity {
     @Bind(R.id.toolbar)
     Toolbar toolbar;
@@ -54,7 +57,6 @@ public class UseBaiDuMapActivity extends BaseActivity {
                 finish();
             }
         });
-
     }
 
     @Override
@@ -64,6 +66,7 @@ public class UseBaiDuMapActivity extends BaseActivity {
 
     @OnClick(R.id.button)
     public void onViewClicked() {
+        //确定是否获得了定位权限
         if (PermissionUtils.isHasPermission(UseBaiDuMapActivity.this, "android.permission.ACCESS_FINE_LOCATION")) {
             startLocation();
         } else {
@@ -81,7 +84,7 @@ public class UseBaiDuMapActivity extends BaseActivity {
                 @Override
                 public void onCompleteRefuse(Permission permission) {
                     //开启gps权限
-                    showConfirmDialog("温馨提示", "定位权限已被永久拒绝，需要手动开启权限,是否立刻前往开启定位服务?（具体步骤:点击\"选项\"---->选择\"定位\"---->选择\"允许\"）", new ConfirmDialogInterface() {
+                    showConfirmDialog("温馨提示", "定位权限已被永久拒绝，需要手动开启权限,是否立刻前往开启定位服务?（具体步骤:点击\"选项\"---->选择\"定位\"---->选择\"允许\"）", new IConfirmDialogInterface() {
                         @Override
                         public void onConfirmClickListener() {
                             Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
@@ -99,7 +102,9 @@ public class UseBaiDuMapActivity extends BaseActivity {
         }
     }
 
-    //开始定位
+    /**
+     * 开始定位
+     */
     private void startLocation() {
         bdLocationParameter = new BDLocationParameter(new BDLocationInterface() {
             @Override
@@ -112,7 +117,7 @@ public class UseBaiDuMapActivity extends BaseActivity {
                 textResult.setText("定位失败啦");
             }
         });
-        bdLocationParameter.setLocationParame();
+        bdLocationParameter.setLocationParam();
         bdLocationParameter.locationClient.start();
     }
 

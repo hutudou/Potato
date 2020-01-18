@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="系统功能">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/clearCache"
+                    android:icon="@drawable/icon_vector_clear_cache"
+                    android:title="缓存清理" />
+
+                <item
+                    android:id="@+id/changeTheme"
+                    android:icon="@drawable/icon_vector_theme"
+                    android:title="更改主题" />
+
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="软件信息">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/aboutEveryDay"
+                    android:icon="@drawable/icon_vector_about_every_day"
+                    android:title="关于爱音乐" />
+
+                <item
+                    android:id="@+id/aboutAuthor"
+                    android:icon="@drawable/icon_vector_about_author"
+                    android:title="关于作者" />
+            </group>
+        </menu>
+    </item>
+
+</menu>

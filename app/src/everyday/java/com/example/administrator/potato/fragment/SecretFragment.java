@@ -15,7 +15,7 @@ import com.example.administrator.potato.R;
 import com.example.administrator.potato.activity.AddSecretActivity;
 import com.example.administrator.potato.bmobbeen.Secret;
 import com.example.administrator.potato.holder.BaseRecyclerViewHolder;
-import com.example.administrator.potato.recyclerView.adapter.CommonRecyclerViewAdapter;
+import com.example.administrator.potato.recycler.adapter.CommonRecyclerViewAdapter;
 import com.example.administrator.potato.utils.ToastMessage;
 
 import java.util.List;

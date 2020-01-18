@@ -6,7 +6,6 @@ import android.support.v7.widget.Toolbar;
 import android.text.SpannableString;
 import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
-import android.transition.Explode;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,6 +22,9 @@ import butterknife.ButterKnife;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
 
+/**
+ * @author potato
+ */
 public class AddSecretActivity extends BaseActivity {
 
     @Bind(R.id.toolbar)
@@ -90,6 +92,8 @@ public class AddSecretActivity extends BaseActivity {
                                 }
                             }
                         });
+                        break;
+                    default:
                         break;
                 }
                 return false;

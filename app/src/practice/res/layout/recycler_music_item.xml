@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingEnd="16dp"
+    android:paddingStart="16dp">
+
+    <ImageView
+        android:id="@+id/imageMusicPhoto"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textMusicName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="--名字--"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_16" />
+
+        <TextView
+            android:id="@+id/textMusicAuthor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="--歌手--"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_13" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textMusicTotalTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:text="--时间--"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_16" />
+
+        <TextView
+            android:id="@+id/textMusicAlbum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:text="专辑名"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_13" />
+    </LinearLayout>
+</LinearLayout>

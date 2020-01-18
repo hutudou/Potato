@@ -12,5 +12,15 @@
         android:background="?attr/toolBarColor"
         app:title="@string/app_name"
         app:titleTextColor="@android:color/white">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
     </android.support.v7.widget.Toolbar>
 </android.support.design.widget.AppBarLayout>

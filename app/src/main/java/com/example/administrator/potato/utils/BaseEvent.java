@@ -2,6 +2,8 @@ package com.example.administrator.potato.utils;
 
 /**
  * EventBus基础事件
+ *
+ * @author potato
  */
 public class BaseEvent {
     public int eventType;

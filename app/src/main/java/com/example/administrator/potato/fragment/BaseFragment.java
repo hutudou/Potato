@@ -1,6 +1,5 @@
 package com.example.administrator.potato.fragment;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -21,7 +20,6 @@ import android.widget.TextView;
 
 import com.example.administrator.potato.R;
 import com.example.administrator.potato.activity.BaseActivity;
-import com.example.administrator.potato.application.MyApplication;
 import com.lzy.okgo.OkGo;
 
 /**
@@ -106,7 +104,7 @@ public abstract class BaseFragment extends android.support.v4.app.Fragment {
      * @param msg                    dialog的消息
      * @param confirmDialogInterface 监听dialog确认键以及取消键的点击事件
      */
-    protected void showConfirmDialog(@Nullable String title, @Nullable String msg, @NonNull final BaseActivity.ConfirmDialogInterface confirmDialogInterface) {
+    protected void showConfirmDialog(@Nullable String title, @Nullable String msg, @NonNull final BaseActivity.IConfirmDialogInterface confirmDialogInterface) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
         //加载布局
         View view = View.inflate(mContext, R.layout.dialog_confirm, null);
@@ -224,6 +222,7 @@ public abstract class BaseFragment extends android.support.v4.app.Fragment {
             progressDialog = null;
         }
     }
+
     /**
      * 活动跳转
      *
@@ -277,7 +276,7 @@ public abstract class BaseFragment extends android.support.v4.app.Fragment {
                     @Override
                     public void onClick(View view) {
                         //以接口方式发送出去，便于使用者处理自己的业务逻辑
-                        iSnackBarClickEvent.clickEvent();
+                        iSnackBarClickEvent.onSnackBarClickEvent();
                     }
                 });
         TypedArray typedArray = mContext.obtainStyledAttributes(R.styleable.appCustomerAttrs);
@@ -289,7 +288,8 @@ public abstract class BaseFragment extends android.support.v4.app.Fragment {
         //设置snackBar图标 这里是获取到snackBar的textView 然后给textView增加左边图标的方式来实现的
         View snackBarView = snackbar.getView();
         TextView textView = (TextView) snackBarView.findViewById(R.id.snackbar_text);
-        Drawable drawable = getResources().getDrawable(R.drawable.icon_vector_notification);//图片自己选择
+        //可以使用自定义图片
+        Drawable drawable = getResources().getDrawable(R.drawable.icon_vector_notification,null);
         drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
         textView.setCompoundDrawables(drawable, null, null, null);
         //增加文字和图标的距离

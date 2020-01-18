@@ -5,21 +5,36 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 
+/**
+ * @author potato
+ */
 public class NumImageView extends android.support.v7.widget.AppCompatImageView {
 
-    //要显示的数量数量
+    /**
+     * 要显示的数量数量
+     */
     private int num = 0;
-    //红色圆圈的半径
+    /**
+     * 色圆圈的半径
+     */
     private float radius;
-    //圆圈内数字的半径
+    /**
+     * 圆圈内数字的半径
+     */
     private float textSize;
-    //右边和上边内边距
+    /**
+     * 右边和上边内边距
+     */
     private int paddingRight;
     private int paddingTop;
-    //角标text的xy
+    /**
+     * 角标text的xy
+     */
     private float textX;
     private float textY;
-    //画笔
+    /**
+     * 画笔
+     */
     Paint paint = new Paint();
 
     public NumImageView(Context context) {

@@ -40,6 +40,8 @@ public class DateUtils {
         //lastDate示例: Tue Feb 29 23:59:59 GMT+08:00 2000  使用substring来截取天数所对应的位置
         return lastDate.toString().substring(8, 10);
     }
+/*
+ */
 
     /**
      * 把日期转为指定格式的字符串

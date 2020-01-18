@@ -12,7 +12,7 @@ import java.util.TimerTask;
 
 public class Test {
     public static void main(String args[]) {
-        System.out.println("时间转换为时间戳:");
+       /* System.out.println("时间转换为时间戳:");
         System.out.println(DateUtils.dateToTimeStamp(DateUtils.getLocalDate("yyyy-MM-dd hh-mm-ss"), "yyyy-MM-dd hh-mm-ss"));
 
         System.out.println("\n时间戳转换为时间:");
@@ -26,6 +26,9 @@ public class Test {
         final long day = map.get("day");
         final long hour = map.get("hour");
         final long minute = map.get("minute");
-        final long second = map.get("second");
+        final long second = map.get("second");*/
+        int i = 1;
+        i = ++i;
+        System.out.println(i);
     }
 }

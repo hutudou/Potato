@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.potato.activity.CustomTextViewActivity">
+
+    <include layout="@layout/app_toolbar" />
+
+    <com.example.administrator.potato.utils.TextDrawable
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="测试"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_16"
+        app:startDrawable="@drawable/icon_count"
+        app:startDrawableHeight="30dp"
+        app:startDrawableWidth="30dp" />
+
+    <com.example.administrator.potato.utils.TextDrawable
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="测试"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_16"
+        app:startDrawable="@drawable/icon_count"
+        app:startDrawableHeight="60dp"
+        app:startDrawableWidth="60dp" />
+
+    <com.example.administrator.potato.utils.TextDrawable
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="测试"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_16"
+        app:startDrawable="@drawable/icon_count"
+        app:startDrawableHeight="100dp"
+        app:startDrawableWidth="100dp" />
+
+    <com.example.administrator.potato.utils.TextDrawable
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="测试"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_16"
+        app:startDrawable="@drawable/icon_count"
+        app:startDrawableHeight="140dp"
+        app:startDrawableWidth="140dp" />
+</LinearLayout>

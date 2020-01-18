@@ -1,28 +1,30 @@
 package com.example.administrator.potato.activity;
 
-import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.administrator.potato.R;
 import com.example.administrator.potato.application.MyApplication;
-import com.example.administrator.potato.utils.PermissionUtils;
 import com.example.administrator.potato.utils.ToastMessage;
-import com.tbruyelle.rxpermissions2.Permission;
-import com.tbruyelle.rxpermissions2.RxPermissions;
+
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.util.Enumeration;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import io.reactivex.functions.Consumer;
 
+/**
+ * @author potato
+ */
 public class MainActivity extends BaseActivity {
 
     @Bind(R.id.listview)
@@ -30,7 +32,6 @@ public class MainActivity extends BaseActivity {
     @Bind(R.id.toolbar)
     Toolbar toolbar;
     private String[] type = {
-
             "练习:练习代码时的Activity",
             "功能一:Toasty的使用和简单封装",
             "功能二:butterknife的使用",
@@ -40,12 +41,12 @@ public class MainActivity extends BaseActivity {
             "功能六:百度sdk定位的使用",
             "功能七:CircleImageView+自定义view实现带角标的圆形图片",
             "功能八:tabLayout的使用",
-            "功能九:webview的使用",
+            "功能九:webView的使用",
             "功能十:MPAndroidChart的使用",
             "功能十一:VideoView的使用",
             "功能十二:EventBus的使用",
             "功能十三:Notification的使用以及封装",
-            "功能十四:okhttp的简单使用",
+            "功能十四:okHttp的简单使用",
             "功能十五:使用Lottie来解析json格式动画",
             "功能十六:SnackBar的使用以及封装",
             "功能十七:服务的使用",
@@ -58,7 +59,18 @@ public class MainActivity extends BaseActivity {
             "功能二十四:Retrofit的简单使用",
             "功能二十五:测试SharedPreferencesUtil",
             "功能二十六:PictureSelector框架的使用以及封装",
-            "功能二十七:NumberPicker的使用"
+            "功能二十七:NumberPicker的使用",
+            "功能二十八:手写签名",
+            "功能二十九:测试原生GPS的准确性",
+            "功能三十:安卓动画简单使用",
+            "功能三十一:动态添加xml布局并设置不同id",
+            "功能三十二:使用NiceSpinner插件",
+            "功能三十三:使用时间线",
+            "功能三十四:使用系统Spinner(自定义布局)",
+            "功能三十五:使用表格插件",
+            "功能三十六:text view字体大小的适配",
+            "功能三十七:扫描本地的音乐文件",
+            "功能三十八:使用自定义的TextView(可调整图片大小)"
     };
 
     @Override
@@ -66,24 +78,11 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        PermissionUtils.getPermission(this, new PermissionUtils.IPermissionEvent() {
-            @Override
-            public void onAlreadyGet(Permission permission) {
-                Toast.makeText(getApplicationContext(), "权限已经获取了哟", Toast.LENGTH_SHORT).show();
-            }
-            @Override
-            public void onPartRefuse(Permission permission) {
-                Toast.makeText(getApplicationContext(), "权限已经被拒绝了哟", Toast.LENGTH_SHORT).show();
-            }
-            @Override
-            public void onCompleteRefuse(Permission permission) {
-                Toast.makeText(getApplicationContext(), "权限已经被永久拒绝了哟", Toast.LENGTH_SHORT).show();
-            }
-        }, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE);
         initView();
         initData();
     }
 
+    @Override
     protected void initView() {
         initToolBar(toolbar, "功能列表", false, null, true, R.menu.app_toolbar_menu, new Toolbar.OnMenuItemClickListener() {
             @Override
@@ -92,13 +91,28 @@ public class MainActivity extends BaseActivity {
                     case R.id.itemRefresh:
                         ToastMessage.toastSuccess("刷新成功", true);
                         break;
+                    case R.id.itemTitle:
+                        break;
+                    default:
+                        break;
                 }
                 return true;
             }
         });
+
+        setListView();
     }
 
+    @Override
     protected void initData() {
+        String mac = getLocalMacAddressFromIp(this);
+        ToastMessage.toastWarn("mac地址是:" + mac);
+    }
+
+    /**
+     * 设置点击事件
+     */
+    private void setListView() {
         final ArrayAdapter<String> adapter = new ArrayAdapter<>(MyApplication.getContext(), android.R.layout.simple_list_item_1, type);
         listview.setAdapter(adapter);
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -135,6 +149,7 @@ public class MainActivity extends BaseActivity {
                         Intent intent4 = new Intent(mContext, UseRxPermissionsActivity.class);
                         startActivity(intent4);
                         break;
+                    //功能六:使用百度地图进行定位(仅获取经纬度)
                     case 6:
                         Intent intent5 = new Intent(mContext, UseBaiDuMapActivity.class);
                         startActivity(intent5);
@@ -144,7 +159,7 @@ public class MainActivity extends BaseActivity {
                         Intent intent6 = new Intent(mContext, UseNumImageViewActivity.class);
                         startActivity(intent6);
                         break;
-                    //功能八:tabLayout的使用
+                    //功能八:tabLayout的使用9214-50=9164
                     case 8:
                         Intent intent8 = new Intent(mContext, TabLayoutActivity.class);
                         startActivity(intent8);
@@ -174,7 +189,7 @@ public class MainActivity extends BaseActivity {
                         Intent intent13 = new Intent(mContext, UseNotificationActivity.class);
                         startActivity(intent13);
                         break;
-                    //功能十四:okhttp的简单使用
+                    //功能十四:okHttp的简单使用
                     case 14:
                         Intent intent14 = new Intent(mContext, UseOkHttpActivity.class);
                         startActivity(intent14);
@@ -244,11 +259,114 @@ public class MainActivity extends BaseActivity {
                         Intent intent27 = new Intent(mContext, UseNumberPickerActivity.class);
                         startActivity(intent27);
                         break;
+                    //"功能二十八:手写签名"
+                    case 28:
+                        Intent intent28 = new Intent(mContext, SignActivity.class);
+                        startActivity(intent28);
+                        break;
+                    //功能二十九:使用原生gps进行定位
+                    case 29:
+                        Intent intent29 = new Intent(mContext, GetNativeLocationInfoActivity.class);
+                        startActivity(intent29);
+                        break;
+                    //功能三十一:动态添加xml布局并设置不同id
+                    case 31:
+                        Intent intent30 = new Intent(mContext, DynamicAddLayoutActivity.class);
+                        startActivity(intent30);
+                        break;
+                    //"功能三十二:使用NiceSpinner插件"
+                    case 32:
+                        Intent intent31 = new Intent(mContext, UseNiceSpinnerActivity.class);
+                        startActivity(intent31);
+                        break;
+                    //功能三十三:使用时间线
+                    case 33:
+                        Intent intent32 = new Intent(mContext, UseTimeAxleActivity.class);
+                        startActivity(intent32);
+                        break;
+                    //"功能三十四:使用系统Spinner(自定义布局)"
+                    case 34:
+                        Intent intent33 = new Intent(mContext, UseCustomSpinnerActivity.class);
+                        startActivity(intent33);
+                        break;
+                    //"功能三十五:使用表格插件"
+                    case 35:
+                        Intent intent34 = new Intent(mContext, UseTableActivity.class);
+                        startActivity(intent34);
+                        break;
+                    //功能三十六:text view字体大小的适配
+                    case 36:
+                        Intent intent35 = new Intent(mContext, AutoTextSizeActivity.class);
+                        startActivity(intent35);
+                        break;
+                    //功能三十七:扫描本地的音乐文件
+                    case 37:
+                        Intent intent36 = new Intent(mContext, QueryLocalMusicActivity.class);
+                        startActivity(intent36);
+                        break;
+                    //"功能三十八:使用自定义的TextView(可调整图片大小)"
+                    case 38:
+                        Intent intent37 = new Intent(mContext, CustomTextViewActivity.class);
+                        startActivity(intent37);
+                        break;
+                    default:
+                        break;
 
                 }
             }
         });
     }
 
+    public static String getLocalMacAddressFromIp(Context context) {
+        String mac_s = "";
+        try {
+            byte[] mac;
+            NetworkInterface ne = NetworkInterface.getByInetAddress(InetAddress.getByName(getLocalIpAddress()));
+            mac = ne.getHardwareAddress();
+            mac_s = byte2hex(mac);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return mac_s;
+    }
+
+    /**
+     * 获取本地IP
+     *
+     * @return string
+     */
+    public static String getLocalIpAddress() {
+        try {
+            for (Enumeration<NetworkInterface> en = NetworkInterface.getNetworkInterfaces(); en.hasMoreElements(); ) {
+                NetworkInterface intf = en.nextElement();
+                for (Enumeration<InetAddress> enumIpAddr = intf
+                        .getInetAddresses(); enumIpAddr.hasMoreElements(); ) {
+                    InetAddress inetAddress = enumIpAddr.nextElement();
+                    if (!inetAddress.isLoopbackAddress()) {
+                        return inetAddress.getHostAddress().toString();
+                    }
+                }
+            }
+        } catch (SocketException ex) {
+        }
+
+        return null;
+    }
+
+    public static String byte2hex(byte[] b) {
+        StringBuffer hs = new StringBuffer(b.length);
+        String stmp = "";
+        int len = b.length;
+        for (int n = 0; n < len; n++) {
+            stmp = Integer.toHexString(b[n] & 0xFF);
+            if (stmp.length() == 1) {
+                hs = hs.append("0").append(stmp);
+            } else {
+                hs = hs.append(stmp);
+            }
+        }
+        return String.valueOf(hs);
+    }
 
 }

@@ -22,9 +22,13 @@ public class NotificationUtil {
     private NotificationManager manager;
     private Notification.Builder builder;
     private Context mContext;
-    //大图标
+    /**
+     * 大图标
+     */
     private int largeIcon;
-    //小图标
+    /**
+     * 小图标
+     */
     private int smallIcon;
 
     public NotificationUtil(Context mContext, String chanelId, String notificationName) {
@@ -60,6 +64,7 @@ public class NotificationUtil {
             mChannel.getAudioAttributes();//获取系统通知响铃声音的配置
             mChannel.getGroup();//获取通知取到组
             mChannel.setShowBadge(true);
+//            mChannel.setSound(); 8.0以上在channel里面设置播放的声音
             mChannel.setLockscreenVisibility(Notification.VISIBILITY_PRIVATE);
             mChannel.setBypassDnd(true);//设置可绕过  请勿打扰模式
             mChannel.setVibrationPattern(new long[]{500, 500, 1000});//设置震动模式

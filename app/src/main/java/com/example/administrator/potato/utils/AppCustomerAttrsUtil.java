@@ -10,10 +10,10 @@ import com.example.administrator.potato.application.MyApplication;
 import java.util.concurrent.ExecutionException;
 
 /**
- * 作者 Administrator
- * 时间 2019/1/23
- * <p>
  * 自定义属性管理工具
+ *
+ * @author Administrator
+ * @date 2019/1/23
  */
 
 public class AppCustomerAttrsUtil {

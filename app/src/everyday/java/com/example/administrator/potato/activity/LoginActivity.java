@@ -76,7 +76,8 @@ public class LoginActivity extends BaseActivity {
         if (!TextUtils.isEmpty((String) SharedPreferencesUtil.getData(AppConstant.PASSWORD, ""))) {
             editPassword.setText((String) SharedPreferencesUtil.getData(AppConstant.PASSWORD, ""));
         }
-        buttonShowOrHide.setOnTouchListener(new View.OnTouchListener() {//监听按钮的按下 和 松开事件 按下时显示密码 松开是隐藏密码
+        //监听按钮的按下 和 松开事件 按下时显示密码 松开是隐藏密码
+        buttonShowOrHide.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 if (view.getId() == R.id.buttonShowOrHide) {

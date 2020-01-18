@@ -12,7 +12,9 @@ import java.util.Map;
 import io.reactivex.annotations.NonNull;
 
 /**
- * 不同格式的请求方法
+ * @author potato
+ *         <p>
+ *         不同格式的请求方法
  */
 
 public class RequestMethod {

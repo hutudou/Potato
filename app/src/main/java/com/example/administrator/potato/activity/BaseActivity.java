@@ -16,7 +16,6 @@ import android.support.v7.app.AlertDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
-import android.transition.Explode;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
@@ -33,8 +32,14 @@ import com.example.administrator.potato.utils.AppCustomerAttrsUtil;
 import com.example.administrator.potato.utils.SharedPreferencesUtil;
 import com.lzy.okgo.OkGo;
 
+/**
+ * @author potato
+ */
 public abstract class BaseActivity extends AppCompatActivity {
-    //上下文对象
+
+    /**
+     * 上下文对象
+     */
     protected Context mContext;
 
     private ProgressDialog progressDialog;
@@ -42,7 +47,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         //设置主题
         if ((int) SharedPreferencesUtil.getData(AppConstant.CURRENT_APP_THEME, -1) == -1) {
             setTheme(R.style.AppVioletTheme);
@@ -52,9 +56,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         //获取上下文对象
         mContext = this;
         initStateBar();
+       /* //设置动画
         getWindow().setEnterTransition(new Explode().setDuration(300));
         getWindow().setExitTransition(new Explode().setDuration(300));
-        getWindow().setReturnTransition(new Explode().setDuration(300));
+        getWindow().setReturnTransition(new Explode().setDuration(300));*/
     }
 
     @Override
@@ -90,7 +95,11 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
-    //初始化网络请求dialog
+    /**
+     * 初始化网络请求dialog
+     *
+     * @param activity dialog展示需要活动的上下文对象
+     */
     private void initWaitDialog(Activity activity) {
         progressDialog = new ProgressDialog(activity);
         //无标题
@@ -103,7 +112,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
     }
 
-    //bmob内部封装了okhttp请求 所以需要手动添加dialog来提示用户正在进行网络请求
+    /**
+     * bmob内部封装了okhttp请求 所以需要手动添加dialog来提示用户正在进行网络请求
+     */
     protected void showWaitDialog(Activity activity) {
         initWaitDialog(activity);
         //dialog不为空且不在展示的状态才显示
@@ -112,6 +123,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * 隐藏dialog
+     */
     protected void hideWaitDialog() {
         if (progressDialog != null && progressDialog.isShowing()) {
             progressDialog.dismiss();
@@ -167,7 +181,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     /**
-     * 初始视图
+     * 初始视图 initView应该在initData前面
      */
     protected abstract void initView();
 
@@ -183,7 +197,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @param msg                    dialog的消息
      * @param confirmDialogInterface 监听dialog确认键以及取消键的点击事件
      */
-    protected void showConfirmDialog(@Nullable String title, @Nullable String msg, @NonNull final ConfirmDialogInterface confirmDialogInterface) {
+    protected void showConfirmDialog(@Nullable String title, @Nullable String msg, @NonNull final IConfirmDialogInterface confirmDialogInterface) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
         //加载布局
         View view = View.inflate(mContext, R.layout.dialog_confirm, null);
@@ -192,7 +206,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         TextView textContent = view.findViewById(R.id.textContent);
         TextView textConfirm = view.findViewById(R.id.textConfirm);
         TextView textCancel = view.findViewById(R.id.textCancel);
-
         //设置标题
         textTitle.setText(title);
         //设置消息内容
@@ -274,16 +287,17 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @param navigationOnClickListener 左边图标的点击事件
      */
     protected void initToolBar(android.support.v7.widget.Toolbar toolbar, @NonNull String title, Boolean isShowLeft, View.OnClickListener navigationOnClickListener) {
-        //使用toolbar替代actionBar
-        setSupportActionBar(toolbar);
-        toolbar.setTitle(title);
-        //设置左边icon
-        if (isShowLeft) {
-            toolbar.setNavigationIcon(R.drawable.icon_vector_back);
-            if (navigationOnClickListener != null) {
-                toolbar.setNavigationOnClickListener(navigationOnClickListener);
-            }
-        }
+        initToolBar(toolbar, title, isShowLeft, navigationOnClickListener, false, null, null);
+    }
+
+    /**
+     * 初始化toolbar的究极省略版 且使用此方法构造的标题是居中的
+     *
+     * @param toolbar                   toolbar
+     * @param navigationOnClickListener 左边图标的点击事件
+     */
+    protected void initToolBar(android.support.v7.widget.Toolbar toolbar, View.OnClickListener navigationOnClickListener) {
+        initToolBar(toolbar, "", true, navigationOnClickListener, false, null, null);
     }
 
     /**
@@ -293,11 +307,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @param isFinishActivity 是否结束当前活动
      */
     protected void gotoActivity(Class<?> clazz, boolean isFinishActivity) {
-        Intent intent = new Intent(MyApplication.getContext(), clazz);
-        startActivity(intent);
-        if (isFinishActivity) {
-            this.finish();
-        }
+        gotoActivity(clazz, null, null, isFinishActivity);
     }
 
     /**
@@ -308,14 +318,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @param isFinishActivity 是否结束当前活动
      */
     protected void gotoActivity(Class<?> clazz, Bundle bundle, boolean isFinishActivity) {
-        Intent intent = new Intent(MyApplication.getContext(), clazz);
-        if (bundle != null) {
-            intent.putExtras(bundle);
-        }
-        startActivity(intent);
-        if (isFinishActivity) {
-            this.finish();
-        }
+        gotoActivity(clazz, bundle, null, isFinishActivity);
     }
 
 
@@ -352,7 +355,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      */
     protected void showSnackBar(@NonNull View view, @NonNull String msg, boolean isDismiss, String action, final ISnackBarClickEvent iSnackBarClickEvent) {
         //snackBar默认显示时间为LENGTH_LONG
-        int duringTime = Snackbar.LENGTH_LONG;
+        int duringTime;
         if (isDismiss) {
             duringTime = Snackbar.LENGTH_LONG;
         } else {
@@ -364,7 +367,7 @@ public abstract class BaseActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         //以接口方式发送出去，便于使用者处理自己的业务逻辑
-                        iSnackBarClickEvent.clickEvent();
+                        iSnackBarClickEvent.onSnackBarClickEvent();
                     }
                 });
         TypedArray typedArray = mContext.obtainStyledAttributes(R.styleable.appCustomerAttrs);
@@ -376,7 +379,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         //设置snackBar图标 这里是获取到snackBar的textView 然后给textView增加左边图标的方式来实现的
         View snackBarView = snackbar.getView();
         TextView textView = (TextView) snackBarView.findViewById(R.id.snackbar_text);
-        Drawable drawable = getResources().getDrawable(R.drawable.icon_vector_notification);//图片自己选择
+        //图片自己选择
+        Drawable drawable = getResources().getDrawable(R.drawable.icon_vector_notification);
         drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
         textView.setCompoundDrawables(drawable, null, null, null);
         //增加文字和图标的距离
@@ -389,19 +393,25 @@ public abstract class BaseActivity extends AppCompatActivity {
      * snackBar的action事件
      */
     public interface ISnackBarClickEvent {
-        //点击事件
-        void clickEvent();
+        /**
+         * 点击事件
+         */
+        void onSnackBarClickEvent();
     }
 
     /**
      * confirmDialog的点击事件
      */
-    public interface ConfirmDialogInterface {
+    public interface IConfirmDialogInterface {
 
-        //监听确认按钮点击事件
+        /**
+         * dialog 点击确认回调事件
+         */
         void onConfirmClickListener();
 
-        //监听取消按钮点击事件
+        /**
+         * dialog 点击取消回调事件
+         */
         void onCancelClickListener();
     }
 }

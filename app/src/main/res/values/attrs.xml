@@ -8,4 +8,16 @@
         <attr name="toolBarColor" />
 
     </declare-styleable>
+
+    <declare-styleable name="TextDrawable">
+        <attr name="startDrawable" format="reference" />
+        <attr name="startDrawableWidth" format="dimension" />
+        <attr name="startDrawableHeight" format="dimension" />
+        <attr name="endDrawable" format="reference" />
+        <attr name="endDrawableWidth" format="dimension" />
+        <attr name="endDrawableHeight" format="dimension" />
+        <attr name="topDrawable" format="reference" />
+        <attr name="topDrawableWidth" format="dimension" />
+        <attr name="topDrawableHeight" format="dimension" />
+    </declare-styleable>
 </resources>

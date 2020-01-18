@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.potato.activity.GetNativeLocationInfoActivity">
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="展示位置信息" />
+
+    <com.example.administrator.potato.view.ExpandLinearLayout
+        android:id="@+id/testExpand"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:clickable="true"
+        android:background="@color/blue"
+        android:orientation="vertical"
+        android:focusable="true">
+
+        <TextView
+            android:text="ssss"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
+    </com.example.administrator.potato.view.ExpandLinearLayout>
+</LinearLayout>

@@ -1,9 +1,5 @@
 package com.example.administrator.potato.utils;
 
-/**
- * 作者 Administrator
- * 时间 2018/11/13
- */
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,8 +10,17 @@ import android.support.v4.content.FileProvider;
 
 import java.io.File;
 
+/**
+ * @author potato
+ * @date 2018/11/13
+ */
 public class FileUtils {
-    //android获取一个用于打开HTML文件的intent
+    /**
+     * android获取一个用于打开HTML文件的intent
+     * @param path
+     * @param mContext
+     * @return
+     */
     public static Intent getHtmlFileIntent(String path, Context mContext) {
         File file = new File(path);
         Uri uri = Uri.parse(file.toString()).buildUpon().encodedAuthority("com.android.htmlfileprovider").scheme("content").encodedPath(file.toString()).build();
@@ -24,7 +29,12 @@ public class FileUtils {
         return intent;
     }
 
-    //android获取一个用于打开图片文件的intent
+    /**
+     * android获取一个用于打开图片文件的intent
+     * @param path
+     * @param mContext
+     * @return
+     */
     public static Intent getImageFileIntent(String path, Context mContext) {
         File file = new File(path);
         Intent intent = new Intent("android.intent.action.VIEW");
@@ -35,7 +45,12 @@ public class FileUtils {
         return intent;
     }
 
-    //android获取一个用于打开PDF文件的intent
+    /**
+     * android获取一个用于打开PDF文件的intent
+     * @param path
+     * @param mContext
+     * @return
+     */
     public static Intent getPdfFileIntent(String path, Context mContext) {
         File file = new File(path);
         Intent intent = new Intent("android.intent.action.VIEW");
@@ -46,7 +61,12 @@ public class FileUtils {
         return intent;
     }
 
-    //android获取一个用于打开文本文件的intent
+    /**
+     * android获取一个用于打开文本文件的intent
+     * @param path
+     * @param mContext
+     * @return
+     */
     public static Intent getTextFileIntent(String path, Context mContext) {
         File file = new File(path);
         Intent intent = new Intent("android.intent.action.VIEW");
@@ -57,7 +77,12 @@ public class FileUtils {
         return intent;
     }
 
-    //android获取一个用于打开音频文件的intent
+    /**
+     * android获取一个用于打开音频文件的intent
+     * @param path
+     * @param mContext
+     * @return
+     */
     public static Intent getAudioFileIntent(String path, Context mContext) {
         File file = new File(path);
         Intent intent = new Intent("android.intent.action.VIEW");
@@ -69,7 +94,12 @@ public class FileUtils {
         return intent;
     }
 
-    //android获取一个用于打开视频文件的intent
+    /**
+     * android获取一个用于打开视频文件的intent
+     * @param path
+     * @param mContext
+     * @return
+     */
     public static Intent getVideoFileIntent(String path, Context mContext) {
         File file = new File(path);
         Intent intent = new Intent("android.intent.action.VIEW");
@@ -82,7 +112,12 @@ public class FileUtils {
     }
 
 
-    //android获取一个用于打开CHM文件的intent
+    /**
+     * android获取一个用于打开CHM文件的intent
+     * @param path
+     * @param mContext
+     * @return
+     */
     public static Intent getChmFileIntent(String path, Context mContext) {
         File file = new File(path);
         Intent intent = new Intent("android.intent.action.VIEW");
@@ -94,7 +129,13 @@ public class FileUtils {
     }
 
 
-    //android获取一个用于打开Word文件的intent
+    /**
+     * android获取一个用于打开Word文件的intent
+     *
+     * @param path
+     * @param mContext
+     * @return
+     */
     public static Intent getWordFileIntent(String path, Context mContext) {
         File file = new File(path);
         Intent intent = new Intent("android.intent.action.VIEW");
@@ -106,7 +147,13 @@ public class FileUtils {
         return intent;
     }
 
-    //android获取一个用于打开Excel文件的intent
+    /**
+     * android获取一个用于打开Excel文件的intent
+     *
+     * @param path
+     * @param mContext
+     * @return
+     */
     public static Intent getExcelFileIntent(String path, Context mContext) {
         File file = new File(path);
         Intent intent = new Intent("android.intent.action.VIEW");
@@ -117,7 +164,13 @@ public class FileUtils {
         return intent;
     }
 
-    //android获取一个用于打开PPT文件的intent
+    /**
+     * android获取一个用于打开PPT文件的intent
+     *
+     * @param path
+     * @param mContext
+     * @return
+     */
     public static Intent getPPTFileIntent(String path, Context mContext) {
         File file = new File(path);
         Intent intent = new Intent("android.intent.action.VIEW");

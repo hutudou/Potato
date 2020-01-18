@@ -20,8 +20,8 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 
 /**
- * Created by wuyr on 3/15/18 5:23 PM.
- * GitHub: https://github.com/wuyr/RippleAnimation
+ * @author wuyr
+ * @date 3/15/18 5:23 PM
  */
 
 @SuppressLint("ViewConstructor")

@@ -1,13 +1,8 @@
 package com.example.administrator.potato.activity;
 
-import android.Manifest;
 import android.animation.Animator;
-import android.animation.ValueAnimator;
-import android.app.Activity;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -15,12 +10,13 @@ import com.airbnb.lottie.LottieAnimationView;
 import com.example.administrator.potato.BuildConfig;
 import com.example.administrator.potato.R;
 
-import java.util.Timer;
-import java.util.TimerTask;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+/**
+ * @author potato
+ */
 public class UseLottieActivity extends BaseActivity {
 
     @Bind(R.id.toolbar)
@@ -77,16 +73,6 @@ public class UseLottieActivity extends BaseActivity {
 
             }
         });
-       /* //控制动画进度
-        ValueAnimator animator = ValueAnimator.ofFloat(0f, 1f)
-                .setDuration(5000);
-        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                lottieAnimationView.setProgress(lottieAnimationView.getProgress());
-            }
-        });
-        animator.start();*/
     }
 
     @Override

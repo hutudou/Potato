@@ -1,10 +1,5 @@
 package com.example.administrator.potato.utils.baidumap;
 
-/**
- * 作者:土豆
- * 创建日期:2018/9/6
- * 邮箱:1401552353@qq.com
- */
 
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
@@ -13,21 +8,25 @@ import com.example.administrator.potato.interfaces.BDLocationInterface;
 
 /**
  * 设置定位参数
+ *
+ * @author potato
+ * @date 2018/9/6
  */
 public class BDLocationParameter {
     public LocationClient locationClient = null;
     private BDLocationInterface bdLocationInterface;
     private BDLocationListener locationListener;
 
-    public BDLocationParameter( BDLocationInterface bdLocationInterface) {
+    public BDLocationParameter(BDLocationInterface bdLocationInterface) {
         this.bdLocationInterface = bdLocationInterface;
         locationListener = new BDLocationListener(bdLocationInterface);
 
     }
 
-    public void setLocationParame() {
+    public void setLocationParam() {
         //使用application的context以防止内存泄露
         locationClient = new LocationClient(MyApplication.getContext());
+
 
         LocationClientOption option = new LocationClientOption();
         //可选，设置定位模式，默认高精度

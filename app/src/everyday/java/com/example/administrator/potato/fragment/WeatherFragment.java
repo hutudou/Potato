@@ -21,7 +21,7 @@ import com.example.administrator.potato.activity.ChangeCityActivity;
 import com.example.administrator.potato.callback.StringDialogCallback;
 import com.example.administrator.potato.holder.BaseRecyclerViewHolder;
 import com.example.administrator.potato.javabeen.WeatherBeen;
-import com.example.administrator.potato.recyclerView.adapter.CommonRecyclerViewAdapter;
+import com.example.administrator.potato.recycler.adapter.CommonRecyclerViewAdapter;
 import com.example.administrator.potato.request.RequestMethod;
 import com.example.administrator.potato.request.RequestUrl;
 import com.example.administrator.potato.utils.ToastMessage;

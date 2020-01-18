@@ -68,7 +68,7 @@ public class UseDialogActivity extends BaseActivity {
                         .show();
                 break;
             case R.id.button1:
-                showConfirmDialog("来自土豆的提示", "这是第一个dialog", new ConfirmDialogInterface() {
+                showConfirmDialog("来自土豆的提示", "这是第一个dialog", new IConfirmDialogInterface() {
                     @Override
                     public void onConfirmClickListener() {
                         Toast.makeText(mContext, "点击了第一个dialog的确认键", Toast.LENGTH_SHORT).show();
@@ -81,7 +81,7 @@ public class UseDialogActivity extends BaseActivity {
                 });
                 break;
             case R.id.button2:
-                showConfirmDialog("温馨提示", "这是第二个dialog！！", new ConfirmDialogInterface() {
+                showConfirmDialog("温馨提示", "这是第二个dialog！！", new IConfirmDialogInterface() {
                     @Override
                     public void onConfirmClickListener() {
                         ToastMessage.toastSuccess("这是第二个dialog的确认键", true);

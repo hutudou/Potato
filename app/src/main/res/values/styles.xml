@@ -38,7 +38,7 @@
 
     <!-- app主题之活力橙-->
     <style name="AppOrangeTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+        <!-- Customize your theme here -->
         <item name="colorPrimary">#FFAF60</item>
         <item name="colorPrimaryDark">#FFAF60</item>
         <item name="toolBarColor">#FFAF60</item>
@@ -62,7 +62,7 @@
 
     <!-- app主题之炫酷黑-->
     <style name="AppBlackTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+        <!-- Customize your theme here -->
         <item name="colorPrimary">#4F4F4F</item>
         <item name="colorPrimaryDark">#4F4F4F</item>
         <item name="toolBarColor">#4F4F4F</item>
@@ -71,6 +71,7 @@
         <item name="windowNoTitle">true</item>
         <item name="android:windowContentTransitions">true</item>
     </style>
+
     <!--popupWindow进入进出动画-->
     <style name="popup_window_anim">
         <item name="android:windowEnterAnimation">@anim/popup_view_in</item>

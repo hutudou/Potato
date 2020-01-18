@@ -22,23 +22,32 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /**
- * 存储设备信息以及异常信息
+ * @author potato
+ *         存储设备信息以及异常信息
  */
 public class CrashLog {
-
+    /**
+     * 保存崩溃日志
+     *
+     * @param context   上下文对象
+     * @param throwable 异常
+     */
     public static void saveCrashLog(Context context, Throwable throwable) {
         Map<String, String> map = collectDeviceInfo(context);
         saveCrashInfo2File(throwable, map);
     }
 
-
-    //收集设备信息
-    private static Map<String, String> collectDeviceInfo(Context ctx) {
+    /**
+     * 收集设备信息
+     *
+     * @param context 上下文对象
+     */
+    private static Map<String, String> collectDeviceInfo(Context context) {
         Map<String, String> infos = new TreeMap<>();
         try {
             infos.put("systemVersion", Build.VERSION.RELEASE);
-            PackageManager pm = ctx.getPackageManager();
-            PackageInfo pi = pm.getPackageInfo(ctx.getPackageName(), PackageManager.GET_ACTIVITIES);
+            PackageManager pm = context.getPackageManager();
+            PackageInfo pi = pm.getPackageInfo(context.getPackageName(), PackageManager.GET_ACTIVITIES);
             if (pi != null) {
                 String versionName = pi.versionName == null ? "null" : pi.versionName;
                 String versionCode = pi.versionCode + "";
@@ -46,6 +55,7 @@ public class CrashLog {
                 infos.put("versionCode", versionCode);
             }
         } catch (PackageManager.NameNotFoundException e) {
+
         }
         Field[] fields = Build.class.getDeclaredFields();
         for (Field field : fields) {
@@ -63,7 +73,7 @@ public class CrashLog {
         //循环输出设备信息
         sb.append("   ************************************************************\n");
         sb.append(" *                                                             *\n");
-        sb.append("*                            设备信息                            *\n");
+        sb.append("*                            《设 备 信 息》                            *\n");
         sb.append(" *                                                             *\n");
         sb.append("   ************************************************************\n");
         for (Map.Entry<String, String> entry : infos.entrySet()) {
@@ -74,7 +84,7 @@ public class CrashLog {
         //收集异常信息
         sb.append("   ************************************************************\n");
         sb.append(" *                                                             *\n");
-        sb.append("*                            错误信息                            *\n");
+        sb.append("*                            《错 误 信 息》                            *\n");
         sb.append(" *                                                             *\n");
         sb.append("   ************************************************************\n");
         Writer writer = new StringWriter();
@@ -92,7 +102,11 @@ public class CrashLog {
         saveLog(sb.toString());
     }
 
-    //写入文件
+    /**
+     * 写入文件
+     *
+     * @param fileContent 文件内容
+     */
     private static void saveLog(String fileContent) {
         BufferedOutputStream bos = null;
         FileOutputStream fos = null;
@@ -132,7 +146,6 @@ public class CrashLog {
                     e.printStackTrace();
                 }
             }
-
             if (fos != null) {
                 try {
                     fos.close();
@@ -140,7 +153,6 @@ public class CrashLog {
                     e.printStackTrace();
                 }
             }
-
         }
     }
 

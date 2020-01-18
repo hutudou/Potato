@@ -11,12 +11,11 @@ import com.tbruyelle.rxpermissions2.RxPermissions;
 import io.reactivex.functions.Consumer;
 
 /**
- * 作者:土豆
+ * @author potato
  * 创建日期:2018/8/21
  * 邮箱:1401552353@qq.com
  */
 
-// 动态权限管理类
 public class PermissionUtils {
 
     /**
@@ -49,7 +48,7 @@ public class PermissionUtils {
      *
      * @param activity   调用方法所在的活动
      * @param permission 需要验证的权限
-     * @return boolean              已经获取返回true 没有获取返回false
+     * @return boolean   已经获取返回true 没有获取返回false
      */
     public static boolean isHasPermission(@NonNull Activity activity, @NonNull String permission) {
         RxPermissions rxPermissions = new RxPermissions(activity);
@@ -57,13 +56,22 @@ public class PermissionUtils {
     }
 
     public interface IPermissionEvent {
-        //权限已获取
+        /**
+         * 权限已获取
+         * @param permission Permission
+         */
         void onAlreadyGet(Permission permission);
 
-        //权限本次拒绝 但是下次仍然可以获取
+        /**
+         * 权限本次被拒绝，但是下次仍然可以重新询问
+         * @param permission Permission
+         */
         void onPartRefuse(Permission permission);
 
-        //权限已彻底拒绝
+        /**
+         * 权限永久被拒绝，需要在系统页面打开权限
+         * @param permission Permission
+         */
         void onCompleteRefuse(Permission permission);
     }
 

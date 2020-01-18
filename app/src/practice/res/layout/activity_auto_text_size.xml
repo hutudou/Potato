@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.potato.activity.AutoTextSizeActivity">
+
+    <include layout="@layout/app_toolbar" />
+
+    <TextView
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:autoSizeMaxTextSize="@dimen/text_size_16"
+        android:autoSizeMinTextSize="2sp"
+        android:autoSizeStepGranularity="1sp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="测试文本能不能自动缩放" />
+
+    <TextView
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:autoSizeMaxTextSize="@dimen/text_size_16"
+        android:autoSizeMinTextSize="2sp"
+        android:autoSizeStepGranularity="1sp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="测试文本能不能自动缩放" />
+
+    <TextView
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:autoSizeMaxTextSize="@dimen/text_size_16"
+        android:autoSizeMinTextSize="2sp"
+        android:autoSizeStepGranularity="1sp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="测试文本能不能自动缩放" />
+
+    <TextView
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:autoSizeMaxTextSize="@dimen/text_size_16"
+        android:autoSizeMinTextSize="2sp"
+        android:autoSizeStepGranularity="1sp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="测试文本能不能自动缩放" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:autoSizeMaxTextSize="@dimen/text_size_16"
+        android:autoSizeMinTextSize="2sp"
+        android:autoSizeStepGranularity="1sp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="测试文本能不能自动缩放" />
+
+    <TextView
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:autoSizeMaxTextSize="@dimen/text_size_16"
+        android:autoSizeMinTextSize="2sp"
+        android:autoSizeStepGranularity="1sp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="测试文本能不能自动缩放" />
+
+    <TextView
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:autoSizeMaxTextSize="@dimen/text_size_16"
+        android:autoSizeMinTextSize="2sp"
+        android:autoSizeStepGranularity="1sp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="测试文本能不能自动缩放" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:autoSizeMaxTextSize="@dimen/text_size_16"
+        android:gravity="start"
+        android:text="以上的文本都只是给size设置了一个区域，程序会自动根据当前屏幕大小来匹配合适的字体大小,这是安卓8.0以上的特性，如果在8.0以下的版本中使用，可以使activity继承自AppCompatActivity或者使用兼容包"
+        android:textColor="@color/black" />
+</LinearLayout>

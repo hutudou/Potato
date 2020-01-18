@@ -3,37 +3,33 @@ package com.example.administrator.potato.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 
 import com.example.administrator.potato.R;
 import com.example.administrator.potato.adapter.FullyGridLayoutManager;
 import com.example.administrator.potato.adapter.GridImageAdapter;
-import com.example.administrator.potato.utils.PictureSelectorUtil;
-import com.example.administrator.potato.utils.ToastMessage;
 import com.luck.picture.lib.PictureSelector;
-import com.luck.picture.lib.adapter.PictureImageGridAdapter;
 import com.luck.picture.lib.config.PictureConfig;
 import com.luck.picture.lib.config.PictureMimeType;
 import com.luck.picture.lib.entity.LocalMedia;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+/**
+ * @author potato
+ */
 public class PictureSelectorActivity extends BaseActivity {
 
     @Bind(R.id.toolbar)
     Toolbar toolbar;
     @Bind(R.id.recycler)
     RecyclerView recycler;
-    private PictureImageGridAdapter adapter;
     private GridImageAdapter mAdapter;
     private List<LocalMedia> list;
 
@@ -63,7 +59,7 @@ public class PictureSelectorActivity extends BaseActivity {
 //                        .theme(themeId)// 主题样式设置 具体参考 values/styles   用法：R.style.picture.white.style
                         .maxSelectNum(9)// 最大图片选择数量
                         .minSelectNum(1)// 最小选择数量
-                        .imageSpanCount(4)// 每行显示个数
+                        .imageSpanCount(4)// 每行显示个数(指的是选择图片时的显示个数)
                        /* .selectionMode(true ?
                                 PictureConfig.MULTIPLE : PictureConfig.SINGLE)// 多选 or 单选*/
                         .selectionMode(PictureConfig.MULTIPLE)
@@ -128,6 +124,8 @@ public class PictureSelectorActivity extends BaseActivity {
                         case 3:
                             // 预览音频
                             PictureSelector.create(PictureSelectorActivity.this).externalPictureAudio(media.getPath());
+                            break;
+                        default:
                             break;
                     }
                 }

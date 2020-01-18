@@ -9,10 +9,8 @@ import android.widget.Toast;
 
 import com.example.administrator.potato.AppConstant;
 import com.example.administrator.potato.R;
-import com.example.administrator.potato.been.TodayInHistoryBeen;
 import com.example.administrator.potato.interfaces.TestInterfaces;
 import com.example.administrator.potato.request.RequestUrl;
-import com.example.administrator.potato.service.TestService;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -21,9 +19,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
+/**
+ * @author Administrator
+ */
 public class UseRetrofitActivity extends BaseActivity {
 
     @Bind(R.id.toolbar)

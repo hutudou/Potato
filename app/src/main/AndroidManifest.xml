@@ -8,8 +8,6 @@
         所谓同组权限即表示多个权限属于同一权限组，
         这一组的权限只需要动态申请一个，其他的权限就不需要重复申请
     -->
-
-
     <!-- 动态权限第一组 -->
     <!-- 网络定位 -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -74,6 +72,8 @@
         <activity
             android:name=".activity.UserFingerprintActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".activity.UseAnimationActivity" />
+        <activity android:name=".activity.UseCustomSpinnerActivity" />
 
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"

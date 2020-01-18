@@ -4,9 +4,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * 作者 Administrator
- * 时间 2019/3/14
  * 平时可能用到的一些小工具
+ *
+ * @author potato
+ * @date 2019/3/14
  */
 
 public class NormalUtils {

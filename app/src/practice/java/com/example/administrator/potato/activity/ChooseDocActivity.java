@@ -15,10 +15,10 @@ import android.widget.TextView;
 
 import com.example.administrator.potato.AppConstant;
 import com.example.administrator.potato.R;
-import com.example.administrator.potato.recyclerView.adapter.CommonRecyclerViewAdapter;
-import com.example.administrator.potato.been.DocBean;
+import com.example.administrator.potato.recycler.adapter.CommonRecyclerViewAdapter;
+import com.example.administrator.potato.bean.DocBean;
 import com.example.administrator.potato.holder.BaseRecyclerViewHolder;
-import com.example.administrator.potato.recyclerView.click.ItemClickListener;
+import com.example.administrator.potato.recycler.click.ItemClickListener;
 import com.example.administrator.potato.utils.DateUtils;
 import com.example.administrator.potato.utils.FileUtils;
 import com.example.administrator.potato.utils.ToastMessage;

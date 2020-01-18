@@ -28,7 +28,8 @@ public class SharedPreferencesUtil {
     public static void saveData(@NonNull String key, Object value) {
         SharedPreferences sharedPreferences = MyApplication.getContext().getSharedPreferences(APP_INFO, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        if (value instanceof String) {//根据value的类型存入对应的类型
+        //根据value的类型存入对应的类型
+        if (value instanceof String) {
             editor.putString(key, (String) value);
         } else if (value instanceof Integer) {
             editor.putInt(key, (Integer) value);
@@ -52,7 +53,8 @@ public class SharedPreferencesUtil {
     public static void saveDataWithFileName(@NonNull String name, @NonNull String key, Object value) {
         SharedPreferences sharedPreferences = MyApplication.getContext().getSharedPreferences(name, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        if (value instanceof String) {//根据value的类型存入对应的类型
+        //根据value的类型存入对应的类型
+        if (value instanceof String) {
             editor.putString(key, (String) value);
         } else if (value instanceof Integer) {
             editor.putInt(key, (Integer) value);
@@ -76,7 +78,8 @@ public class SharedPreferencesUtil {
     public static boolean removeValueByKey(@NonNull String key) {
         SharedPreferences sharedPreferences = MyApplication.getContext().getSharedPreferences(APP_INFO, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        if (sharedPreferences.contains(key)) {//删除前先判断key是否存在
+        //删除前先判断key是否存在
+        if (sharedPreferences.contains(key)) {
             editor.remove(key);
             editor.apply();
         } else {
@@ -95,7 +98,8 @@ public class SharedPreferencesUtil {
     public static boolean removeValueByKey(@NonNull String key, @NonNull String name) {
         SharedPreferences sharedPreferences = MyApplication.getContext().getSharedPreferences(name, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        if (sharedPreferences.contains(key)) {//删除前先判断key是否存在
+        //删除前先判断key是否存在
+        if (sharedPreferences.contains(key)) {
             editor.remove(key);
             editor.apply();
         } else {
@@ -113,7 +117,8 @@ public class SharedPreferencesUtil {
      */
     public static Object getData(@NonNull String key, @NonNull Object defaultValue) {
         SharedPreferences sharedPreferences = MyApplication.getContext().getSharedPreferences(APP_INFO, Context.MODE_PRIVATE);
-        if (defaultValue instanceof String) {//根据defaultValue判断取得的类型
+        //根据defaultValue判断取得的类型
+        if (defaultValue instanceof String) {
             return sharedPreferences.getString(key, (String) defaultValue);
         } else if (defaultValue instanceof Integer) {
             return sharedPreferences.getInt(key, (Integer) defaultValue);
@@ -137,7 +142,8 @@ public class SharedPreferencesUtil {
      */
     public static Object getData(@NonNull String key, @NonNull Object defaultValue, @NonNull String name) {
         SharedPreferences sharedPreferences = MyApplication.getContext().getSharedPreferences(name, Context.MODE_PRIVATE);
-        if (defaultValue instanceof String) {//根据defaultValue判断取得的类型
+        //根据defaultValue判断取得的类型
+        if (defaultValue instanceof String) {
             return sharedPreferences.getString(key, (String) defaultValue);
         } else if (defaultValue instanceof Integer) {
             return sharedPreferences.getInt(key, (Integer) defaultValue);

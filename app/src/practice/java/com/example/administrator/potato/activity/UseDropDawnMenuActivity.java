@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.administrator.potato.R;
-import com.example.administrator.potato.utils.ToastMessage;
 import com.jayfang.dropdownmenu.DropDownMenu;
 import com.jayfang.dropdownmenu.OnMenuSelectedListener;
 
@@ -17,6 +16,9 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+/**
+ * @author potato
+ */
 public class UseDropDawnMenuActivity extends BaseActivity {
 
     @Bind(R.id.toolbar)
@@ -48,20 +50,33 @@ public class UseDropDawnMenuActivity extends BaseActivity {
             }
         });
         String[] defaultTitle = {"星座", "生肖"};
-        dropDownMenu.setmMenuCount(2);//Menu的个数
-        dropDownMenu.setmShowCount(12);//Menu展开list数量太多是只显示的个数
-        dropDownMenu.setShowCheck(true);//是否显示展开list的选中项
-        dropDownMenu.setmMenuTitleTextSize(16);//Menu的文字大小
-        dropDownMenu.setmMenuTitleTextColor(ContextCompat.getColor(mContext, R.color.black));//Menu的文字颜色
-        dropDownMenu.setmMenuListTextSize(16);//Menu展开list的文字大小
+        //Menu的个数
+        dropDownMenu.setmMenuCount(2);
+        //Menu展开list数量太多是只显示的个数
+        dropDownMenu.setmShowCount(12);
+        //是否显示展开list的选中项
+        dropDownMenu.setShowCheck(true);
+        //Menu的文字大小
+        dropDownMenu.setmMenuTitleTextSize(16);
+        //Menu的文字颜色
+        dropDownMenu.setmMenuTitleTextColor(ContextCompat.getColor(mContext, R.color.black));
+        //Menu展开list的文字大小
+        dropDownMenu.setmMenuListTextSize(16);
         dropDownMenu.setShowDivider(true);
-        dropDownMenu.setmMenuListTextSize(ContextCompat.getColor(mContext, R.color.black));//Menu展开list的文字颜色
-        dropDownMenu.setmMenuBackColor(ContextCompat.getColor(mContext, R.color.white));//Menu的背景颜色
-        dropDownMenu.setmMenuPressedBackColor(ContextCompat.getColor(mContext, R.color.bg_color));//Menu按下的背景颜色
-        dropDownMenu.setmCheckIcon(R.drawable.ico_make);//Menu展开list的勾选图片
-        dropDownMenu.setmUpArrow(R.drawable.arrow_up);//Menu默认状态的箭头
-        dropDownMenu.setmDownArrow(R.drawable.arrow_down);//Menu按下状态的箭头
-        dropDownMenu.setDefaultMenuTitle(defaultTitle);//默认未选择任何过滤的Menu title
+        //Menu展开list的文字颜色
+        dropDownMenu.setmMenuListTextSize(ContextCompat.getColor(mContext, R.color.black));
+        //Menu的背景颜色
+        dropDownMenu.setmMenuBackColor(ContextCompat.getColor(mContext, R.color.white));
+        //Menu按下的背景颜色
+        dropDownMenu.setmMenuPressedBackColor(ContextCompat.getColor(mContext, R.color.bg_color));
+        //Menu展开list的勾选图片
+        dropDownMenu.setmCheckIcon(R.drawable.ico_make);
+        //Menu默认状态的箭头
+        dropDownMenu.setmUpArrow(R.drawable.arrow_up);
+        //Menu按下状态的箭头
+        dropDownMenu.setmDownArrow(R.drawable.arrow_down);
+        //默认未选择任何过滤的Menu title
+        dropDownMenu.setDefaultMenuTitle(defaultTitle);
         dropDownMenu.setmArrowMarginTitle(20);
         dropDownMenu.setMenuSelectedListener(new OnMenuSelectedListener() {
             @Override
@@ -72,6 +87,8 @@ public class UseDropDawnMenuActivity extends BaseActivity {
                         break;
                     case 1:
                         selectZodiac = zodiac[i];
+                        break;
+                    default:
                         break;
                 }
                 text.setText(String.format("你选择的星座是:%s\n你选择的生肖是:%s", selectConstellation, selectZodiac));

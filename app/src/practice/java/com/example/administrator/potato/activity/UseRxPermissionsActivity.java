@@ -17,6 +17,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.reactivex.functions.Consumer;
 
+/**
+ * @author potato
+ */
 public class UseRxPermissionsActivity extends BaseActivity {
 
     @Bind(R.id.toolbar)
@@ -41,7 +44,7 @@ public class UseRxPermissionsActivity extends BaseActivity {
                     public void accept(Permission permission) throws Exception {
                         if (permission.granted) {
                             /**
-                             * 当获取多项权限时 这里是一项项获取的 可以根据permission.name来控制每一次获取的权限是哪一个
+                             * 当获取多项权限时 这里是一项项获取的 可以根据permission.name 获得权限的名字 来获知获取的权限是哪一个
                              */
                             ToastMessage.toastSuccess(permission.name + "权限已经成功获取了", true);
                             Log.d("awei", permission.name + "权限已经成功获取了");

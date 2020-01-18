@@ -23,18 +23,26 @@ import java.util.ArrayList;
 
 public class DatePickerUtil {
     //常量
-    //月
+    /**
+     * 月
+     */
     private final String[] MONTHS = {"01月", "02月", "03月", "04月", "05月", "06月", "07月", "08月", "09月", "10月", "11月", "12月"};
-    //日
+    /**
+     * 日
+     */
     private final String[] DAYS = {"01日", "02日", "03日", "04日", "05日", "06日", "07日", "08日", "09日", "10日",
             "11日", "12日", "13日", "14日", "15日", "16日", "17日", "18日", "19日", "20日",
             "21日", "22日", "23日", "24日", "25日", "26日", "27日", "28日", "29日", "30日", "31日"};
-    //时
+    /**
+     * 时
+     */
     private final String[] HOURS = {
             "01时", "02时", "03时", "04时", "05时", "06时", "07时", "08时", "09时", "10时",
             "11时", "12时", "13时", "14时", "15时", "16时", "17时", "18时", "19时", "20时",
             "21时", "22时", "23时", "24时"};
-    //分
+    /**
+     * 分
+     */
     private final String[] MINUTES = {
             "01分", "02分", "03分", "04分", "05分", "06分", "07分", "08分", "09分", "10分",
             "11分", "12分", "13分", "14分", "15分", "16分", "17分", "18分", "19分", "20分",
@@ -43,7 +51,9 @@ public class DatePickerUtil {
             "41分", "42分", "43分", "44分", "45分", "46分", "47分", "48分", "49分", "50分",
             "51分", "52分", "53分", "54分", "55分", "56分", "57分", "58分", "59分"
     };
-    //秒
+    /**
+     * 秒
+     */
     private final String[] SECONDS = {
             "01秒", "02秒", "03秒", "04秒", "05秒", "06秒", "07秒", "08秒", "09秒", "10秒",
             "11秒", "12秒", "13秒", "14秒", "15秒", "16秒", "17秒", "18秒", "19秒", "20秒",
@@ -54,32 +64,58 @@ public class DatePickerUtil {
     };
     private static final String DISMISS = "dismiss";
     private static final String SHOW = "show";
-    //picker类型一 年月
+    /**
+     * picker类型一 年月
+     */
     public static final String CHOOSE_YEAR_MONTH = "chooseYearMonth";
-    //picker类型二 月日
+    /**
+     * picker类型二 月日
+     */
     public static final String CHOOSE_MONTH_DAY = "chooseMonthDay";
-    //picker类型三 年月日
+    /**
+     * picker类型三 年月日
+     */
     public static final String CHOOSE_YEAR_MONTH_DAY = "chooseYearMonthDay";
-    //picker类型四  时分秒
+    /**
+     * picker类型四  时分秒
+     */
     public static final String CHOOSE_HOUR_MINUTE_SECOND = "chooseHourMinuteSecond";
-    //picker类型五 年月日 时分秒
+    /**
+     * picker类型五 年月日 时分秒
+     */
     public static final String CHOOSE_YEAR_MONTH_DAY_HOUR_MINUTE_SECOND = "chooseYearMonthDayHourMinuteSecond";
-    //年
+    /**
+     * 年
+     */
     private ArrayList<String> years;
     private Activity activity;
-    //当前年份
+    /**
+     * 当前年份
+     */
     private int currentYear;
-    //当前月份
+    /**
+     * 当前月份
+     */
     private int currentMonth;
-    //当前日
+    /**
+     * 当前日
+     */
     private int currentDay;
-    //当前时
+    /**
+     * 当前时
+     */
     private int currentHour;
-    //当前分
+    /**
+     * 当前分
+     */
     private int currentMinute;
-    //当前秒
+    /**
+     * 当前秒
+     */
     private int currentSecond;
-    //view
+    /**
+     * popupView
+     */
     private View popupView;
     private NumberPicker pickerYear;
     private NumberPicker pickerMonth;
@@ -99,7 +135,9 @@ public class DatePickerUtil {
         initPickerListener();
     }
 
-    //将当前的日期的年、月、日、时、分、秒拆分出来
+    /**
+     * 将当前的日期的年、月、日、时、分、秒拆分出来
+     */
     private void getCurrentDate() {
         long t = System.currentTimeMillis();
         SimpleDateFormat dfYear = new SimpleDateFormat("yyyy");
@@ -116,10 +154,10 @@ public class DatePickerUtil {
             currentMinute = Integer.parseInt(dfMinute.format(t));
             currentSecond = Integer.parseInt(dfSecond.format(t));
         } catch (Exception e) {
-            ToastMessage.toastError("日期转化int失败,请联系开发者哦...", false);
+            ToastMessage.toastError("日期类型转化失败,请联系开发者哦...", false);
         }
-        //因为年份是随着当前年份浮动的 所以需要动态赋值
-        for (int i = currentYear - 10; i < currentYear + 10; i++) { //当前年份上下十年
+        //因为年份是随着当前年份浮动的 所以需要动态赋值 选择当前年份上下十年
+        for (int i = currentYear - 10; i < currentYear + 10; i++) {
             years.add(i + "年");
         }
     }
@@ -141,25 +179,30 @@ public class DatePickerUtil {
             }
         });
         switch (pickerType) {
-            case CHOOSE_YEAR_MONTH://选择年月
+            //选择年月
+            case CHOOSE_YEAR_MONTH:
                 pickerDay.setVisibility(View.GONE);
                 pickerHour.setVisibility(View.GONE);
                 pickerMinute.setVisibility(View.GONE);
                 pickerSecond.setVisibility(View.GONE);
                 break;
-            case CHOOSE_YEAR_MONTH_DAY://选择年月日
+            //选择年月日
+            case CHOOSE_YEAR_MONTH_DAY:
                 pickerHour.setVisibility(View.GONE);
                 pickerMinute.setVisibility(View.GONE);
                 pickerSecond.setVisibility(View.GONE);
                 break;
-            case CHOOSE_YEAR_MONTH_DAY_HOUR_MINUTE_SECOND://选择年月日  时分秒
+            //选择年月日  时分秒
+            case CHOOSE_YEAR_MONTH_DAY_HOUR_MINUTE_SECOND:
                 break;
-            case CHOOSE_HOUR_MINUTE_SECOND://选择时分秒
+            //选择时分秒
+            case CHOOSE_HOUR_MINUTE_SECOND:
                 pickerYear.setVisibility(View.GONE);
                 pickerMonth.setVisibility(View.GONE);
                 pickerDay.setVisibility(View.GONE);
                 break;
-            case CHOOSE_MONTH_DAY://选择月日
+            //选择月日
+            case CHOOSE_MONTH_DAY:
                 pickerYear.setVisibility(View.GONE);
                 pickerHour.setVisibility(View.GONE);
                 pickerMinute.setVisibility(View.GONE);
@@ -185,19 +228,24 @@ public class DatePickerUtil {
             public void onClick(View view) {
                 String result;
                 switch (pickerType) {
-                    case CHOOSE_YEAR_MONTH://选择年月
+                    //选择年月
+                    case CHOOSE_YEAR_MONTH:
                         result = "" + years.get(pickerYear.getValue()) + "" + MONTHS[pickerMonth.getValue()];
                         break;
-                    case CHOOSE_YEAR_MONTH_DAY://选择年月日
+                    //选择年月日
+                    case CHOOSE_YEAR_MONTH_DAY:
                         result = "" + years.get(pickerYear.getValue()) + "" + MONTHS[pickerMonth.getValue()] + "" + DAYS[pickerDay.getValue()];
                         break;
-                    case CHOOSE_YEAR_MONTH_DAY_HOUR_MINUTE_SECOND://选择年月日  时分秒
+                    //选择年月日  时分秒
+                    case CHOOSE_YEAR_MONTH_DAY_HOUR_MINUTE_SECOND:
                         result = "" + years.get(pickerYear.getValue()) + "" + MONTHS[pickerMonth.getValue()] + "" + DAYS[pickerDay.getValue()] + "" + HOURS[pickerHour.getValue()] + "" + MINUTES[pickerMinute.getValue()] + "" + SECONDS[pickerSecond.getValue()];
                         break;
-                    case CHOOSE_HOUR_MINUTE_SECOND://选择时分秒
+                    //选择时分秒
+                    case CHOOSE_HOUR_MINUTE_SECOND:
                         result = "" + HOURS[pickerHour.getValue()] + "" + MINUTES[pickerMinute.getValue()] + "" + SECONDS[pickerSecond.getValue()];
                         break;
-                    case CHOOSE_MONTH_DAY://选择月日
+                    //选择月日
+                    case CHOOSE_MONTH_DAY:
                         result = "" + MONTHS[pickerMonth.getValue()] + "" + DAYS[pickerDay.getValue()];
                         break;
                     default:
@@ -221,7 +269,8 @@ public class DatePickerUtil {
         pickerYear.setDisplayedValues(y);
         pickerYear.setMinValue(0);
         pickerYear.setMaxValue(years.size() - 1);
-        for (int i = 0; i < y.length; i++) {//设置pickerYear    从y数组中找到当前年份的位置
+        //设置pickerYear    从y数组中找到当前年份的位置
+        for (int i = 0; i < y.length; i++) {
             if (y[i].contains(currentYear + "")) {
                 pickerYear.setValue(i);
             }
@@ -256,30 +305,41 @@ public class DatePickerUtil {
 
     //设置日的取值范围（因为大小月 闰年平年时 月份的大小是不固定的 所以需要动态判定赋值）
     private void setPickerByDate(int currentYear) {
-        if (isLeapYear(currentYear)) {//先判断是否是闰年
-            if (pickerMonth.getValue() == 1) {//再判断是否是二月
-                pickerDay.setMaxValue(DAYS.length - 3);//闰年29天
+        //先判断是否是闰年
+        if (isLeapYear(currentYear)) {
+            //再判断是否是二月
+            if (pickerMonth.getValue() == 1) {
+                //闰年29天
+                pickerDay.setMaxValue(DAYS.length - 3);
             } else {
                 if (isLargeMonth(pickerMonth.getValue())) {
-                    pickerDay.setMaxValue(DAYS.length - 1);//平年大月31天
+                    //平年大月31天
+                    pickerDay.setMaxValue(DAYS.length - 1);
                 } else {
-                    pickerDay.setMaxValue(DAYS.length - 2);//平年小月30天
+                    //平年小月30天
+                    pickerDay.setMaxValue(DAYS.length - 2);
                 }
             }
         } else {//不是闰年
-            if (pickerMonth.getValue() == 1) {//再判断是否是二月
-                pickerDay.setMaxValue(DAYS.length - 4);//不是闰年28天
+            //再判断是否是二月
+            if (pickerMonth.getValue() == 1) {
+                //不是闰年28天
+                pickerDay.setMaxValue(DAYS.length - 4);
             } else {
                 if (isLargeMonth(pickerMonth.getValue())) {
-                    pickerDay.setMaxValue(DAYS.length - 1);//平年大月31天
+                    //平年大月31天
+                    pickerDay.setMaxValue(DAYS.length - 1);
                 } else {
-                    pickerDay.setMaxValue(DAYS.length - 2);//平年小月30天
+                    //平年小月30天
+                    pickerDay.setMaxValue(DAYS.length - 2);
                 }
             }
         }
     }
 
-    //添加picker事件
+    /**
+     * 添加picker事件
+     */
     private void initPickerListener() {
         pickerYear.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
@@ -297,18 +357,31 @@ public class DatePickerUtil {
         });
     }
 
-    //判断是否是闰年
+    /**
+     * 判断是否是闰年
+     *
+     * @param valueYear
+     * @return
+     */
     private boolean isLeapYear(int valueYear) {
         return (valueYear % 4 == 0 && valueYear % 100 != 0) || valueYear % 400 == 0;
     }
 
-    //判断是否是大月
+    /**
+     * 判断是否是大月
+     *
+     * @param valueMonth
+     * @return
+     */
     private boolean isLargeMonth(int valueMonth) {
-        valueMonth += 1;//月份需要加一
+        //月份需要加一
+        valueMonth += 1;
         return valueMonth == 1 || valueMonth == 3 || valueMonth == 5 || valueMonth == 7 || valueMonth == 8 || valueMonth == 10 || valueMonth == 12;
     }
 
-    //获取控件
+    /**
+     * 获取控件
+     */
     private void initView() {
         popupView = activity.getLayoutInflater().inflate(R.layout.popup_view_date_picker, null);
         //获取布局中的控件
@@ -322,7 +395,9 @@ public class DatePickerUtil {
         textConfirm = popupView.findViewById(R.id.textConfirm);
     }
 
-    //popubView在显示和消失时改变背景屏幕的透明度
+    /**
+     * popubView在显示和消失时改变背景屏幕的透明度
+     */
     private void change(String type) {
         Window window = activity.getWindow();
         final WindowManager.LayoutParams params = window.getAttributes();
@@ -335,8 +410,14 @@ public class DatePickerUtil {
     }
 
     public interface IPickEvent {
-        void onCancel();//取消事件
+        /**
+         * 取消事件
+         */
+        void onCancel();
 
-        void onConfirm(String dateResult);//日期确认选择  返回字符型时间和选择时间的时间戳
+        /**
+         * 日期确认选择  返回字符型时间和选择时间的时间戳
+         */
+        void onConfirm(String dateResult);
     }
 }

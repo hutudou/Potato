@@ -9,7 +9,7 @@ import com.lzy.okgo.request.base.Request;
 import java.lang.reflect.Type;
 
 /**
- * Created by Administrator on 2018/11/2.
+ * @author potato
  */
 
 public abstract class JsonDialogCallback<T> extends JsonCallback<T> {
@@ -26,7 +26,11 @@ public abstract class JsonDialogCallback<T> extends JsonCallback<T> {
     private ProgressDialog progressDialog;
 
 
-    //初始化dialog
+    /**
+     * 初始化dialog
+     *
+     * @param activity 需要显示dialog的活动
+     */
     private void initDialog(Activity activity) {
         progressDialog = new ProgressDialog(activity);
         //无标题

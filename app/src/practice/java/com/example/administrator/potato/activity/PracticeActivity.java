@@ -55,7 +55,7 @@ public class PracticeActivity extends BaseActivity {
 
     @OnClick(R.id.button1)
     public void onViewClicked() {
-        showConfirmDialog("来自土豆的提示", "您确定要提交吗？", new ConfirmDialogInterface() {
+        showConfirmDialog("来自土豆的提示", "您确定要提交吗？", new IConfirmDialogInterface() {
             @Override
             public void onConfirmClickListener() {
                 ToastMessage.toastSuccess("您点击了确定按钮!", true);

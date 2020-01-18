@@ -13,12 +13,18 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+/**
+ * @author patato
+ */
 public class UserFingerprintActivity extends BaseActivity {
 
     @Bind(R.id.toolbar)
     Toolbar toolbar;
     @Bind(R.id.textResult)
     TextView textResult;
+    /**
+     * 指纹管理器
+     */
     private FingerprintManagerCompat manager;
 
     @Override

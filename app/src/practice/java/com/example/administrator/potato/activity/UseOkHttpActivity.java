@@ -11,9 +11,9 @@ import android.widget.TextView;
 import com.alibaba.fastjson.JSON;
 import com.example.administrator.potato.AppConstant;
 import com.example.administrator.potato.R;
-import com.example.administrator.potato.recyclerView.adapter.CommonRecyclerViewAdapter;
-import com.example.administrator.potato.been.TodayInHistoryBeen;
-import com.example.administrator.potato.callback.StringDialogCallback;
+import com.example.administrator.potato.recycler.adapter.CommonRecyclerViewAdapter;
+import com.example.administrator.potato.bean.TodayInHistoryBeen;
+import com.example.administrator.potato.callback.AbstractStringDialogCallback;
 import com.example.administrator.potato.holder.BaseRecyclerViewHolder;
 import com.example.administrator.potato.request.RequestMethod;
 import com.example.administrator.potato.request.RequestUrl;
@@ -75,7 +75,7 @@ public class UseOkHttpActivity extends BaseActivity {
         Map<String, String> map = new HashMap<>();
         map.put("key", AppConstant.MOB_APP_KEY);
         map.put("day", "0404");
-        RequestMethod.get(this, RequestUrl.TOADY_IN_HISTORY, map, new StringDialogCallback(this) {
+        RequestMethod.get(this, RequestUrl.TOADY_IN_HISTORY, map, new AbstractStringDialogCallback(this) {
             @Override
             public void onSuccess(Response<String> response) {
                 String msg = response.body();

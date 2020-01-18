@@ -62,7 +62,7 @@ public class UseSnackBarActivity extends BaseActivity {
     public void onButtonCustomClicked() {
         showSnackBar(coordinatorCustom, "这是我们自己封装的snackBar", false, "再瞅一个试试", new ISnackBarClickEvent() {
             @Override
-            public void clickEvent() {
+            public void onSnackBarClickEvent() {
                 ToastMessage.toastWarn("试试就试试", true);
             }
         });

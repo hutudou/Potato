@@ -19,8 +19,10 @@ public class TextViewShowWordOneByOne {
 
     public TextViewShowWordOneByOne(TextView tv, String s, long time, boolean isRepeat) {
         this.tv = tv;
-        TextViewShowWordOneByOne.s = s;//字符串
-        TextViewShowWordOneByOne.time = time;//间隔时间
+        //字符串
+        TextViewShowWordOneByOne.s = s;
+        //间隔时间
+        TextViewShowWordOneByOne.time = time;
         length = s.length();
         this.isRepeat = isRepeat;
     }
@@ -44,7 +46,8 @@ public class TextViewShowWordOneByOne {
                                     tv.setText(stv);
                                 }
                             });
-                            Thread.sleep(time);//休息片刻
+                            //休息片刻
+                            Thread.sleep(time);
                             nn = n + 1;//读取下个字
                             if (nn <= length) {//如果还有汉字，那么继续开启线程，相当于递归的感觉
                                 startTv(nn);

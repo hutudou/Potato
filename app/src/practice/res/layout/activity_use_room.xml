@@ -10,6 +10,7 @@
     <include layout="@layout/app_toolbar" />
 
     <Button
+        android:layout_marginTop="18dp"
         android:id="@+id/buttonInsert"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,4 +33,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="显示库中所有数据" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_marginTop="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </android.support.v7.widget.RecyclerView>
 </LinearLayout>

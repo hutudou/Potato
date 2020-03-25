@@ -1,14 +1,17 @@
 package com.example.administrator.potato.dao;
 
 import android.arch.persistence.room.Dao;
+import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
+import android.arch.persistence.room.Update;
 
 import com.example.administrator.potato.model.StudentModel;
 
 import java.util.List;
 
 import io.reactivex.Flowable;
+import io.reactivex.Single;
 
 
 /**
@@ -23,9 +26,29 @@ public interface StudentDao {
     @Query("SELECT * FROM student")
     Flowable<List<StudentModel>> getAllStudents();
 
+
     /**
      * 插入多条数据
+     *
+     * @return 插入的数据所在的行数Id集合
      */
     @Insert
-    void insertAll(StudentModel... studentModels);
+    List<Long> insertAll(StudentModel... studentModels);
+
+    /**
+     * 删除指定的数据项
+     *
+     * @param studentModels
+     * @return 被删除的行总数
+     */
+    @Delete
+    int delete(StudentModel... studentModels);
+
+    /**
+     * 更改指定项
+     *
+     * @return 修改的行总数
+     */
+    @Update
+    int update(StudentModel... studentModels);
 }

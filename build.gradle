@@ -1,7 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    
+
     repositories {
         google()
         jcenter()
@@ -10,18 +10,37 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.1'
         classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2' // add plugin
-         // NOTE: Do not place your application dependencies here; they belong
+        // NOTE: Do not place your application dependencies here; they belong
         //GreenDao3依赖
         classpath 'org.greenrobot:greendao-gradle-plugin:3.2.1'
     }
+
+    /*subprojects {
+        project.configurations.all {
+            resolutionStrategy.eachDependency { details ->
+                if (details.requested.group == 'com.android.support'
+                        && !details.requested.name.contains('multidex') ) {
+                    details.useVersion "27.1.1"
+                }
+
+                if (details.requested.group == 'androidx.core'
+                        && !details.requested.name.contains('androidx') ) {
+                    details.useVersion "1.0.1"
+                }
+            }
+        }
+    }*/
+
     ext {
         //app发布版----平时开发调试的时候，请设置为false，正式上线发布的时候设置为true
         appRelease = false
     }
+
 }
 
 allprojects {
     repositories {
+        mavenCentral()
         google()
         jcenter()
         maven { url "https://raw.github.com/bmob/bmob-android-sdk/master" }

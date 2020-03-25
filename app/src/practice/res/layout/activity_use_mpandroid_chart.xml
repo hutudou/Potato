@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.administrator.potato.activity.UseMPAndroidChart">
+    tools:context="com.example.administrator.potato.activity.UseMPAndroidChartActivity">
     <include layout="@layout/app_toolbar"/>
     <TextView
         android:layout_marginTop="16dp"

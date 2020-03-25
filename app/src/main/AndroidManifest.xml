@@ -90,7 +90,6 @@
             android:name="com.baidu.location.f"
             android:enabled="true"
             android:process=":remote" />
-        <service android:name=".service.GetLocationService" />
 
         <provider
             android:name="cn.bmob.v3.util.BmobContentProvider"

@@ -144,6 +144,9 @@ public class EveryDayMainActivity extends BaseActivity {
                     case R.id.position:
                         ToastMessage.toastWarn("功能正在开发中...", true);
                         break;
+                        /*
+
+                         */
                     case R.id.clearCache:
                         showConfirmDialog("清理缓存", "当前缓存:" + DataCleanUtils.getTotalCacheSize(mContext) + ",确定要清除吗?", new ConfirmDialogInterface() {
                             @Override

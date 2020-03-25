@@ -70,7 +70,8 @@ public class MainActivity extends BaseActivity {
             "功能三十五:使用表格插件",
             "功能三十六:text view字体大小的适配",
             "功能三十七:扫描本地的音乐文件",
-            "功能三十八:使用自定义的TextView(可调整图片大小)"
+            "功能三十八:使用自定义的TextView(可调整图片大小)",
+            "功能三十九:使用数据库管理框架----room"
     };
 
     @Override
@@ -171,7 +172,7 @@ public class MainActivity extends BaseActivity {
                         break;
                     //功能十:MPAndroidChart的使用
                     case 10:
-                        Intent intent10 = new Intent(mContext, UseMPAndroidChart.class);
+                        Intent intent10 = new Intent(mContext, UseMPAndroidChartActivity.class);
                         startActivity(intent10);
                         break;
                     //功能十一:MPAndroidChart的使用
@@ -308,6 +309,11 @@ public class MainActivity extends BaseActivity {
                     case 38:
                         Intent intent37 = new Intent(mContext, CustomTextViewActivity.class);
                         startActivity(intent37);
+                        break;
+                    //"功能三十九:使用数据库管理框架----room"
+                    case 39:
+                        Intent intent38 = new Intent(mContext, UseRoomActivity.class);
+                        startActivity(intent38);
                         break;
                     default:
                         break;

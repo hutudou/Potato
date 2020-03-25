@@ -1,6 +1,4 @@
 apply plugin: 'com.android.application'
-//使用greendao
-apply plugin: 'org.greenrobot.greendao'
 android {
     compileSdkVersion 28
     useLibrary 'org.apache.http.legacy'
@@ -42,13 +40,6 @@ android {
             flavor ->
                 buildConfigField("String", flavor.name, "\"${flavor.name}\"")
         }
-    }
-    //greendao配置
-    greendao {
-        //版本号，升级时可配置
-        schemaVersion 1
-        daoPackage 'com.example.administrator.potato.gen'
-        targetGenDir 'src/everyday/java'
     }
     signingConfigs {
         release {
@@ -153,11 +144,14 @@ dependencies {
     compile 'cn.bmob.android:bmob-sdk:3.6.9'
     //分包策略
     compile 'com.android.support:multidex:1.0.1'
-    //greenDao
-    compile 'org.greenrobot:greendao:3.2.0'
     //NiceSpinner
     implementation 'com.github.arcadefire:nice-spinner:1.4.3'
-
+    //谷歌数据库管理框架 room androidX和support不兼容
+    def room_version = "1.1.1"
+    implementation "android.arch.persistence.room:runtime:$room_version"
+    annotationProcessor "android.arch.persistence.room:compiler:$room_version"
+    //使用rxjava来配合room
+    implementation "android.arch.persistence.room:rxjava2:1.0.0"
 }
 
 

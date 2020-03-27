@@ -11,25 +11,29 @@ import com.example.administrator.potato.model.StudentModel;
 import java.util.List;
 
 import io.reactivex.Flowable;
-import io.reactivex.Single;
 
 
 /**
- * @author 0119 huwei
+ * @author potato
  * @date 2020/3/24
  */
 @Dao
 public interface StudentDao {
     /**
-     * 查询所有的学生信息
+     * 查询所有的学生信息 普通版本
      */
-    @Query("SELECT * FROM student")
-    Flowable<List<StudentModel>> getAllStudents();
+    @Query("select * from student")
+    List<StudentModel> getAllStudentsByNormal();
 
 
     /**
+     * 查询所有的学生信息 rxjava版
+     */
+    @Query("SELECT * FROM student")
+    Flowable<List<StudentModel>> getAllStudentsByRxjava();
+
+    /**
      * 插入多条数据
-     *
      * @return 插入的数据所在的行数Id集合
      */
     @Insert

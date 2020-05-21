@@ -23,7 +23,6 @@ import com.wanjian.cockroach.Cockroach;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
-import cn.bmob.v3.Bmob;
 import okhttp3.OkHttpClient;
 
 
@@ -50,7 +49,7 @@ public class MyApplication extends MultiDexApplication {
     }
 
     private void initBmob() {
-        Bmob.initialize(this, AppConstant.BMOB_APPLICATION_ID);
+
     }
 
     //得到Application的context

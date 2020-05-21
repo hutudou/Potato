@@ -91,9 +91,9 @@
             android:enabled="true"
             android:process=":remote" />
 
-        <provider
+        <!--<provider
             android:name="cn.bmob.v3.util.BmobContentProvider"
-            android:authorities="com.example.administrator.potato.BmobContentProvider" />
+            android:authorities="com.example.administrator.potato.BmobContentProvider" />-->
     </application>
 
 </manifest>

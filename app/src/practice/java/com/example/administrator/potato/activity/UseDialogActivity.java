@@ -93,6 +93,8 @@ public class UseDialogActivity extends BaseActivity {
                     }
                 });
                 break;
+            default:
+                break;
         }
     }
 }

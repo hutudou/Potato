@@ -33,7 +33,7 @@ import io.reactivex.schedulers.Schedulers;
 /**
  * 使用Google官方的数据库框架 room
  *
- * @author awei
+ * @author potato
  * @date 2020/3/24
  */
 public class UseRoomActivity extends BaseActivity {
@@ -52,6 +52,9 @@ public class UseRoomActivity extends BaseActivity {
     @Bind(R.id.recyclerView)
     RecyclerView recyclerView;
     private List<StudentModel> studentModelList = new ArrayList<>();
+    /**
+     * 适配器
+     */
     private CommonRecyclerViewAdapter<StudentModel> adapter;
 
     @Override

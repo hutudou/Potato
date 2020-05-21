@@ -199,6 +199,14 @@ public class GridImageAdapter extends
                         mItemClickListener.onItemClick(adapterPosition, v);
                     }
                 });
+                viewHolder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View v) {
+                        int adapterPosition = viewHolder.getAdapterPosition();
+                        mItemClickListener.onItemLongClick(adapterPosition, v);
+                        return true;
+                    }
+                });
             }
         }
     }
@@ -206,7 +214,15 @@ public class GridImageAdapter extends
     protected OnItemClickListener mItemClickListener;
 
     public interface OnItemClickListener {
+        /**
+         * 子项点击
+         *
+         * @param position
+         * @param v
+         */
         void onItemClick(int position, View v);
+
+        void onItemLongClick(int position, View v);
     }
 
     public void setOnItemClickListener(OnItemClickListener listener) {

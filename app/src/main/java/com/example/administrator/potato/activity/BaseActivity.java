@@ -37,9 +37,6 @@ import com.lzy.okgo.OkGo;
  */
 public abstract class BaseActivity extends AppCompatActivity {
 
-    /**
-     * 上下文对象
-     */
     protected Context mContext;
 
     private ProgressDialog progressDialog;
@@ -82,7 +79,6 @@ public abstract class BaseActivity extends AppCompatActivity {
      * * @param excludeViews  点击这些View不会触发隐藏软键盘动作
      */
     public static final void hideInputWhenTouchOtherView(Activity activity, MotionEvent ev) {
-
         if (ev.getAction() == MotionEvent.ACTION_DOWN) {
             View v = activity.getCurrentFocus();
             if (isShouldHideInput(v, ev)) {

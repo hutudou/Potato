@@ -10,8 +10,9 @@ import android.view.View;
 import com.example.administrator.potato.R;
 import com.example.administrator.potato.adapter.FullyGridLayoutManager;
 import com.example.administrator.potato.adapter.GridImageAdapter;
+import com.example.administrator.potato.utils.PictureSelectorUtil;
+import com.example.administrator.potato.utils.ToastMessage;
 import com.luck.picture.lib.PictureSelector;
-import com.luck.picture.lib.config.PictureConfig;
 import com.luck.picture.lib.config.PictureMimeType;
 import com.luck.picture.lib.entity.LocalMedia;
 
@@ -44,24 +45,28 @@ public class PictureSelectorActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+
         initToolBar(toolbar, "PictureSelector的使用以及封装", true, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
             }
         });
+
         mAdapter = new GridImageAdapter(this, new GridImageAdapter.onAddPicClickListener() {
             @Override
             public void onAddPicClick() {
-                // 进入相册 以下是例子：不需要的api可以不写
+
+                PictureSelectorUtil.initPictureSelector(PictureSelectorActivity.this, list);
+             /*   // 进入相册 以下是例子：不需要的api可以不写
                 PictureSelector.create(PictureSelectorActivity.this)
                         .openGallery(PictureMimeType.ofImage())// 全部.PictureMimeType.ofAll()、图片.ofImage()、视频.ofVideo()、音频.ofAudio()
-//                        .theme(themeId)// 主题样式设置 具体参考 values/styles   用法：R.style.picture.white.style
+//                      .theme(themeId)// 主题样式设置 具体参考 values/styles   用法：R.style.picture.white.style
                         .maxSelectNum(9)// 最大图片选择数量
                         .minSelectNum(1)// 最小选择数量
                         .imageSpanCount(4)// 每行显示个数(指的是选择图片时的显示个数)
-                       /* .selectionMode(true ?
-                                PictureConfig.MULTIPLE : PictureConfig.SINGLE)// 多选 or 单选*/
+                       *//* .selectionMode(true ?
+                                PictureConfig.MULTIPLE : PictureConfig.SINGLE)// 多选 or 单选*//*
                         .selectionMode(PictureConfig.MULTIPLE)
                         .previewImage(true)// 是否可预览图片
                         .previewVideo(true)// 是否可预览视频
@@ -97,7 +102,7 @@ public class PictureSelectorActivity extends BaseActivity {
                         //.videoQuality()// 视频录制质量 0 or 1
                         //.videoSecond()//显示多少秒以内的视频or音频也可适用
                         //.recordVideoSecond()//录制视频秒数 默认60s
-                        .forResult(0);//结果回调onActivityResult code
+                        .forResult(0);//结果回调onActivityResult code*/
             }
         });
         recycler.setAdapter(mAdapter);
@@ -129,6 +134,11 @@ public class PictureSelectorActivity extends BaseActivity {
                             break;
                     }
                 }
+            }
+
+            @Override
+            public void onItemLongClick(int position, View v) {
+                ToastMessage.toastNormal("点击了" + position);
             }
         });
     }

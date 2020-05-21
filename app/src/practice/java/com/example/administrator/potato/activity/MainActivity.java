@@ -71,7 +71,10 @@ public class MainActivity extends BaseActivity {
             "功能三十六:text view字体大小的适配",
             "功能三十七:扫描本地的音乐文件",
             "功能三十八:使用自定义的TextView(可调整图片大小)",
-            "功能三十九:使用数据库管理框架----room"
+            "功能三十九:使用数据库管理框架----room",
+            "功能四十:自动连接指定的wifi",
+            "功能四十一:Java使用线程池",
+            "功能四十二:使用zing生成二维码"
     };
 
     @Override
@@ -100,7 +103,6 @@ public class MainActivity extends BaseActivity {
                 return true;
             }
         });
-
         setListView();
     }
 
@@ -314,6 +316,19 @@ public class MainActivity extends BaseActivity {
                     case 39:
                         Intent intent38 = new Intent(mContext, UseRoomActivity.class);
                         startActivity(intent38);
+                        break;
+                    //功能四十:自动连接指定的wifi
+                    case 40:
+                        Intent intent39 = new Intent(mContext, WifiActivity.class);
+                        startActivity(intent39);
+                        break;
+                    //功能四十一:Java线程池的使用
+                    case 41:
+                        break;
+                    //"功能四十二:使用zing生成二维码"
+                    case 42:
+                        Intent intent41 = new Intent(mContext, UseZxingActivity.class);
+                        startActivity(intent41);
                         break;
                     default:
                         break;

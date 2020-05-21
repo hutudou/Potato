@@ -20,6 +20,9 @@ import com.example.administrator.potato.R;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+/**
+ * @author potato
+ */
 public class UseWebViewActivity extends BaseActivity {
 
     @Bind(R.id.webView)
@@ -34,6 +37,9 @@ public class UseWebViewActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_use_web_view);
         ButterKnife.bind(this);
+        /*
+        【精准一击】:
+         */
         initView();
         initData();
     }
@@ -44,6 +50,7 @@ public class UseWebViewActivity extends BaseActivity {
         if (webView != null) {
             //推出销毁webview
             webView.destroy();
+            //重置webView
             webView = null;
         }
     }
@@ -56,11 +63,13 @@ public class UseWebViewActivity extends BaseActivity {
                 finish();
             }
         });
+        //显示进程进度条
         progressBar.setVisibility(View.VISIBLE);
         webView.loadUrl("http://192.168.2.47:60240//FQD/ShowForm?id=9daefe21-a575-4542-8dd4-a5bd7691546f");
         WebSettings settings = webView.getSettings();
         settings.setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient() {
+            @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 view.loadUrl(url);
                 return true;

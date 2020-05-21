@@ -93,7 +93,7 @@ public class UseTimeAxleActivity extends BaseActivity {
 
         ItemBeen itemBeen6 = new ItemBeen();
         itemBeen6.setTextItemText("已到达二舍快递存放点");
-        itemBeen6.setTextItemTitle("收件人:你二大爷");
+        itemBeen6.setTextItemTitle("收件人:二大爷");
 
         list.add(itemBeen);
         list.add(itemBeen1);
